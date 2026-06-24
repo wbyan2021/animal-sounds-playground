@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>声音博物馆 V2</title>
+<title>声音大百科</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#FFF8E1;min-height:100vh}
@@ -26,7 +26,7 @@ h1{text-align:center;padding:1rem;background:linear-gradient(135deg,#FF9800,#FFC
 </style>
 </head>
 <body>
-<h1>声音博物馆 <div class="sub">V2 数据驱动 · 38种动物</div></h1>
+<h1>声音大百科 <div class="sub">数据驱动 · 38种动物</div></h1>
 <div id="cats" class="cats"></div>
 <div id="stats" class="stats"></div>
 <div id="grid" class="grid"><div class="loading">正在加载 manifest.json...</div></div>
@@ -44,7 +44,7 @@ async function load() {
     renderGrid();
   } catch(e) {
     document.getElementById('grid').innerHTML =
-      '<div class="loading" style="color:#E24B4A">请通过 HTTP 服务器打开本页面<br><small>终端执行：<br><code>cd sound-museum && python3 -m http.server 9876 --bind 0.0.0.0</code><br>浏览器访问：http://localhost:9876</small></div>';
+      '<div class="loading" style="color:#E24B4A">请通过 HTTP 服务器打开本页面<br><small>终端执行：<br><code>cd sound-encyclopedia && python3 -m http.server 9876 --bind 0.0.0.0</code><br>浏览器访问：http://localhost:9876</small></div>';
   }
 }
 

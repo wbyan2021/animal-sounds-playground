@@ -1,4 +1,4 @@
-# 🐾 声音博物馆 · Sound Museum
+# 🐾 声音大百科 · Sound Encyclopedia
 
 开源儿童声音库 — 让孩子在家听到大自然
 
@@ -9,15 +9,16 @@
 ## 为什么做这个
 
 1–6 岁的孩子通过声音认识世界，但市面上的声音 App 多用合成音效，缺乏真实感。
-声音博物馆收集真实的动物、自然、交通、生活声音，配上 Emoji 卡片，让孩子点击即听、无需识字。
+声音大百科收集真实的动物、自然、交通、生活声音，配上 Emoji 卡片，让孩子点击即听、无需识字。
 
 ## 快速开始
 
 ```bash
-git clone https://github.com/wbyan2021/sound-museum.git
-cd sound-museum
-# 直接用浏览器打开 web/index.html 或
-npx serve web/
+git clone https://github.com/wbyan2021/sound-encyclopedia.git
+cd sound-encyclopedia
+# 通过本地服务器打开（避免 fetch 跨域）
+python3 -m http.server 9876
+# 浏览器访问 http://localhost:9876
 ```
 
 ## 添加声音

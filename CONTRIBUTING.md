@@ -1,12 +1,12 @@
 # 贡献指南
 
-感谢你为声音博物馆添加声音！以下按你的技能水平选择合适的方式。
+感谢你为声音大百科添加声音！以下按你的技能水平选择合适的方式。
 
 ---
 
 ## 角色 A：普通家长/老师（不会用 Git）
 
-1. 打开 [GitHub Issues](https://github.com/wbyan2021/sound-museum/issues/new/choose)
+1. 打开 [GitHub Issues](https://github.com/wbyan2021/sound-encyclopedia/issues/new/choose)
 2. 选择「声音需求」模板
 3. 填写你想要的声音名称和分类
 4. 提交 Issue，等待维护者添加
@@ -65,8 +65,8 @@
 ### 步骤
 
 ```bash
-git clone https://github.com/wbyan2021/sound-museum.git
-cd sound-museum
+git clone https://github.com/wbyan2021/sound-encyclopedia.git
+cd sound-encyclopedia
 
 # 1. 创建声音目录
 mkdir -p data/sounds/animals/whale/audio
