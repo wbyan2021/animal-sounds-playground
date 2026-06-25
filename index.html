@@ -151,7 +151,7 @@ for (let i = 0; i < 12; i++) {
 startBtn.addEventListener('click', async () => {
   startBtn.style.display = 'none';
   loadProgress.style.display = 'flex';
-  skipLink.style.display = 'block';
+  progressText.textContent = '加载中...';
 
   try {
     const res = await fetch('data/manifest.json');
@@ -161,12 +161,10 @@ startBtn.addEventListener('click', async () => {
     return;
   }
 
-  progressFill.style.width = '100%';
-  progressText.textContent = '准备就绪！';
   renderCats();
   renderStats();
   renderGrid();
-  await preloadFirstScreen();
+  // 不预加载任何音频，真正的懒加载：点哪个加载哪个
   enterApp();
 });
 
@@ -178,35 +176,6 @@ function enterApp() {
     startScreen.style.display = 'none';
     document.getElementById('app').classList.add('show');
   }, 600);
-}
-
-// ===== PRELOAD FIRST SCREEN ONLY (lazy loading) =====
-async function preloadFirstScreen() {
-  // 只预加载"全部"分类下前 10 个声音的第一个音频
-  const firstSounds = manifest.sounds.slice(0, 10);
-  let done = 0;
-  const total = firstSounds.length;
-
-  for (const s of firstSounds) {
-    if (s.sounds.length > 0) {
-      const file = s.sounds[0].file;
-      try {
-        const audio = new Audio(file);
-        audio.volume = volume;
-        audioCache[file] = audio;
-        await new Promise(r => {
-          let settled = false;
-          const mark = () => { if (!settled) { settled = true; r(); } };
-          audio.addEventListener('canplaythrough', mark, { once: true });
-          audio.addEventListener('error', mark, { once: true });
-          setTimeout(mark, 5000);
-        });
-      } catch(e) {}
-    }
-    done++;
-    progressFill.style.width = Math.round(done / total * 100) + '%';
-    progressText.textContent = '加载首屏声音 ' + done + '/' + total;
-  }
 }
 
 // ===== LAZY LOAD SINGLE AUDIO =====
