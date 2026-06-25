@@ -1,0 +1,24 @@
+{
+  "id": "life.drum",
+  "category": "life",
+  "subcategory": "music",
+  "name_zh": "鼓",
+  "name_en": "Drum",
+  "emoji": "🥁",
+  "description": "咚咚咚的鼓声",
+  "fun_fact": "鼓皮被敲打时振动就发出咚咚声，是最古老的乐器之一",
+  "sounds": [
+    {
+      "file": "audio/drum_1.mp3"
+    }
+  ],
+  "tags": [
+    "鼓",
+    "音乐",
+    "乐器"
+  ],
+  "license": "CC0-1.0",
+  "source": "https://freesound.org/people/NovaSoundTechnology/sounds/118752/",
+  "contributor": "wbyan2021",
+  "added_at": "2026-06-26"
+}

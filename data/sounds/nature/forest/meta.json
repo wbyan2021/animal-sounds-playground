@@ -1,0 +1,24 @@
+{
+  "id": "nature.forest",
+  "category": "nature",
+  "subcategory": "forest",
+  "name_zh": "森林",
+  "name_en": "Forest",
+  "emoji": "🌲",
+  "description": "森林里树木沙沙，小鸟叽喳",
+  "fun_fact": "森林里有好多树和动物，是大自然最热闹的家",
+  "sounds": [
+    {
+      "file": "audio/forest_1.mp3"
+    }
+  ],
+  "tags": [
+    "森林",
+    "树林",
+    "大自然"
+  ],
+  "license": "CC0-1.0",
+  "source": "https://freesound.org/people/mf.edward/sounds/652249/",
+  "contributor": "wbyan2021",
+  "added_at": "2026-06-26"
+}

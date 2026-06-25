@@ -1,0 +1,24 @@
+{
+  "id": "life.piano",
+  "category": "life",
+  "subcategory": "music",
+  "name_zh": "钢琴",
+  "name_en": "Piano",
+  "emoji": "🎹",
+  "description": "钢琴叮叮咚咚的声音",
+  "fun_fact": "钢琴有黑白两种键，按下去小锤子敲打琴弦就发出美妙的声音",
+  "sounds": [
+    {
+      "file": "audio/piano_1.mp3"
+    }
+  ],
+  "tags": [
+    "钢琴",
+    "音乐",
+    "乐器"
+  ],
+  "license": "CC0-1.0",
+  "source": "https://freesound.org/people/LittleRainySeasons/sounds/345058/",
+  "contributor": "wbyan2021",
+  "added_at": "2026-06-26"
+}

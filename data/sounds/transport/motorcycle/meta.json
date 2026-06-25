@@ -1,0 +1,24 @@
+{
+  "id": "transport.motorcycle",
+  "category": "transport",
+  "subcategory": "road",
+  "name_zh": "摩托车",
+  "name_en": "Motorcycle",
+  "emoji": "🏍️",
+  "description": "摩托车突突突的声音",
+  "fun_fact": "摩托车的发动机比汽车的跑得快，所以声音更响更高",
+  "sounds": [
+    {
+      "file": "audio/motorcycle_1.mp3"
+    }
+  ],
+  "tags": [
+    "摩托车",
+    "突突",
+    "交通"
+  ],
+  "license": "CC0-1.0",
+  "source": "https://freesound.org/people/eldiariosonoro_/sounds/543725/",
+  "contributor": "wbyan2021",
+  "added_at": "2026-06-26"
+}

@@ -1,8 +1,8 @@
 {
-  "version": "2026.06.25.3",
-  "generated_at": "2026-06-25T14:51:00.953Z",
-  "total_sounds": 38,
-  "total_audio_files": 96,
+  "version": "2026.06.26.1",
+  "generated_at": "2026-06-25T16:51:55.832Z",
+  "total_sounds": 53,
+  "total_audio_files": 111,
   "categories": [
     {
       "id": "animals",
@@ -1212,6 +1212,366 @@
       "source": "https://freesound.org/",
       "contributor": "wbyan2021",
       "added_at": "2026-06-17"
+    },
+    {
+      "id": "life.alarm_clock",
+      "category": "life",
+      "subcategory": "home",
+      "name_zh": "闹钟",
+      "name_en": "Alarm Clock",
+      "emoji": "⏰",
+      "description": "闹钟叮铃铃叫你起床",
+      "fun_fact": "闹钟是你起床的好帮手，每天早上准时叫你起来",
+      "sounds": [
+        {
+          "file": "data/sounds/life/alarm_clock/audio/alarm_clock_1.mp3"
+        }
+      ],
+      "tags": [
+        "闹钟",
+        "起床",
+        "家"
+      ],
+      "license": "CC0-1.0",
+      "source": "https://freesound.org/people/Dnab55/sounds/128138/",
+      "contributor": "wbyan2021",
+      "added_at": "2026-06-26"
+    },
+    {
+      "id": "life.doorbell",
+      "category": "life",
+      "subcategory": "home",
+      "name_zh": "门铃",
+      "name_en": "Doorbell",
+      "emoji": "🔔",
+      "description": "门铃叮咚响，有客人来了",
+      "fun_fact": "门铃一响就知道有人来找我们玩了，是家里的礼貌小卫士",
+      "sounds": [
+        {
+          "file": "data/sounds/life/doorbell/audio/doorbell_1.mp3"
+        }
+      ],
+      "tags": [
+        "门铃",
+        "叮咚",
+        "家"
+      ],
+      "license": "CC0-1.0",
+      "source": "https://freesound.org/people/Kneeling/sounds/642955/",
+      "contributor": "wbyan2021",
+      "added_at": "2026-06-26"
+    },
+    {
+      "id": "life.telephone",
+      "category": "life",
+      "subcategory": "home",
+      "name_zh": "电话铃声",
+      "name_en": "Telephone",
+      "emoji": "📞",
+      "description": "电话铃声响，快接电话",
+      "fun_fact": "电话铃声是在告诉你有朋友找你聊天了",
+      "sounds": [
+        {
+          "file": "data/sounds/life/telephone/audio/telephone_1.mp3"
+        }
+      ],
+      "tags": [
+        "电话",
+        "铃声",
+        "家"
+      ],
+      "license": "CC0-1.0",
+      "source": "https://freesound.org/people/soundslikewillem/sounds/264346/",
+      "contributor": "wbyan2021",
+      "added_at": "2026-06-26"
+    },
+    {
+      "id": "nature.campfire",
+      "category": "nature",
+      "subcategory": "forest",
+      "name_zh": "篝火",
+      "name_en": "Campfire",
+      "emoji": "🔥",
+      "description": "篝火噼里啪啦地烧",
+      "fun_fact": "火烧木头时木头里的水分受热膨胀把木头撑破，就发出噼啪声",
+      "sounds": [
+        {
+          "file": "data/sounds/nature/campfire/audio/campfire_1.mp3"
+        }
+      ],
+      "tags": [
+        "篝火",
+        "火",
+        "木头"
+      ],
+      "license": "CC0-1.0",
+      "source": "https://freesound.org/people/mVitalie/sounds/704638/",
+      "contributor": "wbyan2021",
+      "added_at": "2026-06-26"
+    },
+    {
+      "id": "nature.forest",
+      "category": "nature",
+      "subcategory": "forest",
+      "name_zh": "森林",
+      "name_en": "Forest",
+      "emoji": "🌲",
+      "description": "森林里树木沙沙，小鸟叽喳",
+      "fun_fact": "森林里有好多树和动物，是大自然最热闹的家",
+      "sounds": [
+        {
+          "file": "data/sounds/nature/forest/audio/forest_1.mp3"
+        }
+      ],
+      "tags": [
+        "森林",
+        "树林",
+        "大自然"
+      ],
+      "license": "CC0-1.0",
+      "source": "https://freesound.org/people/mf.edward/sounds/652249/",
+      "contributor": "wbyan2021",
+      "added_at": "2026-06-26"
+    },
+    {
+      "id": "nature.ocean_waves",
+      "category": "nature",
+      "subcategory": "water",
+      "name_zh": "海浪",
+      "name_en": "Ocean Waves",
+      "emoji": "🌊",
+      "description": "海浪拍打沙滩，哗啦哗啦",
+      "fun_fact": "海浪是海水被风吹得摇来摇去，永远停不下来",
+      "sounds": [
+        {
+          "file": "data/sounds/nature/ocean_waves/audio/ocean_waves_1.mp3"
+        }
+      ],
+      "tags": [
+        "海浪",
+        "大海",
+        "水"
+      ],
+      "license": "CC0-1.0",
+      "source": "https://freesound.org/people/Jofae/sounds/360634/",
+      "contributor": "wbyan2021",
+      "added_at": "2026-06-26"
+    },
+    {
+      "id": "nature.rain",
+      "category": "nature",
+      "subcategory": "weather",
+      "name_zh": "雨",
+      "name_en": "Rain",
+      "emoji": "🌧️",
+      "description": "雨水落下的声音，滴滴答答",
+      "fun_fact": "雨水是云朵里的小水滴抱在一起太重了，掉下来就变成了雨",
+      "sounds": [
+        {
+          "file": "data/sounds/nature/rain/audio/rain_1.mp3"
+        }
+      ],
+      "tags": [
+        "雨水",
+        "下雨",
+        "天气"
+      ],
+      "license": "CC0-1.0",
+      "source": "https://freesound.org/people/Rvgerxini/sounds/508962/",
+      "contributor": "wbyan2021",
+      "added_at": "2026-06-26"
+    },
+    {
+      "id": "nature.stream",
+      "category": "nature",
+      "subcategory": "water",
+      "name_zh": "溪流",
+      "name_en": "Stream",
+      "emoji": "🏞️",
+      "description": "山间小溪哗啦啦地流",
+      "fun_fact": "溪水从山上往低处跑，流过石头就会发出哗哗的声音",
+      "sounds": [
+        {
+          "file": "data/sounds/nature/stream/audio/stream_1.mp3"
+        }
+      ],
+      "tags": [
+        "溪流",
+        "流水",
+        "水"
+      ],
+      "license": "CC0-1.0",
+      "source": "https://freesound.org/people/Garuda1982/sounds/529456/",
+      "contributor": "wbyan2021",
+      "added_at": "2026-06-26"
+    },
+    {
+      "id": "nature.thunder",
+      "category": "nature",
+      "subcategory": "weather",
+      "name_zh": "雷",
+      "name_en": "Thunder",
+      "emoji": "🌩️",
+      "description": "打雷轰隆隆，闪电亮晶晶",
+      "fun_fact": "雷声是闪电把空气加热膨胀发出的巨响，就像气球爆掉一样",
+      "sounds": [
+        {
+          "file": "data/sounds/nature/thunder/audio/thunder_1.mp3"
+        }
+      ],
+      "tags": [
+        "雷声",
+        "打雷",
+        "天气"
+      ],
+      "license": "CC0-1.0",
+      "source": "https://freesound.org/people/deleted_user_7146007/sounds/383343/",
+      "contributor": "wbyan2021",
+      "added_at": "2026-06-26"
+    },
+    {
+      "id": "nature.wind",
+      "category": "nature",
+      "subcategory": "weather",
+      "name_zh": "风",
+      "name_en": "Wind",
+      "emoji": "💨",
+      "description": "风吹过树叶沙沙响",
+      "fun_fact": "风是空气在跑步，跑得快的时候就会发出呼呼的声音",
+      "sounds": [
+        {
+          "file": "data/sounds/nature/wind/audio/wind_1.mp3"
+        }
+      ],
+      "tags": [
+        "风声",
+        "刮风",
+        "天气"
+      ],
+      "license": "CC0-1.0",
+      "source": "https://freesound.org/people/jacksonacademyashmore/sounds/415972/",
+      "contributor": "wbyan2021",
+      "added_at": "2026-06-26"
+    },
+    {
+      "id": "transport.airplane",
+      "category": "transport",
+      "subcategory": "sky",
+      "name_zh": "飞机",
+      "name_en": "Airplane",
+      "emoji": "✈️",
+      "description": "飞机飞过头顶的轰鸣声",
+      "fun_fact": "飞机引擎力气特别大才能让那么重的飞机飞上天",
+      "sounds": [
+        {
+          "file": "data/sounds/transport/airplane/audio/airplane_1.mp3"
+        }
+      ],
+      "tags": [
+        "飞机",
+        "轰鸣",
+        "交通"
+      ],
+      "license": "CC0-1.0",
+      "source": "https://freesound.org/people/NicknameLarry/sounds/492378/",
+      "contributor": "wbyan2021",
+      "added_at": "2026-06-26"
+    },
+    {
+      "id": "transport.boat",
+      "category": "transport",
+      "subcategory": "water",
+      "name_zh": "轮船",
+      "name_en": "Boat",
+      "emoji": "🚢",
+      "description": "轮船的汽笛声呜呜响",
+      "fun_fact": "轮船在海上呜呜叫是在告诉别的船：我在这里，别撞到我",
+      "sounds": [
+        {
+          "file": "data/sounds/transport/boat/audio/boat_1.mp3"
+        }
+      ],
+      "tags": [
+        "轮船",
+        "汽笛",
+        "交通"
+      ],
+      "license": "CC0-1.0",
+      "source": "https://freesound.org/people/funnyman850/sounds/194812/",
+      "contributor": "wbyan2021",
+      "added_at": "2026-06-26"
+    },
+    {
+      "id": "transport.car",
+      "category": "transport",
+      "subcategory": "road",
+      "name_zh": "汽车",
+      "name_en": "Car",
+      "emoji": "🚗",
+      "description": "汽车滴滴的声音",
+      "fun_fact": "汽车靠发动机工作才能跑起来，不同速度声音也不一样哦",
+      "sounds": [
+        {
+          "file": "data/sounds/transport/car/audio/car_1.mp3"
+        }
+      ],
+      "tags": [
+        "汽车",
+        "滴滴",
+        "交通"
+      ],
+      "license": "CC0-1.0",
+      "source": "https://freesound.org/people/deleted_user_7146007/sounds/383348/",
+      "contributor": "wbyan2021",
+      "added_at": "2026-06-26"
+    },
+    {
+      "id": "transport.motorcycle",
+      "category": "transport",
+      "subcategory": "road",
+      "name_zh": "摩托车",
+      "name_en": "Motorcycle",
+      "emoji": "🏍️",
+      "description": "摩托车突突突的声音",
+      "fun_fact": "摩托车的发动机比汽车的跑得快，所以声音更响更高",
+      "sounds": [
+        {
+          "file": "data/sounds/transport/motorcycle/audio/motorcycle_1.mp3"
+        }
+      ],
+      "tags": [
+        "摩托车",
+        "突突",
+        "交通"
+      ],
+      "license": "CC0-1.0",
+      "source": "https://freesound.org/people/eldiariosonoro_/sounds/543725/",
+      "contributor": "wbyan2021",
+      "added_at": "2026-06-26"
+    },
+    {
+      "id": "transport.train",
+      "category": "transport",
+      "subcategory": "rail",
+      "name_zh": "火车",
+      "name_en": "Train",
+      "emoji": "🚂",
+      "description": "火车轰隆隆开过来了",
+      "fun_fact": "火车在铁轨上跑，车轮和铁轨碰撞就发出轰隆隆的声音",
+      "sounds": [
+        {
+          "file": "data/sounds/transport/train/audio/train_1.mp3"
+        }
+      ],
+      "tags": [
+        "火车",
+        "轰隆隆",
+        "交通"
+      ],
+      "license": "CC0-1.0",
+      "source": "https://freesound.org/people/gundamu/sounds/346957/",
+      "contributor": "wbyan2021",
+      "added_at": "2026-06-26"
     }
   ]
 }

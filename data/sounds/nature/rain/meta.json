@@ -1,0 +1,24 @@
+{
+  "id": "nature.rain",
+  "category": "nature",
+  "subcategory": "weather",
+  "name_zh": "雨",
+  "name_en": "Rain",
+  "emoji": "🌧️",
+  "description": "雨水落下的声音，滴滴答答",
+  "fun_fact": "雨水是云朵里的小水滴抱在一起太重了，掉下来就变成了雨",
+  "sounds": [
+    {
+      "file": "audio/rain_1.mp3"
+    }
+  ],
+  "tags": [
+    "雨水",
+    "下雨",
+    "天气"
+  ],
+  "license": "CC0-1.0",
+  "source": "https://freesound.org/people/Rvgerxini/sounds/508962/",
+  "contributor": "wbyan2021",
+  "added_at": "2026-06-26"
+}

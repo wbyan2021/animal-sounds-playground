@@ -1,0 +1,24 @@
+{
+  "id": "nature.ocean_waves",
+  "category": "nature",
+  "subcategory": "water",
+  "name_zh": "海浪",
+  "name_en": "Ocean Waves",
+  "emoji": "🌊",
+  "description": "海浪拍打沙滩，哗啦哗啦",
+  "fun_fact": "海浪是海水被风吹得摇来摇去，永远停不下来",
+  "sounds": [
+    {
+      "file": "audio/ocean_waves_1.mp3"
+    }
+  ],
+  "tags": [
+    "海浪",
+    "大海",
+    "水"
+  ],
+  "license": "CC0-1.0",
+  "source": "https://freesound.org/people/Jofae/sounds/360634/",
+  "contributor": "wbyan2021",
+  "added_at": "2026-06-26"
+}

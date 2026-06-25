@@ -1,0 +1,24 @@
+{
+  "id": "transport.train",
+  "category": "transport",
+  "subcategory": "rail",
+  "name_zh": "火车",
+  "name_en": "Train",
+  "emoji": "🚂",
+  "description": "火车轰隆隆开过来了",
+  "fun_fact": "火车在铁轨上跑，车轮和铁轨碰撞就发出轰隆隆的声音",
+  "sounds": [
+    {
+      "file": "audio/train_1.mp3"
+    }
+  ],
+  "tags": [
+    "火车",
+    "轰隆隆",
+    "交通"
+  ],
+  "license": "CC0-1.0",
+  "source": "https://freesound.org/people/gundamu/sounds/346957/",
+  "contributor": "wbyan2021",
+  "added_at": "2026-06-26"
+}

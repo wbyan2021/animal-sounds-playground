@@ -1,0 +1,24 @@
+{
+  "id": "life.frying",
+  "category": "life",
+  "subcategory": "kitchen",
+  "name_zh": "炒菜",
+  "name_en": "Frying",
+  "emoji": "🍳",
+  "description": "炒菜滋滋啦啦的声音",
+  "fun_fact": "油在热锅里会跳舞，菜放进去就发出滋滋声，好香呀",
+  "sounds": [
+    {
+      "file": "audio/frying_1.mp3"
+    }
+  ],
+  "tags": [
+    "炒菜",
+    "厨房",
+    "滋滋"
+  ],
+  "license": "CC0-1.0",
+  "source": "https://freesound.org/people/Whiprealgood/sounds/529567/",
+  "contributor": "wbyan2021",
+  "added_at": "2026-06-26"
+}

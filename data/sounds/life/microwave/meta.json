@@ -1,0 +1,24 @@
+{
+  "id": "life.microwave",
+  "category": "life",
+  "subcategory": "kitchen",
+  "name_zh": "微波炉",
+  "name_en": "Microwave",
+  "emoji": "📟",
+  "description": "微波炉嗡嗡工作的声音",
+  "fun_fact": "微波炉用看不见的微波让食物里的水分子运动，食物就热了",
+  "sounds": [
+    {
+      "file": "audio/microwave_1.mp3"
+    }
+  ],
+  "tags": [
+    "微波炉",
+    "厨房",
+    "嗡嗡"
+  ],
+  "license": "CC0-1.0",
+  "source": "https://freesound.org/people/hullum/sounds/415559/",
+  "contributor": "wbyan2021",
+  "added_at": "2026-06-26"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "life.doorbell",
+  "category": "life",
+  "subcategory": "home",
+  "name_zh": "门铃",
+  "name_en": "Doorbell",
+  "emoji": "🔔",
+  "description": "门铃叮咚响，有客人来了",
+  "fun_fact": "门铃一响就知道有人来找我们玩了，是家里的礼貌小卫士",
+  "sounds": [
+    {
+      "file": "audio/doorbell_1.mp3"
+    }
+  ],
+  "tags": [
+    "门铃",
+    "叮咚",
+    "家"
+  ],
+  "license": "CC0-1.0",
+  "source": "https://freesound.org/people/Kneeling/sounds/642955/",
+  "contributor": "wbyan2021",
+  "added_at": "2026-06-26"
+}

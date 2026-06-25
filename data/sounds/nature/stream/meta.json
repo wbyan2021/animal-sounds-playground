@@ -1,0 +1,24 @@
+{
+  "id": "nature.stream",
+  "category": "nature",
+  "subcategory": "water",
+  "name_zh": "溪流",
+  "name_en": "Stream",
+  "emoji": "🏞️",
+  "description": "山间小溪哗啦啦地流",
+  "fun_fact": "溪水从山上往低处跑，流过石头就会发出哗哗的声音",
+  "sounds": [
+    {
+      "file": "audio/stream_1.mp3"
+    }
+  ],
+  "tags": [
+    "溪流",
+    "流水",
+    "水"
+  ],
+  "license": "CC0-1.0",
+  "source": "https://freesound.org/people/Garuda1982/sounds/529456/",
+  "contributor": "wbyan2021",
+  "added_at": "2026-06-26"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "transport.boat",
+  "category": "transport",
+  "subcategory": "water",
+  "name_zh": "轮船",
+  "name_en": "Boat",
+  "emoji": "🚢",
+  "description": "轮船的汽笛声呜呜响",
+  "fun_fact": "轮船在海上呜呜叫是在告诉别的船：我在这里，别撞到我",
+  "sounds": [
+    {
+      "file": "audio/boat_1.mp3"
+    }
+  ],
+  "tags": [
+    "轮船",
+    "汽笛",
+    "交通"
+  ],
+  "license": "CC0-1.0",
+  "source": "https://freesound.org/people/funnyman850/sounds/194812/",
+  "contributor": "wbyan2021",
+  "added_at": "2026-06-26"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "nature.thunder",
+  "category": "nature",
+  "subcategory": "weather",
+  "name_zh": "雷",
+  "name_en": "Thunder",
+  "emoji": "🌩️",
+  "description": "打雷轰隆隆，闪电亮晶晶",
+  "fun_fact": "雷声是闪电把空气加热膨胀发出的巨响，就像气球爆掉一样",
+  "sounds": [
+    {
+      "file": "audio/thunder_1.mp3"
+    }
+  ],
+  "tags": [
+    "雷声",
+    "打雷",
+    "天气"
+  ],
+  "license": "CC0-1.0",
+  "source": "https://freesound.org/people/deleted_user_7146007/sounds/383343/",
+  "contributor": "wbyan2021",
+  "added_at": "2026-06-26"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "life.telephone",
+  "category": "life",
+  "subcategory": "home",
+  "name_zh": "电话铃声",
+  "name_en": "Telephone",
+  "emoji": "📞",
+  "description": "电话铃声响，快接电话",
+  "fun_fact": "电话铃声是在告诉你有朋友找你聊天了",
+  "sounds": [
+    {
+      "file": "audio/telephone_1.mp3"
+    }
+  ],
+  "tags": [
+    "电话",
+    "铃声",
+    "家"
+  ],
+  "license": "CC0-1.0",
+  "source": "https://freesound.org/people/soundslikewillem/sounds/264346/",
+  "contributor": "wbyan2021",
+  "added_at": "2026-06-26"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "nature.campfire",
+  "category": "nature",
+  "subcategory": "forest",
+  "name_zh": "篝火",
+  "name_en": "Campfire",
+  "emoji": "🔥",
+  "description": "篝火噼里啪啦地烧",
+  "fun_fact": "火烧木头时木头里的水分受热膨胀把木头撑破，就发出噼啪声",
+  "sounds": [
+    {
+      "file": "audio/campfire_1.mp3"
+    }
+  ],
+  "tags": [
+    "篝火",
+    "火",
+    "木头"
+  ],
+  "license": "CC0-1.0",
+  "source": "https://freesound.org/people/mVitalie/sounds/704638/",
+  "contributor": "wbyan2021",
+  "added_at": "2026-06-26"
+}

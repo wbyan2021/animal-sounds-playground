@@ -1,0 +1,24 @@
+{
+  "id": "transport.airplane",
+  "category": "transport",
+  "subcategory": "sky",
+  "name_zh": "飞机",
+  "name_en": "Airplane",
+  "emoji": "✈️",
+  "description": "飞机飞过头顶的轰鸣声",
+  "fun_fact": "飞机引擎力气特别大才能让那么重的飞机飞上天",
+  "sounds": [
+    {
+      "file": "audio/airplane_1.mp3"
+    }
+  ],
+  "tags": [
+    "飞机",
+    "轰鸣",
+    "交通"
+  ],
+  "license": "CC0-1.0",
+  "source": "https://freesound.org/people/NicknameLarry/sounds/492378/",
+  "contributor": "wbyan2021",
+  "added_at": "2026-06-26"
+}

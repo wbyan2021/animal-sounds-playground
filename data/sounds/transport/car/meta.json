@@ -1,0 +1,24 @@
+{
+  "id": "transport.car",
+  "category": "transport",
+  "subcategory": "road",
+  "name_zh": "汽车",
+  "name_en": "Car",
+  "emoji": "🚗",
+  "description": "汽车滴滴的声音",
+  "fun_fact": "汽车靠发动机工作才能跑起来，不同速度声音也不一样哦",
+  "sounds": [
+    {
+      "file": "audio/car_1.mp3"
+    }
+  ],
+  "tags": [
+    "汽车",
+    "滴滴",
+    "交通"
+  ],
+  "license": "CC0-1.0",
+  "source": "https://freesound.org/people/deleted_user_7146007/sounds/383348/",
+  "contributor": "wbyan2021",
+  "added_at": "2026-06-26"
+}

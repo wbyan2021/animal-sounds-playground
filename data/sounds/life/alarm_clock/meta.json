@@ -1,0 +1,24 @@
+{
+  "id": "life.alarm_clock",
+  "category": "life",
+  "subcategory": "home",
+  "name_zh": "闹钟",
+  "name_en": "Alarm Clock",
+  "emoji": "⏰",
+  "description": "闹钟叮铃铃叫你起床",
+  "fun_fact": "闹钟是你起床的好帮手，每天早上准时叫你起来",
+  "sounds": [
+    {
+      "file": "audio/alarm_clock_1.mp3"
+    }
+  ],
+  "tags": [
+    "闹钟",
+    "起床",
+    "家"
+  ],
+  "license": "CC0-1.0",
+  "source": "https://freesound.org/people/Dnab55/sounds/128138/",
+  "contributor": "wbyan2021",
+  "added_at": "2026-06-26"
+}

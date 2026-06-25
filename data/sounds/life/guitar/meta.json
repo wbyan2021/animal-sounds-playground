@@ -1,0 +1,24 @@
+{
+  "id": "life.guitar",
+  "category": "life",
+  "subcategory": "music",
+  "name_zh": "吉他",
+  "name_en": "Guitar",
+  "emoji": "🎸",
+  "description": "吉他弹奏的声音",
+  "fun_fact": "吉他拨动琴弦就能发出声音，六根弦从粗到细声音从低到高",
+  "sounds": [
+    {
+      "file": "audio/guitar_1.mp3"
+    }
+  ],
+  "tags": [
+    "吉他",
+    "音乐",
+    "乐器"
+  ],
+  "license": "CC0-1.0",
+  "source": "https://freesound.org/people/VcaAnimation/sounds/315973/",
+  "contributor": "wbyan2021",
+  "added_at": "2026-06-26"
+}

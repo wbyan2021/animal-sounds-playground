@@ -1,0 +1,24 @@
+{
+  "id": "nature.wind",
+  "category": "nature",
+  "subcategory": "weather",
+  "name_zh": "风",
+  "name_en": "Wind",
+  "emoji": "💨",
+  "description": "风吹过树叶沙沙响",
+  "fun_fact": "风是空气在跑步，跑得快的时候就会发出呼呼的声音",
+  "sounds": [
+    {
+      "file": "audio/wind_1.mp3"
+    }
+  ],
+  "tags": [
+    "风声",
+    "刮风",
+    "天气"
+  ],
+  "license": "CC0-1.0",
+  "source": "https://freesound.org/people/jacksonacademyashmore/sounds/415972/",
+  "contributor": "wbyan2021",
+  "added_at": "2026-06-26"
+}
