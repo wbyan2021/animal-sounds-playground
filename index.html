@@ -179,31 +179,15 @@ function enterApp() {
 }
 
 // ===== LAZY LOAD SINGLE AUDIO =====
-function getAudio(file, card) {
+function getAudio(file) {
   if (audioCache[file]) {
-    return Promise.resolve(audioCache[file]);
+    return audioCache[file];
   }
-
-  if (card) card.classList.add('loading');
-  return new Promise(resolve => {
-    const audio = new Audio(file);
-    audio.volume = volume;
-    audioCache[file] = audio;
-    let settled = false;
-    const done = () => {
-      if (settled) return;
-      settled = true;
-      if (card) card.classList.remove('loading');
-      resolve(audio);
-    };
-    audio.addEventListener('canplaythrough', done, { once: true });
-    audio.addEventListener('error', () => {
-      if (card) card.classList.remove('loading');
-      showToast('声音加载失败，请重试');
-      resolve(null);
-    }, { once: true });
-    setTimeout(done, 8000);
-  });
+  const audio = new Audio(file);
+  audio.preload = 'auto';
+  audio.volume = volume;
+  audioCache[file] = audio;
+  return audio;
 }
 
 // ===== CATEGORIES (only show categories with data) =====
@@ -265,8 +249,8 @@ function renderGrid() {
   });
 }
 
-// ===== PLAY SOUND (with lazy loading) =====
-async function playSound(card) {
+// ===== PLAY SOUND (instant feedback, browser handles buffering) =====
+function playSound(card) {
   const files = JSON.parse(card.dataset.files);
   if (!files.length) return;
   const file = files[Math.floor(Math.random() * files.length)];
@@ -278,23 +262,22 @@ async function playSound(card) {
   }
   if (currentCard) currentCard.classList.remove('playing');
 
-  // 懒加载音频
-  const audio = await getAudio(file, card);
-  if (!audio) return;
-
+  // 立即获取或创建音频对象
+  const audio = getAudio(file);
   audio.volume = volume;
   audio.currentTime = 0;
-  audio.play().catch(() => {
-    showToast('播放失败，请点击页面后重试');
-  });
+
+  // 立即给视觉反馈
   activeAudio = audio;
   currentCard = card;
   card.classList.add('playing');
   card.classList.add('played');
+  playedSet.add(card.dataset.id);
 
-  // 记录已播放
-  const soundId = card.dataset.id;
-  playedSet.add(soundId);
+  // 直接播放，浏览器自动缓冲
+  audio.play().catch(() => {
+    showToast('点击页面后再试一次');
+  });
 
   // Ripple
   const rect = card.getBoundingClientRect();
@@ -330,8 +313,10 @@ async function playSound(card) {
 
   audio.onended = () => {
     card.classList.remove('playing');
-    activeAudio = null;
-    currentCard = null;
+    if (activeAudio === audio) {
+      activeAudio = null;
+      currentCard = null;
+    }
   };
 }
 
