@@ -1,8 +1,8 @@
 {
-  "version": "2026.06.26.1",
-  "generated_at": "2026-06-25T16:51:55.832Z",
-  "total_sounds": 53,
-  "total_audio_files": 111,
+  "version": "2026.06.25.1",
+  "generated_at": "2026-06-25T17:13:26.126Z",
+  "total_sounds": 58,
+  "total_audio_files": 116,
   "categories": [
     {
       "id": "animals",
@@ -1258,6 +1258,126 @@
       ],
       "license": "CC0-1.0",
       "source": "https://freesound.org/people/Kneeling/sounds/642955/",
+      "contributor": "wbyan2021",
+      "added_at": "2026-06-26"
+    },
+    {
+      "id": "life.drum",
+      "category": "life",
+      "subcategory": "music",
+      "name_zh": "鼓",
+      "name_en": "Drum",
+      "emoji": "🥁",
+      "description": "咚咚咚的鼓声",
+      "fun_fact": "鼓皮被敲打时振动就发出咚咚声，是最古老的乐器之一",
+      "sounds": [
+        {
+          "file": "data/sounds/life/drum/audio/drum_1.mp3"
+        }
+      ],
+      "tags": [
+        "鼓",
+        "音乐",
+        "乐器"
+      ],
+      "license": "CC0-1.0",
+      "source": "https://freesound.org/people/NovaSoundTechnology/sounds/118752/",
+      "contributor": "wbyan2021",
+      "added_at": "2026-06-26"
+    },
+    {
+      "id": "life.frying",
+      "category": "life",
+      "subcategory": "kitchen",
+      "name_zh": "炒菜",
+      "name_en": "Frying",
+      "emoji": "🍳",
+      "description": "炒菜滋滋啦啦的声音",
+      "fun_fact": "油在热锅里会跳舞，菜放进去就发出滋滋声，好香呀",
+      "sounds": [
+        {
+          "file": "data/sounds/life/frying/audio/frying_1.mp3"
+        }
+      ],
+      "tags": [
+        "炒菜",
+        "厨房",
+        "滋滋"
+      ],
+      "license": "CC0-1.0",
+      "source": "https://freesound.org/people/Whiprealgood/sounds/529567/",
+      "contributor": "wbyan2021",
+      "added_at": "2026-06-26"
+    },
+    {
+      "id": "life.guitar",
+      "category": "life",
+      "subcategory": "music",
+      "name_zh": "吉他",
+      "name_en": "Guitar",
+      "emoji": "🎸",
+      "description": "吉他弹奏的声音",
+      "fun_fact": "吉他拨动琴弦就能发出声音，六根弦从粗到细声音从低到高",
+      "sounds": [
+        {
+          "file": "data/sounds/life/guitar/audio/guitar_1.mp3"
+        }
+      ],
+      "tags": [
+        "吉他",
+        "音乐",
+        "乐器"
+      ],
+      "license": "CC0-1.0",
+      "source": "https://freesound.org/people/VcaAnimation/sounds/315973/",
+      "contributor": "wbyan2021",
+      "added_at": "2026-06-26"
+    },
+    {
+      "id": "life.microwave",
+      "category": "life",
+      "subcategory": "kitchen",
+      "name_zh": "微波炉",
+      "name_en": "Microwave",
+      "emoji": "📟",
+      "description": "微波炉嗡嗡工作的声音",
+      "fun_fact": "微波炉用看不见的微波让食物里的水分子运动，食物就热了",
+      "sounds": [
+        {
+          "file": "data/sounds/life/microwave/audio/microwave_1.mp3"
+        }
+      ],
+      "tags": [
+        "微波炉",
+        "厨房",
+        "嗡嗡"
+      ],
+      "license": "CC0-1.0",
+      "source": "https://freesound.org/people/hullum/sounds/415559/",
+      "contributor": "wbyan2021",
+      "added_at": "2026-06-26"
+    },
+    {
+      "id": "life.piano",
+      "category": "life",
+      "subcategory": "music",
+      "name_zh": "钢琴",
+      "name_en": "Piano",
+      "emoji": "🎹",
+      "description": "钢琴叮叮咚咚的声音",
+      "fun_fact": "钢琴有黑白两种键，按下去小锤子敲打琴弦就发出美妙的声音",
+      "sounds": [
+        {
+          "file": "data/sounds/life/piano/audio/piano_1.mp3"
+        }
+      ],
+      "tags": [
+        "钢琴",
+        "音乐",
+        "乐器"
+      ],
+      "license": "CC0-1.0",
+      "source": "https://freesound.org/people/LittleRainySeasons/sounds/345058/",
       "contributor": "wbyan2021",
       "added_at": "2026-06-26"
     },
