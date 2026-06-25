@@ -6,6 +6,7 @@
   "name_en": "Penguin",
   "emoji": "🐧",
   "description": "穿燕尾服的南极居民，摇摇摆摆",
+  "fun_fact": "企鹅不会飞但游泳超快，在水里像小鱼一样灵活，可厉害了",
   "sounds": [
     { "file": "audio/real_penguin1.mp3" }
   ],

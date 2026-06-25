@@ -6,6 +6,7 @@
   "name_en": "Parrot",
   "emoji": "🦜",
   "description": "会学人说话的彩色小鸟",
+  "fun_fact": "鹦鹉会学人说话，有的能学会一百多个词，比你还爱聊天呢",
   "sounds": [
     { "file": "audio/real_parrot1.mp3" }
   ],

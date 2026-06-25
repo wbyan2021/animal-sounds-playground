@@ -6,6 +6,7 @@
   "name_en": "Gorilla",
   "emoji": "🦍",
   "description": "森林里的大个子，力气很大",
+  "fun_fact": "大猩猩和人类的基因有百分之九十八一样，是我们很近的亲戚哦",
   "sounds": [
     { "file": "audio/real_gorilla1.mp3" }
   ],

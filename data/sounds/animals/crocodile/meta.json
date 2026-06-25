@@ -6,6 +6,7 @@
   "name_en": "Crocodile",
   "emoji": "🐊",
   "description": "大河里的大家伙，嘴巴特别大",
+  "fun_fact": "鳄鱼的牙齿掉了会一直长新的，一辈子会长出几千颗牙呢",
   "sounds": [
     { "file": "audio/real_crocodile1.mp3" }
   ],

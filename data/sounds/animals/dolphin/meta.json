@@ -6,6 +6,7 @@
   "name_en": "Dolphin",
   "emoji": "🐬",
   "description": "海洋里最聪明的动物，喜欢跳跃",
+  "fun_fact": "海豚睡觉时只闭一只眼，半个脑子在休息，另一半还在工作呢",
   "sounds": [
     { "file": "audio/real_dolphin1.mp3" }
   ],

@@ -6,6 +6,7 @@
   "name_en": "Dove",
   "emoji": "🕊️",
   "description": "和平的小天使，咕咕叫",
+  "fun_fact": "鸽子能飞几百公里回到家，是天然的导航员，从来不会迷路",
   "sounds": [
     { "file": "audio/dove_coo1.mp3" },
     { "file": "audio/dove_coo2.mp3" }

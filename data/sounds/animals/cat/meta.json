@@ -6,6 +6,7 @@
   "name_en": "Cat",
   "emoji": "🐱",
   "description": "毛茸茸的小伙伴，会喵喵叫",
+  "fun_fact": "小猫的耳朵能转一百八十度，背后小虫子轻轻飞过的声音它都听得见哦",
   "sounds": [
     { "file": "audio/cat1a.mp3" },
     { "file": "audio/cat1b.mp3" },

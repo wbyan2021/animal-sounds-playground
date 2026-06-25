@@ -6,6 +6,7 @@
   "name_en": "Bee",
   "emoji": "🐝",
   "description": "勤劳的小飞虫，嗡嗡采花蜜",
+  "fun_fact": "蜜蜂跳一支舞就能告诉同伴花在哪里，是不是很神奇呀",
   "sounds": [
     { "file": "audio/bee_buzz1.mp3" }
   ],

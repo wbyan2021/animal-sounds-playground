@@ -6,6 +6,7 @@
   "name_en": "Wolf",
   "emoji": "🐺",
   "description": "夜晚对着月亮叫的家伙",
+  "fun_fact": "狼成群结队一起捕猎，互相配合像一支小队伍，可团结啦",
   "sounds": [
     { "file": "audio/wolf_howl1.mp3" }
   ],

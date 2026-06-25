@@ -6,6 +6,7 @@
   "name_en": "Snake",
   "emoji": "🐍",
   "description": "没有脚的长家伙，嘶嘶叫",
+  "fun_fact": "蛇没有脚但爬得很快，靠肚子的鳞片抓住地面就能往前滑",
   "sounds": [
     { "file": "audio/real_snake1.mp3" }
   ],

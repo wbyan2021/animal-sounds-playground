@@ -6,6 +6,7 @@
   "name_en": "Elephant",
   "emoji": "🐘",
   "description": "陆地上最大的动物，鼻子超级长",
+  "fun_fact": "大象的鼻子有四万块肌肉，能捡起一颗小花生，也能推倒大树",
   "sounds": [
     { "file": "audio/real_elephant1.mp3" }
   ],

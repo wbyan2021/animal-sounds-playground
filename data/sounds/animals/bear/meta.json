@@ -6,6 +6,7 @@
   "name_en": "Bear",
   "emoji": "🐻",
   "description": "森林里的大个子，冬天喜欢睡懒觉",
+  "fun_fact": "熊冬天会睡很长一觉叫冬眠，一觉醒来春天就到了，好会睡呀",
   "sounds": [
     { "file": "audio/real_bear1.mp3" }
   ],

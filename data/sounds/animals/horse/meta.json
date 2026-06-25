@@ -6,6 +6,7 @@
   "name_en": "Horse",
   "emoji": "🐴",
   "description": "跑得飞快的大朋友，嘶嘶叫",
+  "fun_fact": "马可以站着睡觉，这样遇到危险时能马上撒腿就跑，是不是很厉害",
   "sounds": [
     { "file": "audio/real_horse1.mp3" }
   ],

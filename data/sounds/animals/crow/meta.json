@@ -6,6 +6,7 @@
   "name_en": "Crow",
   "emoji": "🐦‍⬛",
   "description": "聪明的黑鸟，嘎嘎叫",
+  "fun_fact": "乌鸦特别聪明，会把坚果丢在马路上，让汽车帮它压开吃果仁",
   "sounds": [
     { "file": "audio/crow1.mp3" },
     { "file": "audio/crow2.mp3" },

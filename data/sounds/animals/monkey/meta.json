@@ -6,6 +6,7 @@
   "name_en": "Monkey",
   "emoji": "🐒",
   "description": "爱爬树的调皮鬼，吱吱叫",
+  "fun_fact": "猴子用尾巴当第五只手，可以倒挂在树上吃水果，厉害吧",
   "sounds": [
     { "file": "audio/real_monkey1.mp3" }
   ],

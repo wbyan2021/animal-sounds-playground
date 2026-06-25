@@ -6,6 +6,7 @@
   "name_en": "Duck",
   "emoji": "🦆",
   "description": "摇摇摆摆走路，嘎嘎叫",
+  "fun_fact": "鸭子的脚有蹼，游泳时像小船的桨一样，所以在水里游得特别快",
   "sounds": [
     { "file": "audio/mallard1.mp3" }
   ],

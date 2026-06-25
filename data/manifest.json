@@ -1,6 +1,6 @@
 {
-  "version": "2026.06.24.2",
-  "generated_at": "2026-06-24T07:56:26.524Z",
+  "version": "2026.06.25.1",
+  "generated_at": "2026-06-25T09:59:08.292Z",
   "total_sounds": 38,
   "total_audio_files": 96,
   "categories": [
@@ -135,6 +135,7 @@
       "name_en": "Bear",
       "emoji": "🐻",
       "description": "森林里的大个子，冬天喜欢睡懒觉",
+      "fun_fact": "熊冬天会睡很长一觉叫冬眠，一觉醒来春天就到了，好会睡呀",
       "sounds": [
         {
           "file": "data/sounds/animals/bear/audio/real_bear1.mp3"
@@ -158,6 +159,7 @@
       "name_en": "Bee",
       "emoji": "🐝",
       "description": "勤劳的小飞虫，嗡嗡采花蜜",
+      "fun_fact": "蜜蜂跳一支舞就能告诉同伴花在哪里，是不是很神奇呀",
       "sounds": [
         {
           "file": "data/sounds/animals/bee/audio/bee_buzz1.mp3"
@@ -181,6 +183,7 @@
       "name_en": "Bird",
       "emoji": "🐦",
       "description": "唱好听的歌，在天空中飞翔",
+      "fun_fact": "小鸟的骨头是空心的，所以身体很轻，才能在天上飞起来呀",
       "sounds": [
         {
           "file": "data/sounds/animals/bird/audio/bulbul.mp3"
@@ -234,6 +237,7 @@
       "name_en": "Cat",
       "emoji": "🐱",
       "description": "毛茸茸的小伙伴，会喵喵叫",
+      "fun_fact": "小猫的耳朵能转一百八十度，背后小虫子轻轻飞过的声音它都听得见哦",
       "sounds": [
         {
           "file": "data/sounds/animals/cat/audio/cat1a.mp3"
@@ -311,6 +315,7 @@
       "name_en": "Chicken",
       "emoji": "🐔",
       "description": "农场里的妈妈，会咯咯叫",
+      "fun_fact": "母鸡下完蛋后会咯咯叫，是在骄傲地告诉大家：我生了一个蛋啦",
       "sounds": [
         {
           "file": "data/sounds/animals/chicken/audio/hen_cackle1.mp3"
@@ -337,6 +342,7 @@
       "name_en": "Cow",
       "emoji": "🐮",
       "description": "农场里的大家伙，哞哞叫",
+      "fun_fact": "奶牛每天要吃四十多公斤青草，才能产出好喝的牛奶给你喝哦",
       "sounds": [
         {
           "file": "data/sounds/animals/cow/audio/cow1.mp3"
@@ -360,6 +366,7 @@
       "name_en": "Cricket",
       "emoji": "🦗",
       "description": "草丛里的小歌手，唧唧叫",
+      "fun_fact": "蟋蟀用翅膀摩擦唱歌，只有公蟋蟀才会叫，是在吸引母蟋蟀呢",
       "sounds": [
         {
           "file": "data/sounds/animals/cricket/audio/cricket_chirp1.mp3"
@@ -386,6 +393,7 @@
       "name_en": "Crocodile",
       "emoji": "🐊",
       "description": "大河里的大家伙，嘴巴特别大",
+      "fun_fact": "鳄鱼的牙齿掉了会一直长新的，一辈子会长出几千颗牙呢",
       "sounds": [
         {
           "file": "data/sounds/animals/crocodile/audio/real_crocodile1.mp3"
@@ -409,6 +417,7 @@
       "name_en": "Crow",
       "emoji": "🐦‍⬛",
       "description": "聪明的黑鸟，嘎嘎叫",
+      "fun_fact": "乌鸦特别聪明，会把坚果丢在马路上，让汽车帮它压开吃果仁",
       "sounds": [
         {
           "file": "data/sounds/animals/crow/audio/crow1.mp3"
@@ -453,6 +462,7 @@
       "name_en": "Dog",
       "emoji": "🐶",
       "description": "人类最忠实的朋友，喜欢汪汪叫",
+      "fun_fact": "小狗的鼻子比人厉害一万倍，你藏在口袋里的小饼干它一下就能闻到哦",
       "sounds": [
         {
           "file": "data/sounds/animals/dog/audio/dog1a.mp3"
@@ -524,6 +534,7 @@
       "name_en": "Dolphin",
       "emoji": "🐬",
       "description": "海洋里最聪明的动物，喜欢跳跃",
+      "fun_fact": "海豚睡觉时只闭一只眼，半个脑子在休息，另一半还在工作呢",
       "sounds": [
         {
           "file": "data/sounds/animals/dolphin/audio/real_dolphin1.mp3"
@@ -547,6 +558,7 @@
       "name_en": "Donkey",
       "emoji": "🫏",
       "description": "勤劳的长耳朵，会啊啊叫",
+      "fun_fact": "驴的耳朵特别大，能听到很远很远的声音，比人的耳朵厉害多了",
       "sounds": [
         {
           "file": "data/sounds/animals/donkey/audio/real_donkey1.mp3"
@@ -570,6 +582,7 @@
       "name_en": "Dove",
       "emoji": "🕊️",
       "description": "和平的小天使，咕咕叫",
+      "fun_fact": "鸽子能飞几百公里回到家，是天然的导航员，从来不会迷路",
       "sounds": [
         {
           "file": "data/sounds/animals/dove/audio/dove_coo1.mp3"
@@ -596,6 +609,7 @@
       "name_en": "Duck",
       "emoji": "🦆",
       "description": "摇摇摆摆走路，嘎嘎叫",
+      "fun_fact": "鸭子的脚有蹼，游泳时像小船的桨一样，所以在水里游得特别快",
       "sounds": [
         {
           "file": "data/sounds/animals/duck/audio/mallard1.mp3"
@@ -619,6 +633,7 @@
       "name_en": "Eagle",
       "emoji": "🦅",
       "description": "天空中的大力士，飞得很高",
+      "fun_fact": "鹰的眼睛比人锐利八倍，能在高高的天上看到地上跑过的老鼠",
       "sounds": [
         {
           "file": "data/sounds/animals/eagle/audio/eagle_call1.mp3"
@@ -645,6 +660,7 @@
       "name_en": "Elephant",
       "emoji": "🐘",
       "description": "陆地上最大的动物，鼻子超级长",
+      "fun_fact": "大象的鼻子有四万块肌肉，能捡起一颗小花生，也能推倒大树",
       "sounds": [
         {
           "file": "data/sounds/animals/elephant/audio/real_elephant1.mp3"
@@ -668,6 +684,7 @@
       "name_en": "Fox",
       "emoji": "🦊",
       "description": "聪明的红毛家伙，尾巴很大",
+      "fun_fact": "狐狸很聪明，会在冰面上跳来跳去，用耳朵听鱼在哪里游呢",
       "sounds": [
         {
           "file": "data/sounds/animals/fox/audio/real_fox1.mp3"
@@ -691,6 +708,7 @@
       "name_en": "Frog",
       "emoji": "🐸",
       "description": "爱跳的小家伙，呱呱叫",
+      "fun_fact": "青蛙用皮肤喝水，不用嘴巴也能喝饱，是不是很特别呀",
       "sounds": [
         {
           "file": "data/sounds/animals/frog/audio/real_frog1.mp3"
@@ -714,6 +732,7 @@
       "name_en": "Goat",
       "emoji": "🐐",
       "description": "喜欢爬山的小家伙，咩咩叫",
+      "fun_fact": "山羊几乎能爬任何山，连垂直的悬崖都不怕，是真正的攀岩高手",
       "sounds": [
         {
           "file": "data/sounds/animals/goat/audio/real_goat1.mp3"
@@ -737,6 +756,7 @@
       "name_en": "Gorilla",
       "emoji": "🦍",
       "description": "森林里的大个子，力气很大",
+      "fun_fact": "大猩猩和人类的基因有百分之九十八一样，是我们很近的亲戚哦",
       "sounds": [
         {
           "file": "data/sounds/animals/gorilla/audio/real_gorilla1.mp3"
@@ -760,6 +780,7 @@
       "name_en": "Horse",
       "emoji": "🐴",
       "description": "跑得飞快的大朋友，嘶嘶叫",
+      "fun_fact": "马可以站着睡觉，这样遇到危险时能马上撒腿就跑，是不是很厉害",
       "sounds": [
         {
           "file": "data/sounds/animals/horse/audio/real_horse1.mp3"
@@ -783,6 +804,7 @@
       "name_en": "Lion",
       "emoji": "🦁",
       "description": "草原上的大猫，吼声很响亮",
+      "fun_fact": "狮子的吼声能传到八公里远，整个草原上的动物都能听得见呢",
       "sounds": [
         {
           "file": "data/sounds/animals/lion/audio/real_lion1.mp3"
@@ -806,6 +828,7 @@
       "name_en": "Monkey",
       "emoji": "🐒",
       "description": "爱爬树的调皮鬼，吱吱叫",
+      "fun_fact": "猴子用尾巴当第五只手，可以倒挂在树上吃水果，厉害吧",
       "sounds": [
         {
           "file": "data/sounds/animals/monkey/audio/real_monkey1.mp3"
@@ -829,6 +852,7 @@
       "name_en": "Mosquito",
       "emoji": "🦟",
       "description": "嗡嗡飞的小虫子，喜欢叮人",
+      "fun_fact": "蚊子嗡嗡叫是翅膀在振动，一秒钟能扇四百下，所以声音那么响",
       "sounds": [
         {
           "file": "data/sounds/animals/mosquito/audio/mosquito_buzz1.mp3"
@@ -855,6 +879,7 @@
       "name_en": "Mouse",
       "emoji": "🐭",
       "description": "小小的小家伙，吱吱叫",
+      "fun_fact": "老鼠的门牙一直在长，所以它要不停地啃东西磨牙，不然嘴巴闭不上",
       "sounds": [
         {
           "file": "data/sounds/animals/mouse/audio/mouse_squeak1.mp3"
@@ -881,6 +906,7 @@
       "name_en": "Owl",
       "emoji": "🦉",
       "description": "夜晚不睡觉的大眼睛，咕咕叫",
+      "fun_fact": "猫头鹰的头能转二百七十度，不用转身就能看到身后的东西哦",
       "sounds": [
         {
           "file": "data/sounds/animals/owl/audio/owl.mp3"
@@ -904,6 +930,7 @@
       "name_en": "Parrot",
       "emoji": "🦜",
       "description": "会学人说话的彩色小鸟",
+      "fun_fact": "鹦鹉会学人说话，有的能学会一百多个词，比你还爱聊天呢",
       "sounds": [
         {
           "file": "data/sounds/animals/parrot/audio/real_parrot1.mp3"
@@ -927,6 +954,7 @@
       "name_en": "Peacock",
       "emoji": "🦚",
       "description": "最美的鸟，会开屏",
+      "fun_fact": "只有公孔雀才会开屏，它展开漂亮的羽毛是为了吸引母孔雀",
       "sounds": [
         {
           "file": "data/sounds/animals/peacock/audio/real_peacock1.mp3"
@@ -950,6 +978,7 @@
       "name_en": "Penguin",
       "emoji": "🐧",
       "description": "穿燕尾服的南极居民，摇摇摆摆",
+      "fun_fact": "企鹅不会飞但游泳超快，在水里像小鱼一样灵活，可厉害了",
       "sounds": [
         {
           "file": "data/sounds/animals/penguin/audio/real_penguin1.mp3"
@@ -973,6 +1002,7 @@
       "name_en": "Pig",
       "emoji": "🐷",
       "description": "粉嘟嘟的胖家伙，哼哼叫",
+      "fun_fact": "猪其实特别聪明，比小狗还容易学会本事呢，它可不是笨笨的动物哦",
       "sounds": [
         {
           "file": "data/sounds/animals/pig/audio/real_pig1.mp3"
@@ -996,6 +1026,7 @@
       "name_en": "Rooster",
       "emoji": "🐓",
       "description": "农场里的大嗓门，喔喔叫",
+      "fun_fact": "公鸡天还没亮就打鸣，是天然的闹钟，每天早上叫大家起床哦",
       "sounds": [
         {
           "file": "data/sounds/animals/rooster/audio/real_rooster1.mp3"
@@ -1019,6 +1050,7 @@
       "name_en": "Seal",
       "emoji": "🦭",
       "description": "圆滚滚的海里小可爱",
+      "fun_fact": "海豹能在水下憋气三十分钟，比任何人憋得都久，好厉害呀",
       "sounds": [
         {
           "file": "data/sounds/animals/seal/audio/real_seal1.mp3"
@@ -1042,6 +1074,7 @@
       "name_en": "Sheep",
       "emoji": "🐑",
       "description": "穿厚毛衣的软绵绵，咩咩叫",
+      "fun_fact": "绵羊的毛一年要剪一次，如果不剪的话，夏天它会热得受不了哦",
       "sounds": [
         {
           "file": "data/sounds/animals/sheep/audio/real_sheep1.mp3"
@@ -1065,6 +1098,7 @@
       "name_en": "Snake",
       "emoji": "🐍",
       "description": "没有脚的长家伙，嘶嘶叫",
+      "fun_fact": "蛇没有脚但爬得很快，靠肚子的鳞片抓住地面就能往前滑",
       "sounds": [
         {
           "file": "data/sounds/animals/snake/audio/real_snake1.mp3"
@@ -1088,6 +1122,7 @@
       "name_en": "Swan",
       "emoji": "🦢",
       "description": "湖面上优雅的白裙子",
+      "fun_fact": "天鹅宝宝小时候是灰色的，长大后才变成漂亮的白天鹅哦",
       "sounds": [
         {
           "file": "data/sounds/animals/swan/audio/real_swan1.mp3"
@@ -1111,6 +1146,7 @@
       "name_en": "Tiger",
       "emoji": "🐯",
       "description": "森林里的大猫，身上有花纹",
+      "fun_fact": "老虎的条纹长在皮肤上，就算剃光了毛，身上还是有花纹的哦",
       "sounds": [
         {
           "file": "data/sounds/animals/tiger/audio/tiger_growl1.mp3"
@@ -1137,6 +1173,7 @@
       "name_en": "Whale",
       "emoji": "🐋",
       "description": "海洋里最大的动物，会唱歌",
+      "fun_fact": "鲸鱼是地球上最大的动物，它的心脏有一辆小汽车那么大哦",
       "sounds": [
         {
           "file": "data/sounds/animals/whale/audio/real_whale1.mp3"
@@ -1160,6 +1197,7 @@
       "name_en": "Wolf",
       "emoji": "🐺",
       "description": "夜晚对着月亮叫的家伙",
+      "fun_fact": "狼成群结队一起捕猎，互相配合像一支小队伍，可团结啦",
       "sounds": [
         {
           "file": "data/sounds/animals/wolf/audio/wolf_howl1.mp3"

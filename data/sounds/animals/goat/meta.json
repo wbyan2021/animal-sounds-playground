@@ -6,6 +6,7 @@
   "name_en": "Goat",
   "emoji": "🐐",
   "description": "喜欢爬山的小家伙，咩咩叫",
+  "fun_fact": "山羊几乎能爬任何山，连垂直的悬崖都不怕，是真正的攀岩高手",
   "sounds": [
     { "file": "audio/real_goat1.mp3" }
   ],

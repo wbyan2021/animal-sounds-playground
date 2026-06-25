@@ -6,6 +6,7 @@
   "name_en": "Mouse",
   "emoji": "🐭",
   "description": "小小的小家伙，吱吱叫",
+  "fun_fact": "老鼠的门牙一直在长，所以它要不停地啃东西磨牙，不然嘴巴闭不上",
   "sounds": [
     { "file": "audio/mouse_squeak1.mp3" },
     { "file": "audio/mouse_squeak2.mp3" }

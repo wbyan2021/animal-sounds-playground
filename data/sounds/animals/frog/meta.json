@@ -6,6 +6,7 @@
   "name_en": "Frog",
   "emoji": "🐸",
   "description": "爱跳的小家伙，呱呱叫",
+  "fun_fact": "青蛙用皮肤喝水，不用嘴巴也能喝饱，是不是很特别呀",
   "sounds": [
     { "file": "audio/real_frog1.mp3" }
   ],

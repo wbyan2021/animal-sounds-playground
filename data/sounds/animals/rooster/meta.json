@@ -6,6 +6,7 @@
   "name_en": "Rooster",
   "emoji": "🐓",
   "description": "农场里的大嗓门，喔喔叫",
+  "fun_fact": "公鸡天还没亮就打鸣，是天然的闹钟，每天早上叫大家起床哦",
   "sounds": [
     { "file": "audio/real_rooster1.mp3" }
   ],

@@ -6,6 +6,7 @@
   "name_en": "Lion",
   "emoji": "🦁",
   "description": "草原上的大猫，吼声很响亮",
+  "fun_fact": "狮子的吼声能传到八公里远，整个草原上的动物都能听得见呢",
   "sounds": [
     { "file": "audio/real_lion1.mp3" }
   ],

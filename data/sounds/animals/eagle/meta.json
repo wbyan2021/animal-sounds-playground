@@ -6,6 +6,7 @@
   "name_en": "Eagle",
   "emoji": "🦅",
   "description": "天空中的大力士，飞得很高",
+  "fun_fact": "鹰的眼睛比人锐利八倍，能在高高的天上看到地上跑过的老鼠",
   "sounds": [
     { "file": "audio/eagle_call1.mp3" },
     { "file": "audio/eagle_call2.mp3" }

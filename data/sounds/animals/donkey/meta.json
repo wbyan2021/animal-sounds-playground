@@ -6,6 +6,7 @@
   "name_en": "Donkey",
   "emoji": "🫏",
   "description": "勤劳的长耳朵，会啊啊叫",
+  "fun_fact": "驴的耳朵特别大，能听到很远很远的声音，比人的耳朵厉害多了",
   "sounds": [
     { "file": "audio/real_donkey1.mp3" }
   ],

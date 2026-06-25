@@ -1,16 +1,7 @@
-// Service Worker - 声音大百科
-const CACHE_NAME = 'sound-encyclopedia-v2';
-const ASSETS = [
-  '/',
-  '/index.html',
-  '/data/manifest.json',
-  '/data/categories.json'
-];
+// Service Worker - 声音大百科 v2.1
+const CACHE_NAME = 'sound-encyclopedia-v2.1';
 
 self.addEventListener('install', e => {
-  e.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS)).catch(() => {})
-  );
   self.skipWaiting();
 });
 
@@ -26,8 +17,40 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
 
-  // Cache-first for audio files
-  if (url.pathname.endsWith('.mp3') || url.pathname.endsWith('.json') || url.pathname.endsWith('.html')) {
+  // manifest.json: network-first (保证新声音能上线)
+  if (url.pathname.endsWith('manifest.json')) {
+    e.respondWith(
+      fetch(e.request)
+        .then(resp => {
+          if (resp.ok) {
+            const clone = resp.clone();
+            caches.open(CACHE_NAME).then(cache => cache.put(e.request, clone));
+          }
+          return resp;
+        })
+        .catch(() => caches.match(e.request))
+    );
+    return;
+  }
+
+  // index.html / sw.js: network-first (保证更新能生效)
+  if (url.pathname.endsWith('.html') || url.pathname.endsWith('sw.js')) {
+    e.respondWith(
+      fetch(e.request)
+        .then(resp => {
+          if (resp.ok) {
+            const clone = resp.clone();
+            caches.open(CACHE_NAME).then(cache => cache.put(e.request, clone));
+          }
+          return resp;
+        })
+        .catch(() => caches.match(e.request))
+    );
+    return;
+  }
+
+  // 音频文件: cache-first (省流量，加载过就缓存)
+  if (url.pathname.endsWith('.mp3')) {
     e.respondWith(
       caches.match(e.request).then(cached => {
         if (cached) return cached;
@@ -38,6 +61,23 @@ self.addEventListener('fetch', e => {
           }
           return resp;
         }).catch(() => cached);
+      })
+    );
+    return;
+  }
+
+  // 其他 JSON (categories.json): stale-while-revalidate
+  if (url.pathname.endsWith('.json')) {
+    e.respondWith(
+      caches.match(e.request).then(cached => {
+        const fetchPromise = fetch(e.request).then(resp => {
+          if (resp.ok) {
+            const clone = resp.clone();
+            caches.open(CACHE_NAME).then(cache => cache.put(e.request, clone));
+          }
+          return resp;
+        }).catch(() => cached);
+        return cached || fetchPromise;
       })
     );
   }

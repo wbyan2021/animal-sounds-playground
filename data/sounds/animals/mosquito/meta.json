@@ -6,6 +6,7 @@
   "name_en": "Mosquito",
   "emoji": "🦟",
   "description": "嗡嗡飞的小虫子，喜欢叮人",
+  "fun_fact": "蚊子嗡嗡叫是翅膀在振动，一秒钟能扇四百下，所以声音那么响",
   "sounds": [
     { "file": "audio/mosquito_buzz1.mp3" },
     { "file": "audio/mosquito_buzz2.mp3" }

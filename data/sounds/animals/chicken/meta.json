@@ -6,6 +6,7 @@
   "name_en": "Chicken",
   "emoji": "🐔",
   "description": "农场里的妈妈，会咯咯叫",
+  "fun_fact": "母鸡下完蛋后会咯咯叫，是在骄傲地告诉大家：我生了一个蛋啦",
   "sounds": [
     { "file": "audio/hen_cackle1.mp3" },
     { "file": "audio/hen_cackle2.mp3" }

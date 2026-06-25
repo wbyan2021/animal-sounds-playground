@@ -6,6 +6,7 @@
   "name_en": "Swan",
   "emoji": "🦢",
   "description": "湖面上优雅的白裙子",
+  "fun_fact": "天鹅宝宝小时候是灰色的，长大后才变成漂亮的白天鹅哦",
   "sounds": [
     { "file": "audio/real_swan1.mp3" }
   ],

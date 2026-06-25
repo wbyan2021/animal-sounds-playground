@@ -6,6 +6,7 @@
   "name_en": "Peacock",
   "emoji": "🦚",
   "description": "最美的鸟，会开屏",
+  "fun_fact": "只有公孔雀才会开屏，它展开漂亮的羽毛是为了吸引母孔雀",
   "sounds": [
     { "file": "audio/real_peacock1.mp3" }
   ],

@@ -6,6 +6,7 @@
   "name_en": "Fox",
   "emoji": "🦊",
   "description": "聪明的红毛家伙，尾巴很大",
+  "fun_fact": "狐狸很聪明，会在冰面上跳来跳去，用耳朵听鱼在哪里游呢",
   "sounds": [
     { "file": "audio/real_fox1.mp3" }
   ],

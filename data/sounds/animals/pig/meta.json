@@ -6,6 +6,7 @@
   "name_en": "Pig",
   "emoji": "🐷",
   "description": "粉嘟嘟的胖家伙，哼哼叫",
+  "fun_fact": "猪其实特别聪明，比小狗还容易学会本事呢，它可不是笨笨的动物哦",
   "sounds": [
     { "file": "audio/real_pig1.mp3" }
   ],

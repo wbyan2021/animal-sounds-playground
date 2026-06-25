@@ -6,6 +6,7 @@
   "name_en": "Owl",
   "emoji": "🦉",
   "description": "夜晚不睡觉的大眼睛，咕咕叫",
+  "fun_fact": "猫头鹰的头能转二百七十度，不用转身就能看到身后的东西哦",
   "sounds": [
     { "file": "audio/owl.mp3" }
   ],

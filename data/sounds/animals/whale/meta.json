@@ -6,6 +6,7 @@
   "name_en": "Whale",
   "emoji": "🐋",
   "description": "海洋里最大的动物，会唱歌",
+  "fun_fact": "鲸鱼是地球上最大的动物，它的心脏有一辆小汽车那么大哦",
   "sounds": [
     { "file": "audio/real_whale1.mp3" }
   ],

@@ -6,6 +6,7 @@
   "name_en": "Cow",
   "emoji": "🐮",
   "description": "农场里的大家伙，哞哞叫",
+  "fun_fact": "奶牛每天要吃四十多公斤青草，才能产出好喝的牛奶给你喝哦",
   "sounds": [
     { "file": "audio/cow1.mp3" }
   ],

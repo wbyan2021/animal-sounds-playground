@@ -6,6 +6,7 @@
   "name_en": "Bird",
   "emoji": "🐦",
   "description": "唱好听的歌，在天空中飞翔",
+  "fun_fact": "小鸟的骨头是空心的，所以身体很轻，才能在天上飞起来呀",
   "sounds": [
     { "file": "audio/bulbul.mp3" },
     { "file": "audio/flycatcher1.mp3" },

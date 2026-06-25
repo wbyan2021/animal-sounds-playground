@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+<meta name="theme-color" content="#FF9800">
 <title>声音大百科</title>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -53,6 +54,7 @@ body{background:#FFF8E1;overflow-x:hidden;min-height:100vh}
 .sound-card:active{transform:scale(.95)}
 .sound-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.1)}
 .sound-card.playing{box-shadow:0 4px 20px rgba(255,152,0,.4)}
+.sound-card.played{border:2px solid #A5D6A7}
 
 .card-emoji{font-size:3rem;display:block;margin-bottom:.5rem;transition:transform .3s}
 .sound-card.playing .card-emoji{animation:cardBounce .4s ease}
@@ -60,6 +62,13 @@ body{background:#FFF8E1;overflow-x:hidden;min-height:100vh}
 
 .card-name{font-size:.95rem;font-weight:700;color:#333;margin-bottom:.2rem}
 .card-count{font-size:.7rem;color:#999}
+.card-loading{position:absolute;top:4px;right:4px;width:14px;height:14px;border:2px solid #FF9800;border-top-color:transparent;border-radius:50%;animation:spin .8s linear infinite;display:none}
+.sound-card.loading .card-loading{display:block}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Fun fact panel */
+.fun-fact{margin-top:.5rem;padding:.5rem;background:#FFFDE7;border-radius:8px;font-size:.75rem;color:#5D4037;line-height:1.4;display:none;border-left:3px solid #FFC107}
+.sound-card.show-fact .fun-fact{display:block}
 
 .ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.6);transform:scale(0);animation:rippleAnim .6s ease-out;pointer-events:none}
 @keyframes rippleAnim{to{transform:scale(4);opacity:0}}
@@ -75,6 +84,10 @@ body{background:#FFF8E1;overflow-x:hidden;min-height:100vh}
 .volume-slider::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:#FF9800;cursor:pointer;box-shadow:0 2px 4px rgba(0,0,0,.2)}
 .volume-slider::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:#FF9800;cursor:pointer;border:none;box-shadow:0 2px 4px rgba(0,0,0,.2)}
 
+/* Toast */
+.toast{position:fixed;bottom:5rem;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.75);color:#fff;padding:.6rem 1.2rem;border-radius:20px;font-size:.85rem;z-index:200;opacity:0;transition:opacity .3s;pointer-events:none}
+.toast.show{opacity:1}
+
 @media(max-width:480px){.volume-control{bottom:.5rem;right:.5rem;padding:.4rem .8rem}.volume-slider{width:60px}}
 </style>
 </head>
@@ -87,9 +100,9 @@ body{background:#FFF8E1;overflow-x:hidden;min-height:100vh}
   <button class="start-btn" id="start-btn">开始探索</button>
   <div class="load-progress" id="load-progress">
     <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
-    <div class="progress-text" id="progress-text">准备声音中...</div>
+    <div class="progress-text" id="progress-text">准备中...</div>
   </div>
-  <div class="skip-link" id="skip-link" style="display:none">跳过加载</div>
+  <div class="skip-link" id="skip-link" style="display:none">直接进入</div>
 </div>
 
 <div id="app">
@@ -103,6 +116,7 @@ body{background:#FFF8E1;overflow-x:hidden;min-height:100vh}
     <span class="volume-icon" id="volume-icon">🔊</span>
     <input type="range" class="volume-slider" id="volume-slider" min="0" max="1" step="0.05" value="0.6">
   </div>
+  <div class="toast" id="toast"></div>
 </div>
 
 <script>
@@ -112,6 +126,7 @@ let volume = 0.6;
 let activeAudio = null;
 let audioCache = {};
 let currentCard = null;
+let playedSet = new Set();
 
 // ===== START SCREEN =====
 const startScreen = document.getElementById('start-screen');
@@ -142,14 +157,16 @@ startBtn.addEventListener('click', async () => {
     const res = await fetch('data/manifest.json');
     manifest = await res.json();
   } catch(e) {
-    progressText.textContent = '加载失败，请刷新';
+    progressText.textContent = '加载失败，请检查网络后刷新';
     return;
   }
 
+  progressFill.style.width = '100%';
+  progressText.textContent = '准备就绪！';
   renderCats();
   renderStats();
   renderGrid();
-  await preloadAll();
+  await preloadFirstScreen();
   enterApp();
 });
 
@@ -163,51 +180,74 @@ function enterApp() {
   }, 600);
 }
 
-// ===== PRELOAD =====
-async function preloadAll() {
-  const allFiles = [];
-  manifest.sounds.forEach(s => {
-    s.sounds.forEach(f => allFiles.push(f.file));
-  });
-  const total = allFiles.length;
+// ===== PRELOAD FIRST SCREEN ONLY (lazy loading) =====
+async function preloadFirstScreen() {
+  // 只预加载"全部"分类下前 10 个声音的第一个音频
+  const firstSounds = manifest.sounds.slice(0, 10);
   let done = 0;
+  const total = firstSounds.length;
 
+  for (const s of firstSounds) {
+    if (s.sounds.length > 0) {
+      const file = s.sounds[0].file;
+      try {
+        const audio = new Audio(file);
+        audio.volume = volume;
+        audioCache[file] = audio;
+        await new Promise(r => {
+          let settled = false;
+          const mark = () => { if (!settled) { settled = true; r(); } };
+          audio.addEventListener('canplaythrough', mark, { once: true });
+          audio.addEventListener('error', mark, { once: true });
+          setTimeout(mark, 5000);
+        });
+      } catch(e) {}
+    }
+    done++;
+    progressFill.style.width = Math.round(done / total * 100) + '%';
+    progressText.textContent = '加载首屏声音 ' + done + '/' + total;
+  }
+}
+
+// ===== LAZY LOAD SINGLE AUDIO =====
+function getAudio(file, card) {
+  if (audioCache[file]) {
+    return Promise.resolve(audioCache[file]);
+  }
+
+  if (card) card.classList.add('loading');
   return new Promise(resolve => {
-    const container = document.createElement('div');
-    container.style.cssText = 'position:fixed;width:0;height:0;overflow:hidden;pointer-events:none';
-    document.body.appendChild(container);
-
-    const checkDone = () => {
-      done++;
-      const pct = Math.round(done / total * 100);
-      progressFill.style.width = pct + '%';
-      progressText.textContent = '加载声音 ' + done + '/' + total + ' (' + pct + '%)';
-      if (done >= total) { setTimeout(resolve, 300); }
+    const audio = new Audio(file);
+    audio.volume = volume;
+    audioCache[file] = audio;
+    let settled = false;
+    const done = () => {
+      if (settled) return;
+      settled = true;
+      if (card) card.classList.remove('loading');
+      resolve(audio);
     };
-
-    allFiles.forEach((file, i) => {
-      const a = document.createElement('audio');
-      a.preload = 'auto';
-      a.volume = volume;
-      a.src = file;
-      container.appendChild(a);
-      audioCache[file] = a;
-      let settled = false;
-      const mark = () => { if (!settled) { settled = true; checkDone(); } };
-      a.addEventListener('canplaythrough', mark, { once: true });
-      a.addEventListener('error', mark, { once: true });
-      setTimeout(mark, 10000);
-    });
-
-    setTimeout(resolve, 30000); // max 30s
+    audio.addEventListener('canplaythrough', done, { once: true });
+    audio.addEventListener('error', () => {
+      if (card) card.classList.remove('loading');
+      showToast('声音加载失败，请重试');
+      resolve(null);
+    }, { once: true });
+    setTimeout(done, 8000);
   });
 }
 
-// ===== CATEGORIES =====
+// ===== CATEGORIES (only show categories with data) =====
 function renderCats() {
   const cats = document.getElementById('cat-tabs');
   const buttons = [{ id: 'all', name_zh: '全部', emoji: '🌈' }];
-  manifest.categories.forEach(c => buttons.push(c));
+
+  // 只显示有声音的分类
+  manifest.categories.forEach(c => {
+    const hasData = manifest.sounds.some(s => s.category === c.id);
+    if (hasData) buttons.push(c);
+  });
+
   cats.innerHTML = buttons.map((b, i) =>
     '<button class="cat-tab ' + (i === 0 ? 'active' : '') + '" data-cat="' + b.id + '">' + b.emoji + ' ' + b.name_zh + '</button>'
   ).join('');
@@ -240,10 +280,14 @@ function renderGrid() {
 
   grid.innerHTML = sounds.map(s => {
     const files = JSON.stringify(s.sounds.map(x => x.file));
-    return '<div class="sound-card" data-files=\'' + files + '\' data-emoji="' + s.emoji + '">' +
+    const funFact = s.fun_fact || '';
+    const played = playedSet.has(s.id);
+    return '<div class="sound-card' + (played ? ' played' : '') + '" data-files=\'' + files + '\' data-emoji="' + s.emoji + '" data-id="' + s.id + '" data-fact="' + funFact.replace(/"/g, '&quot;') + '">' +
+      '<div class="card-loading"></div>' +
       '<span class="card-emoji">' + s.emoji + '</span>' +
       '<div class="card-name">' + s.name_zh + '</div>' +
       '<div class="card-count">' + s.sounds.length + ' 个声音</div>' +
+      (funFact ? '<div class="fun-fact">' + funFact + '</div>' : '') +
     '</div>';
   }).join('');
 
@@ -252,25 +296,36 @@ function renderGrid() {
   });
 }
 
-// ===== PLAY SOUND =====
-function playSound(card) {
+// ===== PLAY SOUND (with lazy loading) =====
+async function playSound(card) {
   const files = JSON.parse(card.dataset.files);
   if (!files.length) return;
   const file = files[Math.floor(Math.random() * files.length)];
 
+  // 停止当前播放
   if (activeAudio) {
     activeAudio.pause();
     activeAudio.currentTime = 0;
   }
   if (currentCard) currentCard.classList.remove('playing');
 
-  const audio = audioCache[file] || new Audio(file);
+  // 懒加载音频
+  const audio = await getAudio(file, card);
+  if (!audio) return;
+
   audio.volume = volume;
   audio.currentTime = 0;
-  audio.play().catch(() => {});
+  audio.play().catch(() => {
+    showToast('播放失败，请点击页面后重试');
+  });
   activeAudio = audio;
   currentCard = card;
   card.classList.add('playing');
+  card.classList.add('played');
+
+  // 记录已播放
+  const soundId = card.dataset.id;
+  playedSet.add(soundId);
 
   // Ripple
   const rect = card.getBoundingClientRect();
@@ -298,11 +353,25 @@ function playSound(card) {
     setTimeout(() => star.remove(), 800);
   }
 
+  // 显示科普文案（播放后展开）
+  const fact = card.dataset.fact;
+  if (fact) {
+    setTimeout(() => card.classList.add('show-fact'), 300);
+  }
+
   audio.onended = () => {
     card.classList.remove('playing');
     activeAudio = null;
     currentCard = null;
   };
+}
+
+// ===== TOAST =====
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2500);
 }
 
 // ===== VOLUME =====

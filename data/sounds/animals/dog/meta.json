@@ -6,6 +6,7 @@
   "name_en": "Dog",
   "emoji": "🐶",
   "description": "人类最忠实的朋友，喜欢汪汪叫",
+  "fun_fact": "小狗的鼻子比人厉害一万倍，你藏在口袋里的小饼干它一下就能闻到哦",
   "sounds": [
     { "file": "audio/dog1a.mp3" },
     { "file": "audio/dog1b.mp3" },

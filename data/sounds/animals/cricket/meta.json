@@ -6,6 +6,7 @@
   "name_en": "Cricket",
   "emoji": "🦗",
   "description": "草丛里的小歌手，唧唧叫",
+  "fun_fact": "蟋蟀用翅膀摩擦唱歌，只有公蟋蟀才会叫，是在吸引母蟋蟀呢",
   "sounds": [
     { "file": "audio/cricket_chirp1.mp3" },
     { "file": "audio/cricket_chirp2.mp3" }

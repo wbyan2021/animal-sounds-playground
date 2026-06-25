@@ -6,6 +6,7 @@
   "name_en": "Tiger",
   "emoji": "🐯",
   "description": "森林里的大猫，身上有花纹",
+  "fun_fact": "老虎的条纹长在皮肤上，就算剃光了毛，身上还是有花纹的哦",
   "sounds": [
     { "file": "audio/tiger_growl1.mp3" },
     { "file": "audio/tiger_growl2.mp3" }
