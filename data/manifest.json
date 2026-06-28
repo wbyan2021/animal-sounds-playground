@@ -2,7 +2,7 @@
   "version": "2026.06.27.1",
   "generated_at": "2026-06-26T17:55:04.948Z",
   "total_sounds": 58,
-  "total_audio_files": 116,
+  "total_audio_files": 117,
   "categories": [
     {
       "id": "animals",
@@ -1078,6 +1078,9 @@
       "sounds": [
         {
           "file": "data/sounds/animals/sheep/audio/real_sheep1.mp3"
+        },
+        {
+          "file": "data/sounds/animals/sheep/audio/real_sheep2.mp3"
         }
       ],
       "tags": [
@@ -1088,7 +1091,8 @@
       "license": "CC0-1.0",
       "source": "https://freesound.org/",
       "contributor": "wbyan2021",
-      "added_at": "2026-06-17"
+      "added_at": "2026-06-17",
+      "total_audio_files": 2
     },
     {
       "id": "animals.snake",
