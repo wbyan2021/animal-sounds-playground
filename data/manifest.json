@@ -1,6 +1,6 @@
 {
-  "version": "2026.06.27.1",
-  "generated_at": "2026-06-26T17:55:04.948Z",
+  "version": "2026.06.28.1",
+  "generated_at": "2026-06-28T09:03:05.923Z",
   "total_sounds": 58,
   "total_audio_files": 117,
   "categories": [
@@ -1091,8 +1091,7 @@
       "license": "CC0-1.0",
       "source": "https://freesound.org/",
       "contributor": "wbyan2021",
-      "added_at": "2026-06-17",
-      "total_audio_files": 2
+      "added_at": "2026-06-17"
     },
     {
       "id": "animals.snake",
