@@ -9,6 +9,7 @@
   "fun_fact": "绵羊的毛一年要剪一次，如果不剪的话，夏天它会热得受不了哦",
   "sounds": [
     { "file": "audio/real_sheep1.mp3" }
+    { "file": "audio/real_sheep2.mp3" }
   ],
   "tags": ["农场", "咩咩", "绵羊"],
   "license": "CC0-1.0",
