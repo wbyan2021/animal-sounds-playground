@@ -1,11 +1,6 @@
 {
-<<<<<<< HEAD
-  "version": "2026.06.28.1",
-  "generated_at": "2026-06-28T09:03:05.923Z",
-=======
   "version": "2026.06.30.10",
   "generated_at": "2026-06-30T07:23:27.117Z",
->>>>>>> f92ee72 (feat: AI 内容生成全链路打通（LLM + TTS）)
   "total_sounds": 58,
   "total_audio_files": 291,
   "categories": [
@@ -1608,9 +1603,6 @@
       "license": "CC0-1.0",
       "source": "https://freesound.org/",
       "contributor": "wbyan2021",
-<<<<<<< HEAD
-      "added_at": "2026-06-17"
-=======
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
@@ -1628,7 +1620,6 @@
         "name_en": "data/sounds/animals/sheep/generated/name-en.mp3",
         "fun_fact": "data/sounds/animals/sheep/generated/fun-fact.mp3"
       }
->>>>>>> f92ee72 (feat: AI 内容生成全链路打通（LLM + TTS）)
     },
     {
       "id": "animals.snake",
