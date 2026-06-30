@@ -37,8 +37,14 @@
   "emoji": "🐋",
   "description": "深海中鲸鱼的悠长呼唤",
   "sounds": [
-    { "file": "audio/whale-call.mp3" }
+    {
+      "file": "audio/whale-call.mp3",
+      "label": "鲸歌",
+      "fun_fact": "鲸鱼的歌声可以传到几百公里外，是大海里最远的电话！",
+      "tags": ["海洋", "鲸歌"]
+    }
   ],
+  "fun_fact": "鲸鱼是海洋里最大的哺乳动物，它们的歌声能传遍整个大洋。",
   "tags": ["海洋", "哺乳动物", "鲸歌"],
   "license": "CC0-1.0",
   "source": "https://example.com/whale-sound",
@@ -47,24 +53,30 @@
 }
 ```
 
-字段说明：
+### 字段说明
 
-| 字段 | 必填 | 说明 |
-|------|------|------|
-| `id` | 是 | 格式 `{category}.{name_en}`，全局唯一，如 `animals.whale` |
-| `category` | 是 | 主分类 id，对应 categories.json 中的分类（animals/nature/transport/life） |
-| `subcategory` | 是 | 子分类 id（见 categories.json） |
-| `name_zh` | 是 | 中文名 |
-| `name_en` | 是 | 英文名（也是目录名） |
-| `emoji` | 是 | 代表 Emoji |
-| `description` | 否 | 一句话描述 |
-| `sounds` | 是 | 音频文件数组，至少 1 条，`file` 为相对 meta.json 的路径 |
-| `fun_fact` | 否 | 儿童友好科普文案（30-50字），可用 AI 批量生成 |
-| `tags` | 否 | 搜索标签数组，支持中文名、拼音多维检索 |
-| `license` | 是 | 授权协议（CC0-1.0 或可商用协议名称） |
-| `source` | 是 | 音频来源 URL |
-| `contributor` | 是 | GitHub 用户名 |
-| `added_at` | 是 | 添加日期，格式 YYYY-MM-DD |
+| 字段 | 层级 | 必填 | 说明 |
+|------|------|------|------|
+| `id` | 声音级 | 是 | 格式 `{category}.{name_en}`，如 `animals.whale` |
+| `category` | 声音级 | 是 | 主分类 id（animals/nature/transport/life） |
+| `subcategory` | 声音级 | 是 | 子分类 id |
+| `name_zh` | 声音级 | 是 | 中文名 |
+| `name_en` | 声音级 | 是 | 英文名（也是目录名） |
+| `emoji` | 声音级 | 是 | 代表 Emoji |
+| `description` | 声音级 | 否 | 一句话描述 |
+| `sounds` | 声音级 | 是 | 音频文件数组，至少 1 条 |
+| `sounds[].file` | 音频级 | 是 | 相对 meta.json 的路径 |
+| `sounds[].label` | 音频级 | 否 | 这个音频的标签（如"撒娇"、"警告"） |
+| `sounds[].fun_fact` | 音频级 | 否 | 这个音频的专属科普文案 |
+| `sounds[].tags` | 音频级 | 否 | 这个音频的分类标签 |
+| `fun_fact` | 声音级 | 否 | 声音级科普文案（作为音频级文案的 fallback） |
+| `tags` | 声音级 | 否 | 搜索标签数组 |
+| `license` | 声音级 | 是 | CC0-1.0 或可商用授权 |
+| `source` | 声音级 | 是 | 音频来源 URL |
+| `contributor` | 声音级 | 是 | GitHub 用户名 |
+| `added_at` | 声音级 | 是 | 添加日期 YYYY-MM-DD |
+
+> 💡 **文案层级**：可以只填声音级 `fun_fact`（所有音频共用），也可以为每个音频填专属 `sounds[].fun_fact`。前端优先展示音频级文案。
 
 ---
 
@@ -76,26 +88,35 @@
 git clone https://github.com/wbyan2021/sound-encyclopedia.git
 cd sound-encyclopedia
 
-# 1. 创建声音目录
+# 方式一：用管理后台添加（推荐）
+node scripts/admin-server.js
+# 浏览器打开 http://localhost:3099 → 点「➕ 添加声音」
+
+# 方式二：手动操作
 mkdir -p data/sounds/animals/whale/audio
-
-# 2. 放入音频文件
 cp whale-call.mp3 data/sounds/animals/whale/audio/
-
-# 3. 创建 meta.json（参考上方示例）
-
-# 4. 本地校验
+# 创建 meta.json（参考上方示例）
 node scripts/validate.js
-
-# 5. 构建索引（可选，CI 会自动做）
 node scripts/build-manifest.js
 
-# 6. 提交 PR
+# 提交 PR
+git checkout -b add-whale
 git add data/sounds/animals/whale/
 git commit -m "add: whale sound"
 git push
-# 然后在 GitHub 创建 Pull Request
 ```
+
+### 管理后台功能
+
+```bash
+node scripts/admin-server.js  # http://localhost:3099
+```
+
+- 🗂️ 声音管理（增删 / 搜索 / 单条重新生成文案/TTS）
+- 🎵 音频级管理（每个音频独立播放器 + 文案 + 标签 + 朗读生成）
+- 🤖 AI 批量生成（带进度条 + 自动刷新）
+- 🔄 磁盘同步（清理物理删除的无效引用）
+- 📦 重建 Manifest
 
 ---
 
@@ -134,6 +155,22 @@ git push
 - 你必须确认有权分发该音频
 
 如果音频来自他人作品，请在 `source` 中注明原始出处和授权协议。
+
+---
+
+## AI 内容说明
+
+本项目使用 AI 为声音生成科普文案和朗读音频：
+
+| 服务 | 用途 | 模型 |
+|------|------|------|
+| DeepSeek | 生成科普文案 | deepseek-v4-flash |
+| MiniMax | 生成朗读音频 | speech-2.8-hd |
+
+- AI **不生成**动物/自然声音本身（真实声音红线）
+- 所有 AI 生成内容标注「🤖」
+- 文案可手动调整，手动编辑后标记为非 AI
+- AI 朗读仅用于朗读文字内容
 
 ---
 

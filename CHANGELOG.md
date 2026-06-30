@@ -4,6 +4,70 @@
 
 ---
 
+## [2.4.0] - 2026-06-30
+
+### 重构
+- **AI 模型配置体系重构**：LLM 和 TTS 配置彻底分离，各自独立的 endpoint / api_key / model
+  - LLM 组：`LLM_ENDPOINT` / `LLM_API_KEY` / `LLM_MODEL` / `LLM_MAX_TOKENS` / `LLM_TEMPERATURE`
+  - TTS 组：`TTS_ENDPOINT` / `TTS_API_KEY` / `TTS_MODEL` / `TTS_VOICE_*` / `TTS_SAMPLE_RATE` ...
+  - 通用：`MINIMAX_GROUP_ID`
+  - 向后兼容旧的 `MINIMAX_*` 变量
+- **LLM 切换到 DeepSeek 官方**：endpoint `api.deepseek.com`，模型 `deepseek-v4-flash`
+- **TTS 切换到 MiniMax 国内版**：endpoint `api.minimaxi.com`（注意是 minimaxi 不是 minimax）
+
+### 新增
+- **音频级内容管理**：每个独立音频支持独立的 label / fun_fact / tags / tts
+  - 声音级文案作为 fallback，音频级文案优先展示
+  - 前端科普面板根据当前播放的音频动态切换文案
+  - 多音频提示：显示"第 X/N 个音频 · 标签 · 有/无专属文案"
+- **后台声音管理面板**：
+  - 声音列表 + 搜索 + 每条操作按钮（📝 重新生成文案 / 🔊 重新生成 TTS / 🗑️ 删除）
+  - 点击展开详情编辑面板：声音级文案 + 标签 + 每个音频的独立管理卡片
+  - 每个音频卡片：播放器 + label + fun_fact(+LLM按钮) + tags + TTS生成按钮+TTS播放器
+  - 添加声音表单（上传 mp3 + 填写信息）
+  - 磁盘同步（清理物理删除的无效引用）
+- **后台 API 新增**：
+  - `DELETE /api/sound` — 删除声音
+  - `POST /api/sound` — 创建声音
+  - `GET /api/sound-detail` — 获取声音详情
+  - `PUT /api/sound-meta` — 更新声音级 + 音频级字段
+  - `POST /api/track-generate-fact` — 单条音频 LLM 生成文案
+  - `POST /api/track-generate-tts` — 单条音频生成朗读
+  - `PUT /api/track-update` — 更新单条音频
+  - `POST /api/sync-disk` — 磁盘同步
+- **AI 批量生成优化**：
+  - 配置项：强制重新生成 / 含音频级文案 / 含音频级朗读
+  - 操作预览（将影响 N 个声音）
+  - 实时进度条（百分比 + 计数）
+  - 完成后自动重建 manifest + 自动刷新统计 + 自动刷新声音列表
+- **统计细化**：6 格仪表盘（声音总数 / 声音级文案 / 声音级TTS / 音频级文案 / 音频级TTS / 待处理）
+- **前端 logo 跳转后台**：左上角 logo 点击新标签页打开管理后台
+- **后台静态文件服务**：支持 `/data/` 路径的音频文件流式传输
+
+### 修复
+- **MiniMax 国内版 4 大差异**：
+  1. 域名 `minimaxi.com` vs `minimax.io`（多个 i）
+  2. 模型名 `speech-2.8-hd` 小写 vs `Speech-2.8-HD` 大写
+  3. 字段名 `audio_sample_rate` vs `sample_rate`
+  4. 音频编码 hex vs base64（关键 bug，导致生成的 mp3 全是废文件）
+- **TTS 错误信息**：从"缺少 audio 字段"改为带上 `status_code` + `status_msg` 真实原因
+- **build-manifest 磁盘同步**：扫描时检查音频文件是否真实存在，自动过滤无效引用
+- **操作后即时刷新**：单条音频生成/保存后自动刷新顶部统计和列表状态标记
+
+### 技术
+- `scripts/lib/minimax.js`：`getConfig()` → `getLLMConfig()` + `getTTSConfig()`，hex/base64 自动检测解码
+- `scripts/build-manifest.js`：新增文件存在性检查
+- `scripts/ai-generate-tts.js`：DELAY_MS 从 800 改为 2500（规避 RPM 限流），输出 mp3
+- `scripts/admin-server.js`：新增 8 个 API + 静态文件服务 + 声音管理 UI + 批量生成优化
+
+### 数据
+- 58 个声音全部生成声音级 fun_fact（DeepSeek）
+- 58 个声音全部生成声音级 TTS 三件套（MiniMax）
+- 4 个音频级文案 + 4 个音频级 TTS（猫的 4 个叫声）
+- 音频文件总数从 138 增至 270（含 TTS）
+
+---
+
 ## [2.3.0] - 2026-06-29
 
 ### 新增
