@@ -6,7 +6,7 @@
   "name_en": "Chicken",
   "emoji": "🐔",
   "description": "农场里的妈妈，会咯咯叫",
-  "fun_fact": "母鸡在农场上是会咯咯叫的好妈妈，她们很细心，会孵化小鸡蛋，保护小鸡宝宝哦！",
+  "fun_fact": "母鸡下完蛋，会“咯咯咯”地叫，好像在说：“快看，我下了一个圆圆的蛋！”",
   "sounds": [
     {
       "file": "audio/hen_cackle1.mp3"
@@ -26,10 +26,10 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:58:37.620Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T09:19:56.552Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:15aaabe3"
+    "text_hash": "a91435ff746f6243"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",

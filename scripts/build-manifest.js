@@ -129,11 +129,23 @@ function main() {
     // 将 sounds[].file 从相对于 meta.json 目录的路径
     // 转换为相对于项目根目录的路径
     // 例如: "audio/dog1a.mp3" -> "data/sounds/animals/dog/audio/dog1a.mp3"
+    // 同时检查文件是否真实存在（磁盘同步：物理删除的文件自动过滤）
     if (Array.isArray(meta.sounds)) {
-      meta.sounds = meta.sounds.map(s => ({
-        ...s,
-        file: path.posix.join(metaDir, s.file),
-      }));
+      const validSounds = [];
+      let removedCount = 0;
+      for (const s of meta.sounds) {
+        const remappedFile = path.posix.join(metaDir, s.file);
+        const absPath = path.join(ROOT, remappedFile);
+        if (fs.existsSync(absPath)) {
+          validSounds.push({ ...s, file: remappedFile });
+        } else {
+          removedCount++;
+        }
+      }
+      if (removedCount > 0) {
+        console.log(`  ⚠️  ${meta.id}: 过滤了 ${removedCount} 个不存在的音频文件`);
+      }
+      meta.sounds = validSounds;
       totalAudioFiles += meta.sounds.length;
     }
 

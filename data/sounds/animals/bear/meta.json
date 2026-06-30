@@ -6,7 +6,7 @@
   "name_en": "Bear",
   "emoji": "🐻",
   "description": "森林里的大个子，冬天喜欢睡懒觉",
-  "fun_fact": "在森林里有个大个子叫棕熊，冬天到了，它特别爱睡懒觉，能一觉睡几个月呢！",
+  "fun_fact": "棕熊是森林里的大个子，秋天吃得圆滚滚，冬天就躲进洞里呼呼大睡，一睡好几个月不饿肚子！",
   "sounds": [
     {
       "file": "audio/real_bear1.mp3"
@@ -23,10 +23,10 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:58:31.046Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T08:55:43.765Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:3e5b7bca"
+    "text_hash": "f6e7fc00522aadf0"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",

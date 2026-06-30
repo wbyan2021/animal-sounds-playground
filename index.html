@@ -1144,6 +1144,8 @@
     let volume = 0.6;
     let activeTTS = null;
     let currentTTSData = null;
+    let currentTrackIndex = -1;
+    let currentSoundData = null;
     let canvasAnimating = false;    // 控制 Canvas 动画
 
     // User local progress cache
@@ -1597,6 +1599,9 @@
 
       // Select random track if multiple tracks exist
       const track = data.sounds[Math.floor(Math.random() * data.sounds.length)];
+      // 记录当前播放的音频索引，供科普面板展示音频级文案使用
+      currentTrackIndex = data.sounds.indexOf(track);
+      currentSoundData = data;
       
       // Pause any active track
       if (activeAudio) {
@@ -1687,41 +1692,93 @@
     }
 
     // ===== BOTTOM SHEET CONTROLLER =====
-    function openDiscoveryPanel(data) {
-      panelEmoji.textContent = data.emoji || '🐾';
-      panelName.textContent = data.name_zh || '未知';
-      panelNameEn.textContent = data.name_en || 'Unknown';
-      
-      // Show AI badge for AI-generated fun_fact
+    // 更新科普面板的文案 + TTS 按钮（根据当前播放的音频索引）
+    function updatePanelContent() {
+      if (!currentSoundData) return;
+      const data = currentSoundData;
       const isAIFact = data.fun_fact_ai_generated;
-      const factText = data.fun_fact || '它是神奇世界里的一员，有着独特而好听的声音！';
-      panelFact.textContent = isAIFact ? `🤖 ${factText}` : factText;
-      
-      // Update panel label with AI indicator
-      const panelLabel = document.querySelector('.panel-label');
-      panelLabel.textContent = isAIFact ? '🤖 AI 科普小卡片' : '💡 宝宝科普小卡片';
-      
-      panelAuthor.textContent = `贡献者: ${data.contributor || '声音大百科'}`;
-      
-      // Tags
-      panelTags.innerHTML = (data.tags || ['百科', '真实声音']).map(tag => `
-        <span class="panel-tag">${esc(tag)}</span>
-      `).join('');
-      
-      // Set playing file data for replay button
-      panelReplayBtn.dataset.sounds = JSON.stringify(data.sounds);
-      panelReplayBtn.dataset.id = data.id;
+      const currentTrack = (data.sounds && currentTrackIndex >= 0 && currentTrackIndex < data.sounds.length) ? data.sounds[currentTrackIndex] : null;
+      const trackFact = currentTrack?.fun_fact;
+      const trackLabel = currentTrack?.label;
+      const trackTts = currentTrack?.tts;
 
-      // TTS buttons: show/hide based on availability
-      currentTTSData = data.tts || null;
-      const hasTTS = currentTTSData && (currentTTSData.name_zh || currentTTSData.name_en || currentTTSData.fun_fact);
+      // 1. 文案内容：优先音频级，fallback 声音级
+      const factText = trackFact || data.fun_fact || '它是神奇世界里的一员，有着独特而好听的声音！';
+      const trackBadge = trackFact ? '🎵 ' : (isAIFact ? '🤖 ' : '');
+      panelFact.textContent = trackBadge + factText;
+
+      // 2. 面板标签
+      const panelLabel = document.querySelector('.panel-label');
+      if (trackFact && trackLabel) {
+        panelLabel.textContent = '🎵 ' + trackLabel + ' · 科普小卡片';
+      } else if (trackFact) {
+        panelLabel.textContent = '🎵 音频专属科普';
+      } else if (isAIFact) {
+        panelLabel.textContent = '🤖 AI 科普小卡片';
+      } else {
+        panelLabel.textContent = '💡 宝宝科普小卡片';
+      }
+
+      // 3. 英文名旁显示音频标签
+      if (data.sounds && data.sounds.length > 1 && trackLabel) {
+        panelNameEn.textContent = (data.name_en || 'Unknown') + ' · ' + trackLabel;
+      } else {
+        panelNameEn.textContent = data.name_en || 'Unknown';
+      }
+
+      // 4. TTS 按钮：优先用音频级 TTS，fallback 声音级 TTS
+      // 构造 currentTTSData：如果当前音频有自己的 tts，用它；否则用声音级 tts
+      const soundTts = data.tts || {};
+      currentTTSData = {
+        name_zh: soundTts.name_zh || null,
+        name_en: soundTts.name_en || null,
+        fun_fact: trackTts || soundTts.fun_fact || null,
+        _trackTts: trackTts || null,  // 标记：音频级 TTS 路径
+      };
+      const hasTTS = currentTTSData.name_zh || currentTTSData.name_en || currentTTSData.fun_fact;
       ttsRow.style.display = hasTTS ? 'flex' : 'none';
-      
       if (hasTTS) {
         ttsBtnZh.style.display = currentTTSData.name_zh ? 'inline-flex' : 'none';
         ttsBtnEn.style.display = currentTTSData.name_en ? 'inline-flex' : 'none';
         ttsBtnFact.style.display = currentTTSData.fun_fact ? 'inline-flex' : 'none';
       }
+
+      // 5. 如果有多个音频，显示切换提示
+      const trackInfo = document.getElementById('panel-track-info');
+      if (data.sounds && data.sounds.length > 1) {
+        if (!trackInfo) {
+          // 动态创建音频切换信息元素
+          const info = document.createElement('div');
+          info.id = 'panel-track-info';
+          info.style.cssText = 'font-size:0.7rem;color:#999;margin-top:4px';
+          panelFact.parentNode.insertBefore(info, panelFact);
+        }
+        const infoEl = document.getElementById('panel-track-info');
+        const total = data.sounds.length;
+        const curIdx = currentTrackIndex + 1;
+        infoEl.textContent = `🎵 第 ${curIdx}/${total} 个音频${trackLabel ? ' · ' + trackLabel : ''}${trackFact ? ' · 有专属文案' : ' · 通用文案'}`;
+      } else if (trackInfo) {
+        trackInfo.remove();
+      }
+    }
+
+    function openDiscoveryPanel(data) {
+      panelEmoji.textContent = data.emoji || '🐾';
+      panelName.textContent = data.name_zh || '未知';
+
+      panelAuthor.textContent = `贡献者: ${data.contributor || '声音大百科'}`;
+
+      // Tags
+      panelTags.innerHTML = (data.tags || ['百科', '真实声音']).map(tag => `
+        <span class="panel-tag">${esc(tag)}</span>
+      `).join('');
+
+      // Set playing file data for replay button
+      panelReplayBtn.dataset.sounds = JSON.stringify(data.sounds);
+      panelReplayBtn.dataset.id = data.id;
+
+      // 动态更新文案 + TTS（根据当前播放的音频索引）
+      updatePanelContent();
 
       discoveryPanel.classList.add('show');
     }
@@ -1810,6 +1867,8 @@
                               .find(c => c.dataset.id === id);
       
       if (targetCard) {
+        // triggerSoundExploration 会随机选音频并调用 openDiscoveryPanel
+        // openDiscoveryPanel 内部调用 updatePanelContent 更新文案
         triggerSoundExploration(targetCard);
       }
     });
