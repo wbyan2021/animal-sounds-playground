@@ -6,7 +6,7 @@
   "name_en": "Monkey",
   "emoji": "🐒",
   "description": "爱爬树的调皮鬼，吱吱叫",
-  "fun_fact": "嘿，孩子们！你们知道猴子是个爱爬树的调皮鬼吗？它们吱吱叫着，在树上跳来跳去，就像空中飞人一样！",
+  "fun_fact": "小猴子尾巴像钩子，能紧紧勾住树枝，倒挂着荡秋千，调皮又灵巧！",
   "sounds": [
     {
       "file": "audio/real_monkey1.mp3"
@@ -23,10 +23,10 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:59:07.942Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:48:39.397Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:5153152f"
+    "text_hash": "4fc635dfc0af92c0"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",

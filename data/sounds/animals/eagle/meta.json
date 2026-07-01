@@ -6,13 +6,21 @@
   "name_en": "Eagle",
   "emoji": "🦅",
   "description": "天空中的大力士，飞得很高",
-  "fun_fact": "鹰是天空中的大力士，能飞得很高很高，好像在云端玩耍的小伙伴呢！",
+  "fun_fact": "老鹰是天空的“大力士”，能飞到云朵那么高，还能一眼看清地上的小兔子在跑！",
   "sounds": [
     {
-      "file": "audio/eagle_call1.mp3"
+      "file": "audio/eagle_call1.mp3",
+      "fun_fact": "老鹰的叫声又尖又亮，能穿过山谷告诉同伴：“我在这里！”",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-0-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:32.452Z"
     },
     {
-      "file": "audio/eagle_call2.mp3"
+      "file": "audio/eagle_call2.mp3",
+      "fun_fact": "老鹰的叫声又尖又亮，像在喊“这是我的家”，连山那边都能听见！",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-1-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:33.380Z"
     }
   ],
   "tags": [
@@ -26,16 +34,16 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:58:53.437Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:48:14.831Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:1b152b6b"
+    "text_hash": "c44bb338d981b7fa"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",
     "voice_id_zh": "female-tianmei",
-    "voice_id_en": "male-qn-qingse",
-    "generated_at": "2026-06-30T07:20:34.652Z",
+    "voice_id_en": "English_captivating_female1",
+    "generated_at": "2026-06-30T19:01:33.380Z",
     "tts_model": "speech-2.8-hd",
     "name_en": "generated/name-en.mp3",
     "fun_fact": "generated/fun-fact.mp3"

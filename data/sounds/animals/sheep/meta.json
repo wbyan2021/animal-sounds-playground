@@ -6,13 +6,21 @@
   "name_en": "Sheep",
   "emoji": "🐑",
   "description": "穿厚毛衣的软绵绵，咩咩叫",
-  "fun_fact": "绵羊在农场里咩咩叫，它们穿着厚厚的毛衣——其实是它们自己的毛哦！每到春天，羊毛就会被剪下来，做成温暖的衣服和毛毯呢！",
+  "fun_fact": "绵羊穿着厚厚的毛毛衣，咩咩叫。它的毛会一直长，如果不剪，就会像拖把一样拖到地上啦！",
   "sounds": [
     {
-      "file": "audio/real_sheep1.mp3"
+      "file": "audio/real_sheep1.mp3",
+      "fun_fact": "听，这是真的绵羊咩咩叫，声音又粗又慢，和动画片里的不一样哦。",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-0-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:45.128Z"
     },
     {
-      "file": "audio/real_sheep2.mp3"
+      "file": "audio/real_sheep2.mp3",
+      "fun_fact": "听，这是真的小绵羊在“咩——咩——”叫，它正呼唤着小伙伴一起在草地上散步呢。",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-1-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:46.228Z"
     }
   ],
   "tags": [
@@ -26,16 +34,16 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:59:24.851Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T18:34:14.468Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:7a31e2c9"
+    "text_hash": "625a386651ba7801"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",
     "voice_id_zh": "female-tianmei",
-    "voice_id_en": "male-qn-qingse",
-    "generated_at": "2026-06-30T07:21:52.098Z",
+    "voice_id_en": "English_captivating_female1",
+    "generated_at": "2026-06-30T19:01:46.228Z",
     "tts_model": "speech-2.8-hd",
     "name_en": "generated/name-en.mp3",
     "fun_fact": "generated/fun-fact.mp3"

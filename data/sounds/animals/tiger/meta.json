@@ -6,13 +6,19 @@
   "name_en": "Tiger",
   "emoji": "🐯",
   "description": "森林里的大猫，身上有花纹",
-  "fun_fact": "嘿，你知道吗？森林里的大猫老虎，身上的花纹就像它们的迷彩服，帮助它们在树木间悄悄接近猎物哦！",
+  "fun_fact": "老虎身上的花纹，每只都不一样，就像你的小手指印，全世界只有这一个！",
   "sounds": [
     {
-      "file": "audio/tiger_growl1.mp3"
+      "file": "audio/tiger_growl1.mp3",
+      "fun_fact": "老虎的吼叫声很大，能传到两公里外，就像在喊：“这是我的家！”",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-0-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:49.693Z"
     },
     {
-      "file": "audio/tiger_growl2.mp3"
+      "file": "audio/tiger_growl2.mp3",
+      "fun_fact": "老虎的吼叫声能传到两公里外，像是在说：“这是我的家！”",
+      "fun_fact_ai_generated": true
     }
   ],
   "tags": [
@@ -26,16 +32,16 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:59:30.855Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:49:17.358Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:3cb1f33"
+    "text_hash": "5130c61072350d58"
   },
   "tts": {
     "name_en": "generated/name-en.mp3",
     "voice_id_zh": "female-tianmei",
-    "voice_id_en": "male-qn-qingse",
-    "generated_at": "2026-06-30T07:22:05.479Z",
+    "voice_id_en": "English_captivating_female1",
+    "generated_at": "2026-06-30T19:01:49.801Z",
     "tts_model": "speech-2.8-hd",
     "name_zh": "generated/name-zh.mp3",
     "fun_fact": "generated/fun-fact.mp3"

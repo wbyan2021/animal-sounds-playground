@@ -6,7 +6,7 @@
   "name_en": "Crocodile",
   "emoji": "🐊",
   "description": "大河里的大家伙，嘴巴特别大",
-  "fun_fact": "鳄鱼生活在大河里，它是爬行类动物。你知道吗？它的嘴巴非常大，里面藏着很多尖尖的牙齿呢！",
+  "fun_fact": "鳄鱼是河里的大家伙，嘴巴特别大，但它的舌头却紧紧贴在嘴底，不会伸出来，像粘住了一样！",
   "sounds": [
     {
       "file": "audio/real_crocodile1.mp3"
@@ -23,10 +23,10 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:58:43.152Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:47:52.415Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:431f6774"
+    "text_hash": "994d129d41f27dd1"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",

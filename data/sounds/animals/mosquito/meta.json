@@ -6,13 +6,21 @@
   "name_en": "Mosquito",
   "emoji": "🦟",
   "description": "嗡嗡飞的小虫子，喜欢叮人",
-  "fun_fact": "嗡嗡~小心啦！蚊子是个会飞的小虫子，喜欢在晚上悄悄叮你，吸你的血哦！",
+  "fun_fact": "嗡嗡嗡，蚊子飞来啦！告诉你一个小秘密：只有蚊子妈妈才爱叮人，蚊子爸爸只喝花蜜，从不咬一口！",
   "sounds": [
     {
-      "file": "audio/mosquito_buzz1.mp3"
+      "file": "audio/mosquito_buzz1.mp3",
+      "fun_fact": "蚊子飞的时候，翅膀扇得好快好快，就会发出“嗡嗡嗡”的声音。",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-0-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:36.740Z"
     },
     {
-      "file": "audio/mosquito_buzz2.mp3"
+      "file": "audio/mosquito_buzz2.mp3",
+      "fun_fact": "蚊子飞的时候，翅膀扇得好快，发出“嗡嗡嗡”的响声，就像在说：我来啦！",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-1-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:37.821Z"
     }
   ],
   "tags": [
@@ -26,16 +34,16 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:59:09.216Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:48:42.231Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:2d05b2f"
+    "text_hash": "98a2c9f4e23deb0b"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",
     "voice_id_zh": "female-tianmei",
-    "voice_id_en": "male-qn-qingse",
-    "generated_at": "2026-06-30T07:21:12.710Z",
+    "voice_id_en": "English_captivating_female1",
+    "generated_at": "2026-06-30T19:01:37.821Z",
     "tts_model": "speech-2.8-hd",
     "name_en": "generated/name-en.mp3",
     "fun_fact": "generated/fun-fact.mp3"

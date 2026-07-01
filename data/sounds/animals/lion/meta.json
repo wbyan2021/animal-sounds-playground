@@ -6,7 +6,7 @@
   "name_en": "Lion",
   "emoji": "🦁",
   "description": "草原上的大猫，吼声很响亮",
-  "fun_fact": "草原上威风凛凛的大猫——狮子，它们的吼声可以传得很远，就像草原上的小喇叭，可以和远处的伙伴们交流呢！",
+  "fun_fact": "狮子是草原上的大猫，吼声特别响亮，能传8公里远，好像在告诉所有动物：“我在这里！”",
   "sounds": [
     {
       "file": "audio/real_lion1.mp3"
@@ -23,10 +23,10 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:59:06.163Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:48:37.268Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:1dd73b63"
+    "text_hash": "cf0a8f96ecd7cfc5"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",

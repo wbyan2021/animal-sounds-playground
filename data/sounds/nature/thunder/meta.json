@@ -6,7 +6,7 @@
   "name_en": "Thunder",
   "emoji": "🌩️",
   "description": "打雷轰隆隆，闪电亮晶晶",
-  "fun_fact": "轰隆隆，打雷了！当天空中的云朵们吵架时，就会发出响亮的雷声，闪电像天空中的银线，一闪一闪亮晶晶！",
+  "fun_fact": "闪电和雷声是好朋友，它们一起出现。闪电跑得快，先亮晶晶；雷声慢悠悠，后轰隆隆。",
   "sounds": [
     {
       "file": "audio/thunder_1.mp3"
@@ -23,10 +23,10 @@
   "added_at": "2026-06-26",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:59:56.495Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:50:03.834Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:3e6c5b01"
+    "text_hash": "2041c34d96029684"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",
@@ -34,7 +34,7 @@
     "fun_fact": "generated/fun-fact.mp3",
     "voice_id_zh": "female-tianmei",
     "voice_id_en": "male-qn-qingse",
-    "generated_at": "2026-06-30T07:18:41.340Z",
+    "generated_at": "2026-06-30T11:33:56.076Z",
     "tts_model": "speech-2.8-hd"
   }
 }

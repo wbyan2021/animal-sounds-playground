@@ -200,7 +200,6 @@ function main() {
         addFail(`${metaRel}: 音频文件 "${sound.file}" 不是 .mp3 格式`);
         continue;
       }
-
       // 规则 5: 文件存在性
       if (!fs.existsSync(audioPath)) {
         addFail(`${metaRel}: 音频文件不存在 "${audioRel}"`);
@@ -217,8 +216,26 @@ function main() {
       } catch (err) {
         addWarn(`${metaRel}: 无法获取音频文件大小 "${audioRel}": ${err.message}`);
       }
-    }
 
+      // 规则 9.2: 子音频 TTS 存在性校验
+      if (sound.tts) {
+        let ttsPath;
+        if (sound.tts.startsWith('data/')) {
+          ttsPath = path.join(ROOT, sound.tts);
+        } else {
+          ttsPath = path.join(metaDir, sound.tts);
+        }
+        const ttsRel = path.relative(ROOT, ttsPath);
+        if (!fs.existsSync(ttsPath)) {
+          addFail(`${metaRel}: 子音频 "${sound.file}" 的 tts 引用的文件不存在 "${ttsRel}"`);
+        } else {
+          const ext = path.extname(sound.tts).toLowerCase();
+          if (ext !== '.wav' && ext !== '.mp3') {
+            addWarn(`${metaRel}: 子音频 "${sound.file}" 的 tts 文件格式 "${ext}" 不是 .wav 或 .mp3`);
+          }
+        }
+      }
+    }
     // ---------- 规则 9: TTS 字段校验（可选字段，存在则检查） ----------
     if (meta.tts) {
       const ttsFields = ['name_zh', 'name_en', 'fun_fact'];

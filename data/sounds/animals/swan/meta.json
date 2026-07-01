@@ -6,7 +6,7 @@
   "name_en": "Swan",
   "emoji": "🦢",
   "description": "湖面上优雅的白裙子",
-  "fun_fact": "湖面上，优雅的天鹅身穿洁白如雪的裙子，它们是鸟类中的优雅舞者，在水面上翩翩起舞。",
+  "fun_fact": "天鹅在水上漂，脖子弯成S形，像穿白裙子跳芭蕾。飞起来时，翅膀“呼呼”响，能飞到珠穆朗玛峰那么高呢！",
   "sounds": [
     {
       "file": "audio/real_swan1.mp3"
@@ -23,10 +23,10 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:59:28.484Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:45:58.129Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:13760fda"
+    "text_hash": "785400e0fd815600"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",

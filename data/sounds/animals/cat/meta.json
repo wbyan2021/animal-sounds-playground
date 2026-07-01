@@ -6,7 +6,7 @@
   "name_en": "Cat",
   "emoji": "🐱",
   "description": "毛茸茸的小伙伴，会喵喵叫",
-  "fun_fact": "小猫的脚底有软软的肉垫，走路静悄悄，像穿着小棉鞋，抓老鼠时一点声音都没有哦！",
+  "fun_fact": "小猫开心时会发出咕噜咕噜的声音，像肚子里藏了个小马达，这声音还能帮它们自己放松呢！",
   "sounds": [
     {
       "file": "audio/cat1a.mp3",
@@ -65,10 +65,10 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-30T08:56:12.317Z",
+    "generated_at": "2026-06-30T17:47:39.452Z",
     "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "d1b54fd1b11fd6e4"
+    "text_hash": "6276ac60a81cc998"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",

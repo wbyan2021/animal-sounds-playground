@@ -1,0 +1,14 @@
+{
+  "name": "sound-encyclopedia",
+  "version": "1.0.0",
+  "description": "声音大百科 - 沉浸式儿童声音探索与科普平台",
+  "scripts": {
+    "test": "node --test tests/",
+    "test:unit": "node --test tests/lib.test.js tests/data.test.js",
+    "test:api": "node --test tests/admin-api.test.js",
+    "test:scripts": "node --test tests/scripts.test.js",
+    "validate": "node scripts/validate.js",
+    "build": "node scripts/build-manifest.js"
+  },
+  "license": "MIT"
+}

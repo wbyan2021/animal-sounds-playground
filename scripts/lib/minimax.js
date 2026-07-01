@@ -91,7 +91,7 @@ function getTTSConfig() {
     endpoint = `${baseUrl}/v1/t2a_v2`;
   }
 
-  const model = process.env.TTS_MODEL || process.env.MINIMAX_TTS_MODEL || 'Speech-2.8-HD';
+  const model = process.env.TTS_MODEL || process.env.MINIMAX_TTS_MODEL || 'speech-2.8-hd';
   const sampleRate = parseInt(process.env.TTS_SAMPLE_RATE || String(DEFAULT_TTS_SAMPLE_RATE), 10);
   const bitrate = parseInt(process.env.TTS_BITRATE || '128000', 10);
   const format = process.env.TTS_FORMAT || 'pcm';
@@ -291,10 +291,10 @@ async function generateFunFact(meta) {
     '- 充分利用提供的标签（物种、习性、栖息地等），突出一个有趣的冷知识；',
     '- 不输出任何解释、标题或多余内容，只返回一段文案。',
     '',
-    `输入：中文名=${meta.name_zh}，英文名=${meta.name_en}，分类=${meta.category}/${meta.subcategory}，标签=${(meta.tags || []).join('、') || '无'}，描述=${meta.description || '无'}`,
+    `输入：中文名=${meta.name_zh}，英文名=${meta.name_en}，分类=${meta.category}${meta.subcategory ? '/' + meta.subcategory : ''}，标签=${(meta.tags || []).join('、') || '无'}，描述=${meta.description || '无'}`,
   ].join('\n');
 
-  const text = await callLLM([{ role: 'user', content: prompt }], { temperature: 0.8, maxTokens: 200 });
+  const text = await callLLM([{ role: 'user', content: prompt }], { temperature: 0.8, maxTokens: 512 });
 
   const { model } = getLLMConfig();
   return {
@@ -316,6 +316,55 @@ async function generateAndSaveSpeech(text, outputDir, filename, voicePreset = 'z
   return filePath;
 }
 
+/**
+ * 为单条音频生成专属科普文案（音频级 fun_fact）
+ * 与 admin-server 的 /api/track-generate-fact 使用同一套 prompt，保证逻辑对齐
+ */
+async function generateTrackFact(meta, track, fileName) {
+  const prompt = [
+    '你是一位儿童科普作家，专为 1-6 岁儿童撰写音频专属科普短句。',
+    `当前音频是「${meta.name_zh}」众多录音中的其中一条，请为它写一段 20-40 字的中文科普文案。`,
+    '',
+    '要求：',
+    '- 只陈述科学事实，不编造；',
+    '- 语言口语化、有画面感，孩子能听懂；',
+    '- 必须围绕当前音频的专属标签、场景或文件名展开，突出这条录音的独特之处；',
+    '- 不要重复或概括声音级主文案的内容，要从不同角度切入；',
+    '- 如果当前音频有标签（label / tags），文案要紧扣标签；没有标签时，从文件名推测这条录音的具体场景；',
+    '- 不输出任何解释、标题或多余内容，只返回一段文案。',
+    '',
+    '输入：',
+    `- 声音中文名：${meta.name_zh}`,
+    `- 英文名：${meta.name_en}`,
+    `- 分类：${meta.category}`,
+    `- 声音级主文案（不要重复）：${meta.fun_fact || '无'}`,
+    `- 当前音频标签（label）：${track.label || '无'}`,
+    `- 当前音频分类标签（tags）：${(track.tags || []).join('、') || '无'}`,
+    `- 当前音频文件名：${fileName}`,
+  ].join('\n');
+
+  const text = await callLLM([{ role: 'user', content: prompt }], { temperature: 0.9, maxTokens: 512 });
+  const { model } = getLLMConfig();
+  return {
+    text,
+    ai: {
+      generated_at: new Date().toISOString(),
+      model,
+      prompt_version: 'track-v1',
+      text_hash: sha256(text),
+    },
+  };
+}
+
+/**
+ * 为单条音频生成朗读音频（音频级 TTS）
+ */
+async function generateTrackTTS(text, outputDir, trackIndex) {
+  const filename = `track-${trackIndex}-tts.mp3`;
+  await generateAndSaveSpeech(text, outputDir, filename, 'zh-fact');
+  return 'generated/' + filename;
+}
+
 // ============================================================
 // 导出
 // ============================================================
@@ -327,7 +376,9 @@ module.exports = {
   callLLM,
   generateSpeech,
   generateFunFact,
+  generateTrackFact,
   generateAndSaveSpeech,
+  generateTrackTTS,
   getVoices,
   DEFAULT_VOICES,
   sha256,

@@ -6,10 +6,12 @@
   "name_en": "Bee",
   "emoji": "🐝",
   "description": "勤劳的小飞虫，嗡嗡采花蜜",
-  "fun_fact": "蜜蜂勤劳的小飞虫，嗡嗡飞，采集花蜜。它们的翅膀每秒可拍打200次，真像小小的发动机！",
+  "fun_fact": "小蜜蜂嗡嗡嗡，它把花蜜吸进肚子，回到蜂巢跳起“8”字舞，告诉小伙伴们花在哪里！",
   "sounds": [
     {
-      "file": "audio/bee_buzz1.mp3"
+      "file": "audio/bee_buzz1.mp3",
+      "label": "",
+      "tags": []
     }
   ],
   "tags": [
@@ -23,10 +25,10 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:58:32.374Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:47:33.229Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:5b3b6a4"
+    "text_hash": "ea28a6ad6185875e"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",

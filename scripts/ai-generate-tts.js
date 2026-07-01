@@ -1,11 +1,10 @@
 /**
  * ai-generate-tts.js
- * 批量调用 MiniMax TTS 为声音条目生成 AI 朗读音频
+ * 批量调用 TTS 为声音条目生成 AI 朗读音频
  *
- * 为每条声音生成三种朗读音频（WAV 格式）：
- *   - name_zh  →  generated/name-zh.wav
- *   - name_en  →  generated/name-en.wav
- *   - fun_fact →  generated/fun-fact.wav
+ * 支持两级朗读：
+ *   - 声音级 TTS：name_zh / name_en / fun_fact
+ *   - 音频级 TTS：meta.sounds[i].tts
  *
  * 用法：
  *   node scripts/ai-generate-tts.js                      # 为缺失 TTS 的条目生成
@@ -13,12 +12,13 @@
  *   node scripts/ai-generate-tts.js --id animals.cat     # 只生成指定条目
  *   node scripts/ai-generate-tts.js --category animals   # 只生成指定分类
  *   node scripts/ai-generate-tts.js --dry-run            # 预览模式
- *   node scripts/ai-generate-tts.js --types zh,en,fact   # 只生成指定类型
+ *   node scripts/ai-generate-tts.js --types zh,en,fact   # 只生成指定声音级类型
+ *   node scripts/ai-generate-tts.js --tracks             # 同时生成音频级 TTS
  */
 
 const fs = require('fs');
 const path = require('path');
-const { loadEnv, generateAndSaveSpeech, getVoices, getTTSConfig } = require('./lib/minimax');
+const { loadEnv, generateAndSaveSpeech, generateTrackTTS, getVoices, getTTSConfig } = require('./lib/minimax');
 
 const DATA_DIR = path.join(__dirname, '..', 'data', 'sounds');
 const DELAY_MS = 2500; // MiniMax 国内版 RPM 限流较严，间隔拉到 2.5 秒
@@ -48,6 +48,7 @@ async function main() {
   const args = process.argv.slice(2);
   const isForce = args.includes('--force');
   const isDryRun = args.includes('--dry-run');
+  const isTracks = args.includes('--tracks');
   const targetId = (() => { const i = args.indexOf('--id'); return i !== -1 ? args[i + 1] : null; })();
   const targetCat = (() => { const i = args.indexOf('--category'); return i !== -1 ? args[i + 1] : null; })();
   const typeArg = (() => { const i = args.indexOf('--types'); return i !== -1 ? args[i + 1] : null; })();
@@ -64,7 +65,9 @@ async function main() {
   console.log(`📂 扫描到 ${metaPaths.length} 条声音`);
   if (targetCat) console.log(`🏷️  筛选分类: ${targetCat}`);
   if (targetId) console.log(`🎯 指定条目: ${targetId}`);
-  console.log(`🎙️  生成类型: ${[...types].join(', ')}\n`);
+  console.log(`🎙️  生成类型: ${[...types].join(', ')}`);
+  if (isTracks) console.log(`🎵 同时生成音频级 TTS`);
+  console.log();
 
   let total = 0, skipped = 0, errors = 0;
 
@@ -82,6 +85,7 @@ async function main() {
     let localDone = 0;
     let localErrors = 0;
 
+    // 1. 声音级 TTS
     // 中文名
     if (types.has('zh') && meta.name_zh && (!tts.name_zh || isForce)) {
       console.log(`🎙️ ${meta.id} → name-zh: "${meta.name_zh}"`);
@@ -131,6 +135,38 @@ async function main() {
           localErrors++;
         }
       } else { localDone++; }
+    }
+
+    // 2. 音频级 TTS（只有多条音频才有意义；单条音频直接用声音级朗读）
+    if (isTracks && Array.isArray(meta.sounds) && meta.sounds.length > 1) {
+      for (let i = 0; i < meta.sounds.length; i++) {
+        const track = meta.sounds[i];
+        if (!isForce && track.tts) {
+          console.log(`⏭️  ${meta.id} #${i + 1} 已有音频级 TTS，跳过`);
+          continue;
+        }
+        const text = track.fun_fact || meta.fun_fact;
+        if (!text || !text.trim()) {
+          console.log(`⏭️  ${meta.id} #${i + 1} 没有文案，跳过音频级 TTS`);
+          continue;
+        }
+        const display = track.label || `track-${i}`;
+        console.log(`🎙️ ${meta.id} #${i + 1}（${display}）→ 音频级 TTS`);
+        if (!isDryRun) {
+          try {
+            track.tts = await generateTrackTTS(text, generatedDir, i);
+            track.tts_generated_at = new Date().toISOString();
+            changed = true;
+            localDone++;
+          } catch (e) {
+            console.error(`   ❌ ${meta.id} #${i + 1}: ${e.message}`);
+            errors++;
+            localErrors++;
+          }
+        } else {
+          localDone++;
+        }
+      }
     }
 
     if (localDone === 0 && localErrors === 0) { skipped++; continue; }

@@ -9,7 +9,9 @@
   "fun_fact": "轰隆隆，火车来了！它像一条长长的钢铁巨龙，穿梭在城市和乡村间，带着人们快速旅行。火车头呼啸而过，让铁轨也跟着震动起来，就像一场有节奏的音乐演奏会。",
   "sounds": [
     {
-      "file": "audio/train_1.mp3"
+      "file": "audio/train_1.mp3",
+      "label": "",
+      "tags": []
     }
   ],
   "tags": [
@@ -21,7 +23,7 @@
   "source": "https://freesound.org/people/gundamu/sounds/346957/",
   "contributor": "wbyan2021",
   "added_at": "2026-06-26",
-  "fun_fact_ai_generated": true,
+  "fun_fact_ai_generated": false,
   "ai": {
     "generated_at": "2026-06-29T17:00:08.319Z",
     "model": "abab6.5s-chat",

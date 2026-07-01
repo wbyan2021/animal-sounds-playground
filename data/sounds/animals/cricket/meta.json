@@ -6,13 +6,23 @@
   "name_en": "Cricket",
   "emoji": "🦗",
   "description": "草丛里的小歌手，唧唧叫",
-  "fun_fact": "蟋蟀是草丛里的小歌手，每到夜晚就用它们的小翅膀摩擦发出“唧唧”的声音，其实是它们在唱歌吸引小伙伴呢！",
+  "fun_fact": "蟋蟀是草丛里的小歌手，它不用嘴巴唱歌，而是用翅膀摩擦发出“唧唧”声，夜晚开音乐会呢！",
   "sounds": [
     {
-      "file": "audio/cricket_chirp1.mp3"
+      "file": "audio/cricket_chirp1.mp3",
+      "fun_fact": "听，草丛里的小歌手蟋蟀，正用翅膀摩擦出“唧唧”声，它是在唱歌找伙伴呢！",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-0-tts.mp3",
+      "tts_generated_at": "2026-06-30T11:31:06.512Z",
+      "label": ""
     },
     {
-      "file": "audio/cricket_chirp2.mp3"
+      "file": "audio/cricket_chirp2.mp3",
+      "fun_fact": "夜晚，草丛里的小歌手蟋蟀，正用翅膀“唧唧”地唱歌，那是它们在呼唤朋友呢！",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-1-tts.mp3",
+      "tts_generated_at": "2026-06-30T11:30:47.402Z",
+      "label": ""
     }
   ],
   "tags": [
@@ -26,10 +36,10 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:58:40.997Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:47:49.112Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:69b566fa"
+    "text_hash": "c88d5d4250bd5c78"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",

@@ -6,7 +6,7 @@
   "name_en": "Boat",
   "emoji": "🚢",
   "description": "轮船的汽笛声呜呜响",
-  "fun_fact": "当轮船在水里航行时，它的汽笛会发出“呜呜”的声音，就像在和海豚打招呼呢！海豚听到后，还会用它们的叫声来回应哦。",
+  "fun_fact": "轮船的汽笛“呜呜”响，就像在说：“我来了，快让开！”这样其他船就知道它要转弯啦！",
   "sounds": [
     {
       "file": "audio/boat_1.mp3"
@@ -23,10 +23,10 @@
   "added_at": "2026-06-26",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T17:00:02.586Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:50:11.128Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:197a0ba"
+    "text_hash": "f2475da32b380217"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",

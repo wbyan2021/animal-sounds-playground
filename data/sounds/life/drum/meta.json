@@ -6,7 +6,7 @@
   "name_en": "Drum",
   "emoji": "🥁",
   "description": "咚咚咚的鼓声",
-  "fun_fact": "咚咚咚的鼓声不仅好听，其实还能传递信息呢！像一些小动物，比如青蛙，用它们的“鼓”——肚子，敲出不同的节奏来和同伴们交流呢！",
+  "fun_fact": "鼓的肚子空空的，敲一敲，皮就跳起来，发出“咚咚咚”的声音，像小动物在跑步！",
   "sounds": [
     {
       "file": "audio/drum_1.mp3"
@@ -23,10 +23,10 @@
   "added_at": "2026-06-26",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:59:38.879Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:49:31.678Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:77d01e2d"
+    "text_hash": "2d16d2a7158c59cb"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",

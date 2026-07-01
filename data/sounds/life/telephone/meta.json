@@ -6,7 +6,7 @@
   "name_en": "Telephone",
   "emoji": "📞",
   "description": "电话铃声响，快接电话",
-  "fun_fact": "\"当电话铃声响起，就像家里的小鸟在唱歌，它在提醒我们有朋友想聊天啦！接电话，就像跟小鸟对话一样，了解朋友的新消息。\"",
+  "fun_fact": "家里的电话叮铃铃响，就像在喊：“快接我！”这是有人想和你说话啦，声音会一直响到你拿起听筒。",
   "sounds": [
     {
       "file": "audio/telephone_1.mp3"
@@ -23,10 +23,10 @@
   "added_at": "2026-06-26",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:59:46.892Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:49:45.762Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:5c4dc002"
+    "text_hash": "997039e801de7e59"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",

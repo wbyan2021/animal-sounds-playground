@@ -6,7 +6,7 @@
   "name_en": "Airplane",
   "emoji": "✈️",
   "description": "飞机飞过头顶的轰鸣声",
-  "fun_fact": "轰隆隆，飞机像大鸟一样在天空中翱翔，它的轰鸣声让我们抬头就能看见它在白云间划过的痕迹呢！",
+  "fun_fact": "飞机轰隆隆飞过头顶，是它的大“鼻子”发动机在使劲吸气、呼气，把空气往后推，自己就往前冲啦！",
   "sounds": [
     {
       "file": "audio/airplane_1.mp3"
@@ -23,10 +23,10 @@
   "added_at": "2026-06-26",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:59:59.677Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:50:08.576Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:3213c4f8"
+    "text_hash": "148fccab60efd2a1"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",

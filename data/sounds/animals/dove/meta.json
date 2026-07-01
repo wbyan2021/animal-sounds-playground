@@ -6,13 +6,21 @@
   "name_en": "Dove",
   "emoji": "🕊️",
   "description": "和平的小天使，咕咕叫",
-  "fun_fact": "鸽子不仅是和平的小天使，还会用咕咕声和其它鸽子聊天呢，它们在城市高楼和公园树梢上自由飞翔，喜欢集体生活。",
+  "fun_fact": "鸽子咕咕叫的时候，小脑袋一点一点，其实是在用眼睛悄悄瞄准回家的路呢！",
   "sounds": [
     {
-      "file": "audio/dove_coo1.mp3"
+      "file": "audio/dove_coo1.mp3",
+      "fun_fact": "鸽子咕咕叫时，脖子会鼓得圆圆的，像在吹一个小气球，这是在跟伙伴说悄悄话呢！",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-0-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:28.082Z"
     },
     {
-      "file": "audio/dove_coo2.mp3"
+      "file": "audio/dove_coo2.mp3",
+      "fun_fact": "鸽子咕咕叫的时候，喉咙里的小气囊一鼓一鼓的，声音就是这样挤出来的哦！",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-1-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:29.103Z"
     }
   ],
   "tags": [
@@ -26,16 +34,16 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:58:50.954Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:48:08.674Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:2e7dc84"
+    "text_hash": "370c2041a42c2556"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",
     "voice_id_zh": "female-tianmei",
-    "voice_id_en": "male-qn-qingse",
-    "generated_at": "2026-06-30T07:20:25.863Z",
+    "voice_id_en": "English_captivating_female1",
+    "generated_at": "2026-06-30T19:01:29.103Z",
     "tts_model": "speech-2.8-hd",
     "fun_fact": "generated/fun-fact.mp3",
     "name_en": "generated/name-en.mp3"

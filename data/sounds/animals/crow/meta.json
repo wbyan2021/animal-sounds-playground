@@ -6,31 +6,57 @@
   "name_en": "Crow",
   "emoji": "🐦‍⬛",
   "description": "聪明的黑鸟，嘎嘎叫",
-  "fun_fact": "乌鸦是聪明的黑鸟，它们不仅会嘎嘎叫，还会模仿其他鸟儿的声音哦！",
+  "fun_fact": "乌鸦穿着黑礼服，嘎嘎一叫，原来是在和伙伴聊天。它可是鸟界的小侦探，能记住你的脸呢！",
   "sounds": [
     {
-      "file": "audio/crow1.mp3"
+      "file": "audio/crow1.mp3",
+      "fun_fact": "乌鸦“嘎嘎”叫，是在告诉朋友：“快来，这里有好吃的东西！”",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-0-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:02.784Z"
     },
     {
-      "file": "audio/crow2.mp3"
+      "file": "audio/crow2.mp3",
+      "tts": "generated/track-1-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:03.975Z"
     },
     {
-      "file": "audio/crow3.mp3"
+      "file": "audio/crow3.mp3",
+      "fun_fact": "乌鸦的叫声有几十种，就像在说悄悄话、唱歌或者发警报，能告诉伙伴：这里有好吃的东西！",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-2-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:05.256Z"
     },
     {
-      "file": "audio/crow4.mp3"
+      "file": "audio/crow4.mp3",
+      "tts": "generated/track-3-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:06.598Z"
     },
     {
-      "file": "audio/crow5.mp3"
+      "file": "audio/crow5.mp3",
+      "tts": "generated/track-4-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:07.709Z"
     },
     {
-      "file": "audio/crow6.mp3"
+      "file": "audio/crow6.mp3",
+      "fun_fact": "乌鸦用尖尖的嘴巴叼起一根小树枝，扑扇着翅膀飞回树顶，要盖新房子啦。",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-5-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:08.717Z"
     },
     {
-      "file": "audio/crow7.mp3"
+      "file": "audio/crow7.mp3",
+      "fun_fact": "乌鸦的叫声有很多种，这一声“啊——”，是在告诉同伴这里有好吃的东西。",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-6-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:09.704Z"
     },
     {
-      "file": "audio/crows.mp3"
+      "file": "audio/crows.mp3",
+      "fun_fact": "一群乌鸦好朋友，嘎嘎商量着，一起去找好吃的，还会互相帮忙呢！",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-7-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:10.589Z"
     }
   ],
   "tags": [
@@ -44,18 +70,18 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T17:58:33.025Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:47:55.311Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "5885ab02dfa05ffb"
+    "text_hash": "86317b64ffc655d0"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",
     "name_en": "generated/name-en.mp3",
     "fun_fact": "generated/fun-fact.mp3",
     "voice_id_zh": "female-tianmei",
-    "voice_id_en": "male-qn-qingse",
-    "generated_at": "2026-06-30T07:16:00.984Z",
+    "voice_id_en": "English_captivating_female1",
+    "generated_at": "2026-06-30T19:01:10.589Z",
     "tts_model": "speech-2.8-hd"
   }
 }

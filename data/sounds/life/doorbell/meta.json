@@ -6,7 +6,7 @@
   "name_en": "Doorbell",
   "emoji": "🔔",
   "description": "门铃叮咚响，有客人来了",
-  "fun_fact": "叮咚，门铃响了，这是告诉你有客人来了家门哦。它的声音就像猫咪的喵喵，小狗的汪汪，能传递信息呢！",
+  "fun_fact": "按一下门铃，里面有个小锤子轻轻敲打小铁片，“叮咚”一声，告诉你：有客人来啦！",
   "sounds": [
     {
       "file": "audio/doorbell_1.mp3"
@@ -23,10 +23,10 @@
   "added_at": "2026-06-26",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:59:37.211Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:49:29.096Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:1325211a"
+    "text_hash": "4107bdce27d2c6a4"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",

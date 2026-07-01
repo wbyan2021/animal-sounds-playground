@@ -6,7 +6,7 @@
   "name_en": "Donkey",
   "emoji": "🫏",
   "description": "勤劳的长耳朵，会啊啊叫",
-  "fun_fact": "驴是农场上的勤劳小伙伴，它们长着长长的耳朵，特别喜欢用啊啊的声音和大家打招呼呢。",
+  "fun_fact": "驴的“啊啊”叫声能传好几里地，这是它们在跟远处的朋友打招呼呢！勤劳的长耳朵驴，最爱在农场里帮人驮东西。",
   "sounds": [
     {
       "file": "audio/real_donkey1.mp3"
@@ -23,10 +23,10 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:58:49.428Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:48:05.530Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:6908eea4"
+    "text_hash": "f95fc35ee0ff56a2"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",

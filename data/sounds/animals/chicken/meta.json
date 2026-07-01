@@ -6,13 +6,21 @@
   "name_en": "Chicken",
   "emoji": "🐔",
   "description": "农场里的妈妈，会咯咯叫",
-  "fun_fact": "母鸡下完蛋，会“咯咯咯”地叫，好像在说：“快看，我下了一个圆圆的蛋！”",
+  "fun_fact": "农场里的母鸡妈妈，下完蛋就会“咯咯哒”叫个不停，好像在喊大家来看新宝宝呢！",
   "sounds": [
     {
-      "file": "audio/hen_cackle1.mp3"
+      "file": "audio/hen_cackle1.mp3",
+      "fun_fact": "母鸡下完蛋，会“咯咯咯”地叫，好像在骄傲地报告：“快来看，我下的蛋可棒啦！”",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-0-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:00:58.459Z"
     },
     {
-      "file": "audio/hen_cackle2.mp3"
+      "file": "audio/hen_cackle2.mp3",
+      "fun_fact": "母鸡下完蛋，会“咯咯哒”连叫好几声，好像在开心地告诉大家：“快来看我的蛋宝宝！”",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-1-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:00:59.457Z"
     }
   ],
   "tags": [
@@ -26,18 +34,18 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-30T09:19:56.552Z",
+    "generated_at": "2026-06-30T17:47:42.987Z",
     "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "a91435ff746f6243"
+    "text_hash": "a4e1a6c0e5c42168"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",
     "name_en": "generated/name-en.mp3",
     "fun_fact": "generated/fun-fact.mp3",
     "voice_id_zh": "female-tianmei",
-    "voice_id_en": "male-qn-qingse",
-    "generated_at": "2026-06-30T07:15:42.000Z",
+    "voice_id_en": "English_captivating_female1",
+    "generated_at": "2026-06-30T19:00:59.457Z",
     "tts_model": "speech-2.8-hd"
   }
 }

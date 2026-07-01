@@ -1540,6 +1540,16 @@
           triggerSoundExploration(card);
         });
       });
+
+      // 重新渲染后，如果当前有音频在播放，恢复对应卡片的 playing 高亮
+      if (activeAudio && !activeAudio.paused && activeCard) {
+        const currentId = activeCard.dataset.id;
+        const newCard = gridEl.querySelector(`.sound-card[data-id="${esc(currentId)}"]`);
+        if (newCard) {
+          activeCard = newCard;
+          newCard.classList.add('playing');
+        }
+      }
     }
 
     // ===== SEARCH INPUT CONTROLLERS =====
@@ -1697,7 +1707,8 @@
       if (!currentSoundData) return;
       const data = currentSoundData;
       const isAIFact = data.fun_fact_ai_generated;
-      const currentTrack = (data.sounds && currentTrackIndex >= 0 && currentTrackIndex < data.sounds.length) ? data.sounds[currentTrackIndex] : null;
+      const multiTrack = data.sounds && data.sounds.length > 1;
+      const currentTrack = (multiTrack && data.sounds && currentTrackIndex >= 0 && currentTrackIndex < data.sounds.length) ? data.sounds[currentTrackIndex] : null;
       const trackFact = currentTrack?.fun_fact;
       const trackLabel = currentTrack?.label;
       const trackTts = currentTrack?.tts;
@@ -1732,8 +1743,8 @@
       currentTTSData = {
         name_zh: soundTts.name_zh || null,
         name_en: soundTts.name_en || null,
-        fun_fact: trackTts || soundTts.fun_fact || null,
-        _trackTts: trackTts || null,  // 标记：音频级 TTS 路径
+        fun_fact: (multiTrack ? trackTts : null) || soundTts.fun_fact || null,
+        _trackTts: multiTrack ? trackTts : null,  // 标记：音频级 TTS 路径
       };
       const hasTTS = currentTTSData.name_zh || currentTTSData.name_en || currentTTSData.fun_fact;
       ttsRow.style.display = hasTTS ? 'flex' : 'none';
@@ -1823,19 +1834,25 @@
       activeTTS = audio;
 
       audio.addEventListener('play', () => {
+        if (activeTTS !== audio) return;
         const btnMap = { name_zh: ttsBtnZh, name_en: ttsBtnEn, fun_fact: ttsBtnFact };
         const btn = btnMap[fieldName];
         if (btn) btn.classList.add('playing');
       });
 
-      audio.addEventListener('ended', () => { stopTTS(); });
+      audio.addEventListener('ended', () => {
+        if (activeTTS !== audio) return;
+        stopTTS();
+      });
 
       audio.addEventListener('error', () => {
+        if (activeTTS !== audio) return;
         stopTTS();
         showToast('🤖 AI 朗读音频还没准备好，稍后再试试');
       });
 
       audio.play().catch(() => {
+        if (activeTTS !== audio) return;
         showToast('🤖 AI 朗读音频还没准备好');
       });
     }

@@ -6,7 +6,7 @@
   "name_en": "Gorilla",
   "emoji": "🦍",
   "description": "森林里的大个子，力气很大",
-  "fun_fact": "大猩猩是森林里的大力士，它的力量可以和好几只老虎相比呢！",
+  "fun_fact": "大猩猩是森林里的大力士，生气时会咚咚咚地拍胸口，告诉别人：“别惹我，我超厉害！”",
   "sounds": [
     {
       "file": "audio/real_gorilla1.mp3"
@@ -23,10 +23,10 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:59:02.143Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:48:29.650Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:792a9d94"
+    "text_hash": "b9e61bb9e9aa7c57"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",

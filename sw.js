@@ -34,7 +34,7 @@ self.addEventListener('fetch', e => {
   }
 
   // index.html / sw.js: network-first (保证更新能生效)
-  if (url.pathname.endsWith('.html') || url.pathname.endsWith('sw.js')) {
+  if (url.pathname.endsWith('.html') || url.pathname.endsWith('/') || url.pathname.endsWith('sw.js')) {
     e.respondWith(
       fetch(e.request)
         .then(resp => {

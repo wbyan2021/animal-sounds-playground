@@ -6,7 +6,7 @@
   "name_en": "Owl",
   "emoji": "🦉",
   "description": "夜晚不睡觉的大眼睛，咕咕叫",
-  "fun_fact": "猫头鹰的眼睛大大的，像两盏明亮的灯，在黑夜中也能看清东西。它们晚上不睡觉，咕咕的叫声在寂静中响起，像是在和月亮打招呼呢。",
+  "fun_fact": "猫头鹰的眼睛大大的，晚上不睡觉，脖子能转一个大圆圈，咕咕叫着找食物，真神奇！",
   "sounds": [
     {
       "file": "audio/owl.mp3"
@@ -23,10 +23,10 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:59:13.289Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:48:47.704Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:4b6272b3"
+    "text_hash": "b27e51c5cbe9a662"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",

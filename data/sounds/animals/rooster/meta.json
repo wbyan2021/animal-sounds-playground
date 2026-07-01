@@ -6,7 +6,7 @@
   "name_en": "Rooster",
   "emoji": "🐓",
   "description": "农场里的大嗓门，喔喔叫",
-  "fun_fact": "你知道吗？农场里的大嗓门公鸡，喔喔叫其实是它们在唱歌呢！早上一叫，就是告诉所有人新的一天开始了！",
+  "fun_fact": "公鸡喔喔叫，是为了告诉别的公鸡：“这是我的地盘！”它可是农场里的天然闹钟哦。",
   "sounds": [
     {
       "file": "audio/real_rooster1.mp3"
@@ -23,10 +23,10 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:59:21.368Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:45:43.985Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:1f64752d"
+    "text_hash": "7b6e30dba5603213"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",

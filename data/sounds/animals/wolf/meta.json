@@ -6,7 +6,7 @@
   "name_en": "Wolf",
   "emoji": "🐺",
   "description": "夜晚对着月亮叫的家伙",
-  "fun_fact": "灰狼在月圆之夜对着月亮嚎叫，不是为了表达孤独，而是为了和远方的伙伴们交流呢！",
+  "fun_fact": "灰狼晚上“嗷呜”大叫，可不是在跟月亮聊天——它在喊远处的伙伴：“集合啦，我在这儿呢！”",
   "sounds": [
     {
       "file": "audio/wolf_howl1.mp3"
@@ -23,10 +23,10 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:59:33.949Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:49:23.307Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:544ef67a"
+    "text_hash": "d8320ec1953e8e1e"
   },
   "tts": {
     "fun_fact": "generated/fun-fact.mp3",

@@ -27,7 +27,7 @@ const ROOT = path.resolve(__dirname, '..');
 const ENV_PATH = path.join(ROOT, '.env');
 const MANIFEST_PATH = path.join(ROOT, 'data', 'manifest.json');
 const SCRIPTS_DIR = path.join(ROOT, 'scripts');
-const PORT = 3099;
+const PORT = parseInt(process.env.PORT || '3099', 10);
 
 // ============================================================
 // 安全工具
@@ -81,7 +81,7 @@ function getStatus() {
   // TTS 配置（新 TTS_* 优先，回退到旧的 MINIMAX_*）
   const ttsApiKey = readEnvVar('TTS_API_KEY') || readEnvVar('MINIMAX_API_KEY');
   const ttsEndpoint = readEnvVar('TTS_ENDPOINT', '');
-  const ttsModel = readEnvVar('TTS_MODEL') || readEnvVar('MINIMAX_TTS_MODEL', 'Speech-2.8-HD');
+  const ttsModel = readEnvVar('TTS_MODEL') || readEnvVar('MINIMAX_TTS_MODEL', 'speech-2.8-hd');
   const voiceZh = readEnvVar('TTS_VOICE_ZH') || readEnvVar('MINIMAX_VOICE_ZH', '');
   const voiceEn = readEnvVar('TTS_VOICE_EN') || readEnvVar('MINIMAX_VOICE_EN', '');
 
@@ -342,6 +342,7 @@ async function handleAPI(req, res) {
       }
 
       // 创建 meta.json
+      const now = new Date().toISOString().slice(0, 10);
       const meta = {
         id: soundId,
         name_zh,
@@ -351,7 +352,10 @@ async function handleAPI(req, res) {
         emoji: body.emoji || '🔊',
         description: description || '',
         tags: Array.isArray(tags) ? tags : (tags ? String(tags).split(/[,，、]/).map(t => t.trim()).filter(Boolean) : []),
+        license: 'CC0-1.0',
+        source: 'https://freesound.org/',
         contributor: '声音大百科',
+        added_at: now,
         sounds,
       };
       fs.writeFileSync(path.join(soundDir, 'meta.json'), JSON.stringify(meta, null, 2) + '\n', 'utf-8');
@@ -437,16 +441,22 @@ async function handleAPI(req, res) {
         for (const [k, v] of Object.entries(fields)) {
           if (['name_zh','name_en','emoji','description','fun_fact','tags','subcategory'].includes(k)) {
             meta[k] = v;
+            // 手动修改 fun_fact 后，移除 AI 生成标记
+            if (k === 'fun_fact') meta.fun_fact_ai_generated = false;
           }
         }
       }
 
-      // 更新音频级字段（soundFields: [{ index, label, fun_fact }])
+      // 更新音频级字段（soundFields: [{ index, label, fun_fact, tags }])
       if (Array.isArray(soundFields) && Array.isArray(meta.sounds)) {
         for (const sf of soundFields) {
           if (typeof sf.index !== 'number' || sf.index < 0 || sf.index >= meta.sounds.length) continue;
           if (sf.label !== undefined) meta.sounds[sf.index].label = sf.label;
-          if (sf.fun_fact !== undefined) meta.sounds[sf.index].fun_fact = sf.fun_fact;
+          if (sf.fun_fact !== undefined) {
+            meta.sounds[sf.index].fun_fact = sf.fun_fact;
+            meta.sounds[sf.index].fun_fact_ai_generated = false; // 手动编辑后标记为非 AI
+          }
+          if (sf.tags !== undefined) meta.sounds[sf.index].tags = sf.tags;
         }
       }
 
@@ -531,10 +541,15 @@ async function handleAPI(req, res) {
         return;
       }
       const track = meta.sounds[trackIndex];
+      if (meta.sounds.length <= 1) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: '该声音只有一条音频，请直接编辑声音级科普文案' }));
+        return;
+      }
       const fileName = track.file.split('/').pop().replace(/\.[^.]+$/, '');
 
-      // 构造 LLM prompt：结合声音信息和音频文件名
-      const { loadEnv, callLLM, getLLMConfig } = require('./lib/minimax');
+      // 调用统一封装生成音频级文案
+      const { loadEnv, generateTrackFact, getLLMConfig } = require('./lib/minimax');
       loadEnv();
       const llmCfg = getLLMConfig();
       if (!llmCfg.apiKey) {
@@ -543,25 +558,7 @@ async function handleAPI(req, res) {
         return;
       }
 
-      const prompt = [
-        '你是一位儿童科普作家，擅长为 1-6 岁儿童撰写简短、有趣、准确的科普小知识。',
-        '请根据以下信息，为这一条具体的音频写一段 20-40 字的中文科普文案。',
-        '',
-        '要求：',
-        '- 只陈述科学事实，不编造；',
-        '- 语言口语化、有画面感，孩子能听懂；',
-        '- 结合音频的标签/描述（如有）突出这个具体音频的特点；',
-        '- 不输出任何解释、标题或多余内容，只返回一段文案。',
-        '',
-        `声音：中文名=${meta.name_zh}，英文名=${meta.name_en}，分类=${meta.category}`,
-        `声音标签：${(meta.tags || []).join('、') || '无'}`,
-        `声音描述：${meta.description || '无'}`,
-        `当前音频文件名：${fileName}`,
-        `当前音频标签：${track.label || '无'}`,
-        `声音级科普（参考）：${meta.fun_fact || '无'}`,
-      ].join('\n');
-
-      const text = await callLLM([{ role: 'user', content: prompt }], { temperature: 0.8, maxTokens: 150 });
+      const { text } = await generateTrackFact(meta, track, fileName);
 
       // 保存到 meta.json
       meta.sounds[trackIndex].fun_fact = text;
@@ -603,6 +600,11 @@ async function handleAPI(req, res) {
         return;
       }
       const track = meta.sounds[trackIndex];
+      if (meta.sounds.length <= 1) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: '该声音只有一条音频，请直接使用声音级朗读' }));
+        return;
+      }
       const text = track.fun_fact || meta.fun_fact;
       if (!text || !text.trim()) {
         res.writeHead(400, { 'Content-Type': 'application/json' });
@@ -610,7 +612,7 @@ async function handleAPI(req, res) {
         return;
       }
 
-      const { loadEnv, generateAndSaveSpeech, getTTSConfig } = require('./lib/minimax');
+      const { loadEnv, generateTrackTTS, getTTSConfig } = require('./lib/minimax');
       loadEnv();
       const ttsCfg = getTTSConfig();
       if (!ttsCfg.apiKey) {
@@ -619,19 +621,16 @@ async function handleAPI(req, res) {
         return;
       }
 
-      // 生成 TTS 到 generated/ 目录
       const soundDir = path.join(ROOT, 'data', 'sounds', category, name);
       const generatedDir = path.join(soundDir, 'generated');
-      const ttsFileName = `track-${trackIndex}-tts.mp3`;
-      await generateAndSaveSpeech(text, generatedDir, ttsFileName, 'zh-fact');
+      const ttsPath = await generateTrackTTS(text, generatedDir, trackIndex);
 
-      // 更新 meta.json
-      meta.sounds[trackIndex].tts = 'generated/' + ttsFileName;
+      meta.sounds[trackIndex].tts = ttsPath;
       meta.sounds[trackIndex].tts_generated_at = new Date().toISOString();
       fs.writeFileSync(metaPath, JSON.stringify(meta, null, 2) + '\n', 'utf-8');
 
       res.writeHead(200, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify({ ok: true, tts: 'generated/' + ttsFileName }));
+      res.end(JSON.stringify({ ok: true, tts: ttsPath }));
     } catch (e) {
       res.writeHead(500, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ error: e.message }));
@@ -785,11 +784,7 @@ function getAdminHTML() {
       <div style="display:flex;flex-direction:column;gap:4px">
         <label style="font-size:0.7rem;font-weight:700;color:#795548">📦 模型 ID</label>
         <select id="llm-model-input" style="padding:8px 10px;border:2px solid #E0E0E0;border-radius:10px;font-size:0.8rem;font-family:monospace;outline:none">
-          <option value="deepseek-chat">deepseek-chat（推荐，DeepSeek 出品）</option>
-          <option value="deepseek-reasoner">deepseek-reasoner（DeepSeek 推理模型）</option>
-          <option value="abab6.5s-chat">abab6.5s-chat（MiniMax 轻量快速）</option>
-          <option value="abab6.5-chat">abab6.5-chat（MiniMax 更强推理）</option>
-          <option value="MiniMax-M1">MiniMax-M1（MiniMax 最新）</option>
+          <option value="deepseek-v4-flash">deepseek-v4-flash（DeepSeek 出品，推荐）</option>
         </select>
       </div>
     </div>
@@ -812,8 +807,7 @@ function getAdminHTML() {
         <div style="display:flex;flex-direction:column;gap:4px">
           <label style="font-size:0.7rem;font-weight:700;color:#795548">📦 模型 ID</label>
           <select id="tts-model-input" style="padding:8px 10px;border:2px solid #E0E0E0;border-radius:10px;font-size:0.8rem;font-family:monospace;outline:none">
-            <option value="Speech-2.8-HD">Speech-2.8-HD（推荐，高清）</option>
-            <option value="speech-02">speech-02（高质量）</option>
+            <option value="speech-2.8-hd">speech-2.8-hd（推荐，高清）</option>
             <option value="speech-01-turbo">speech-01-turbo（轻量快速）</option>
           </select>
         </div>
@@ -828,7 +822,7 @@ function getAdminHTML() {
       </div>
     </div>
     <div style="margin-top:12px">
-      <button class="btn btn-primary" onclick="saveConfig()">💾 保存所有配置</button>
+      <button type="button" class="btn btn-primary" onclick="saveConfig()">💾 保存所有配置</button>
     </div>
   </div>
 
@@ -874,12 +868,12 @@ function getAdminHTML() {
 
     <!-- 操作按钮 -->
     <div class="action-row">
-      <button class="btn btn-primary" id="btn-fact" onclick="batchGenerate('fact')">📝 生成科普文案</button>
-      <button class="btn btn-primary" id="btn-tts" onclick="batchGenerate('tts')">🔊 生成 TTS 朗读</button>
-      <button class="btn btn-outline" id="btn-build" onclick="runScript('build-manifest.js', [])">📦 重建 Manifest</button>
+      <button type="button" class="btn btn-primary" id="btn-fact" onclick="batchGenerate('fact')">📝 生成科普文案</button>
+      <button type="button" class="btn btn-primary" id="btn-tts" onclick="batchGenerate('tts')">🔊 生成 TTS 朗读</button>
+      <button type="button" class="btn btn-outline" id="btn-build" onclick="runScript('build-manifest.js', [])">📦 重建 Manifest</button>
     </div>
     <div class="action-row">
-      <button class="btn btn-outline" style="background:#E65100;color:#fff" onclick="runFullPipeline()">🚀 一键全流程</button>
+      <button type="button" class="btn btn-outline" style="background:#E65100;color:#fff" onclick="runFullPipeline()">🚀 一键全流程</button>
       <span style="font-size:0.75rem;color:#795548">文案 + TTS + 构建</span>
     </div>
 
@@ -901,8 +895,8 @@ function getAdminHTML() {
       <h2 style="margin:0">🗂️ 声音管理</h2>
       <div style="display:flex;gap:8px">
         <input type="text" id="sound-search" placeholder="搜索声音..." oninput="renderSoundList()" style="padding:6px 10px;border:2px solid #E0E0E0;border-radius:8px;font-size:0.8rem;width:180px" />
-        <button class="btn btn-outline btn-sm" onclick="syncDisk()" title="扫描磁盘，清理无效引用">🔄 同步磁盘</button>
-        <button class="btn btn-primary btn-sm" onclick="showAddForm()">➕ 添加声音</button>
+        <button type="button" class="btn btn-outline btn-sm" onclick="syncDisk()" title="扫描磁盘，清理无效引用">🔄 同步磁盘</button>
+        <button type="button" class="btn btn-primary btn-sm" onclick="showAddForm()">➕ 添加声音</button>
       </div>
     </div>
     <div id="sound-list" style="max-height:400px;overflow-y:auto;border:1px solid #E0E0E0;border-radius:8px"></div>
@@ -949,7 +943,7 @@ function getAdminHTML() {
 <script>
   let soundList = [];
 
-  async function refreshStatus() {
+  async function refreshStatus(opts = {}) {
     try {
       const res = await fetch('/api/status');
       const s = await res.json();
@@ -974,9 +968,9 @@ function getAdminHTML() {
       // 回填配置表单
       document.getElementById('group-id-input').value = s.groupId || '';
       document.getElementById('llm-endpoint-input').value = s.llmEndpoint || '';
-      document.getElementById('llm-model-input').value = s.llmModel || 'deepseek-chat';
+      document.getElementById('llm-model-input').value = s.llmModel || 'deepseek-v4-flash';
       document.getElementById('tts-endpoint-input').value = s.ttsEndpoint || '';
-      document.getElementById('tts-model-input').value = s.ttsModel || 'Speech-2.8-HD';
+      document.getElementById('tts-model-input').value = s.ttsModel || 'speech-2.8-hd';
       document.getElementById('voice-zh-input').value = s.voiceZh || '';
       document.getElementById('voice-en-input').value = s.voiceEn || '';
       // API Key 输入框留空（不回填明文 key）
@@ -995,7 +989,7 @@ function getAdminHTML() {
       // Load manifest for sound selector
       const mf = await fetch('/data/manifest.json').then(r => r.json());
       soundList = mf.sounds || [];
-      renderSoundList();
+      if (!opts.skipRenderList) renderSoundList();
       updateBatchPreview();
     } catch(e) {}
   }
@@ -1041,29 +1035,61 @@ function getAdminHTML() {
     return args;
   }
 
-  // 更新批量操作预览（显示将影响多少个声音）
-  function updateBatchPreview() {
+  function getBatchTargets() {
     const cat = document.getElementById('target-cat').value;
     const sound = document.getElementById('target-sound').value;
-    let count = 0;
-    let label = '';
-    if (sound) {
-      count = 1;
-      label = sound;
-    } else if (cat === 'all') {
-      count = soundList.length;
-      label = '全部声音';
-    } else {
-      count = soundList.filter(s => s.category === cat).length;
-      label = cat;
+    if (sound) return soundList.filter(s => s.id === sound);
+    if (cat === 'all') return soundList;
+    return soundList.filter(s => s.category === cat);
+  }
+
+  function getBatchTotal(type) {
+    const targets = getBatchTargets();
+    const force = document.getElementById('opt-force').checked;
+    const withTracks = document.getElementById(type === 'fact' ? 'opt-trackfact' : 'opt-tracktts').checked;
+    let total = 0;
+    if (type === 'fact') {
+      for (const s of targets) {
+        if (force || !s.fun_fact) total++;
+        if (withTracks && s.sounds) {
+          for (const tr of s.sounds) {
+            if (force || !tr.fun_fact) total++;
+          }
+        }
+      }
+    } else if (type === 'tts') {
+      for (const s of targets) {
+        const stts = s.tts || {};
+        const hasAll = stts.name_zh && stts.name_en && stts.fun_fact;
+        if (force || !hasAll) total++;
+        if (withTracks && s.sounds) {
+          for (const tr of s.sounds) {
+            if (force || !tr.tts) total++;
+          }
+        }
+      }
     }
-    document.getElementById('batch-count').textContent = count;
-    document.getElementById('batch-preview').innerHTML = '将对 <b>' + count + '</b> 个声音执行操作' + (label ? '（' + esc(label) + '）' : '');
+    return total || targets.length;
+  }
+
+  // 更新批量操作预览（显示将影响多少个声音）
+  function updateBatchPreview() {
+    const targets = getBatchTargets();
+    const cat = document.getElementById('target-cat').value;
+    const sound = document.getElementById('target-sound').value;
+    let label = '';
+    if (sound) label = sound;
+    else if (cat === 'all') label = '全部声音';
+    else label = cat;
+    document.getElementById('batch-count').textContent = targets.length;
+    document.getElementById('batch-preview').innerHTML = '将对 <b>' + targets.length + '</b> 个声音执行操作' + (label ? '（' + esc(label) + '）' : '');
   }
 
   // 批量生成（带实时进度 + 完成后自动刷新声音列表）
   async function batchGenerate(type) {
     const args = getAllArgs();
+    if (type === 'fact' && document.getElementById('opt-trackfact').checked) args.push('--tracks');
+    if (type === 'tts' && document.getElementById('opt-tracktts').checked) args.push('--tracks');
     const script = type === 'fact' ? 'ai-generate-fun-fact.js' : 'ai-generate-tts.js';
     const label = type === 'fact' ? '科普文案' : 'TTS 朗读';
     
@@ -1080,10 +1106,8 @@ function getAdminHTML() {
     clearTerminal();
     log('▶️ 批量生成' + label + ': node scripts/' + script + ' ' + args.join(' ') + '\\n', 'info');
 
-    // 计算总数用于进度条
-    const cat = document.getElementById('target-cat').value;
-    const sound = document.getElementById('target-sound').value;
-    const total = sound ? 1 : (cat === 'all' ? soundList.length : soundList.filter(s => s.category === cat).length);
+    // 计算总数用于进度条（含音频级任务）
+    const total = getBatchTotal(type);
     let processed = 0;
 
     const res = await fetch('/api/run', {
@@ -1161,39 +1185,66 @@ function getAdminHTML() {
 
   // ===== 声音管理 =====
 
+  // 渲染列表里一个声音的标题/状态区（不含详情）
+  function renderSoundInfo(s) {
+    const hasFact = s.fun_fact ? '✅' : '⬜';
+    const hasTts = (s.tts && (s.tts.name_zh || s.tts.fun_fact)) ? '✅' : '⬜';
+    const audioCount = (s.sounds || []).length;
+    // 音频级统计
+    const tracksWithFact = (s.sounds || []).filter(tr => tr.fun_fact).length;
+    const tracksWithTts = (s.sounds || []).filter(tr => tr.tts).length;
+    const trackFactBadge = tracksWithFact === audioCount ? '✅' : (tracksWithFact > 0 ? '🔶' : '⬜');
+    const trackTtsBadge = tracksWithTts === audioCount ? '✅' : (tracksWithTts > 0 ? '🔶' : '⬜');
+    const mismatch = audioCount > 0 && (tracksWithFact !== audioCount || tracksWithTts !== audioCount);
+    return '<div style="font-weight:600;font-size:0.85rem">' + esc(s.name_zh) + ' <span style="color:#999;font-size:0.75rem">' + esc(s.id) + '</span>' + (mismatch ? ' <span style="color:#E65100;font-size:0.7rem">⚠️未配齐</span>' : '') + '</div>' +
+      '<div style="font-size:0.7rem;color:#999">音频 ' + audioCount + ' | 通用文案 ' + hasFact + ' TTS ' + hasTts + ' | 音频级文案 ' + trackFactBadge + ' ' + tracksWithFact + '/' + audioCount + ' TTS ' + trackTtsBadge + ' ' + tracksWithTts + '/' + audioCount + ' | ▾</div>';
+  }
+
+  function updateSoundRow(id) {
+    const s = soundList.find(x => x.id === id);
+    const el = document.getElementById('sound-row-info-' + id);
+    if (s && el) el.innerHTML = renderSoundInfo(s);
+  }
+
   function renderSoundList() {
+    const listEl = document.getElementById('sound-list');
+    const scrollPos = listEl ? listEl.scrollTop : 0;
+
     const q = (document.getElementById('sound-search').value || '').toLowerCase();
     const list = soundList.filter(s => !q || (s.name_zh||'').toLowerCase().includes(q) || (s.id||'').toLowerCase().includes(q) || (s.name_en||'').toLowerCase().includes(q));
     const html = list.map(s => {
-      const hasFact = s.fun_fact ? '✅' : '⬜';
-      const hasTts = (s.tts && (s.tts.name_zh || s.tts.fun_fact)) ? '✅' : '⬜';
-      const audioCount = (s.sounds || []).length;
-      // 音频级统计
-      const tracksWithFact = (s.sounds || []).filter(tr => tr.fun_fact).length;
-      const tracksWithTts = (s.sounds || []).filter(tr => tr.tts).length;
-      const trackFactBadge = tracksWithFact === audioCount ? '✅' : (tracksWithFact > 0 ? '🔶' : '⬜');
-      const trackTtsBadge = tracksWithTts === audioCount ? '✅' : (tracksWithTts > 0 ? '🔶' : '⬜');
-      const mismatch = audioCount > 0 && (tracksWithFact !== audioCount || tracksWithTts !== audioCount);
       return '<div style="display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid #f0f0f0">' +
         '<span style="font-size:1.2rem">' + (s.emoji || '🔊') + '</span>' +
-        '<div style="flex:1;min-width:0;cursor:pointer" onclick="toggleDetail(\\''+s.id+'\\')">' +
-          '<div style="font-weight:600;font-size:0.85rem">' + esc(s.name_zh) + ' <span style="color:#999;font-size:0.75rem">' + esc(s.id) + '</span>' + (mismatch ? ' <span style="color:#E65100;font-size:0.7rem">⚠️未配齐</span>' : '') + '</div>' +
-          '<div style="font-size:0.7rem;color:#999">音频 ' + audioCount + ' | 通用文案 ' + hasFact + ' TTS ' + hasTts + ' | 音频级文案 ' + trackFactBadge + ' ' + tracksWithFact + '/' + audioCount + ' TTS ' + trackTtsBadge + ' ' + tracksWithTts + '/' + audioCount + ' | ▾</div>' +
+        '<div id="sound-row-info-' + s.id + '" style="flex:1;min-width:0;cursor:pointer" onclick="toggleDetail(\\''+s.id+'\\')">' +
+          renderSoundInfo(s) +
         '</div>' +
-        '<button class="btn btn-outline btn-sm" onclick="regenOne(\\''+s.id+'\\',\\'fact\\')" title="重新生成文案">📝</button>' +
-        '<button class="btn btn-outline btn-sm" onclick="regenOne(\\''+s.id+'\\',\\'tts\\')" title="重新生成TTS">🔊</button>' +
-        '<button class="btn btn-outline btn-sm" style="color:#d32f2f;border-color:#d32f2f" onclick="deleteSound(\\''+s.id+'\\')" title="删除">🗑️</button>' +
+        '<button type="button" class="btn btn-outline btn-sm" onclick="regenOne(\\''+s.id+'\\',\\'fact\\')" title="重新生成文案">📝</button>' +
+        '<button type="button" class="btn btn-outline btn-sm" onclick="regenOne(\\''+s.id+'\\',\\'tts\\')" title="重新生成TTS">🔊</button>' +
+        '<button type="button" class="btn btn-outline btn-sm" style="color:#d32f2f;border-color:#d32f2f" onclick="deleteSound(\\''+s.id+'\\')" title="删除">🗑️</button>' +
       '</div>' +
       '<div id="detail-'+s.id+'" style="display:none;padding:8px 12px 12px;background:#fafafa;border-bottom:1px solid #f0f0f0"></div>';
     }).join('');
-    document.getElementById('sound-list').innerHTML = html || '<div style="padding:16px;text-align:center;color:#999">没有匹配的声音</div>';
+    
+    if (listEl) {
+      listEl.innerHTML = html || '<div style="padding:16px;text-align:center;color:#999">没有匹配的声音</div>';
+      listEl.scrollTop = scrollPos;
+    }
+
+    // 重新展开之前展开的条目
+    if (expandedSoundId && list.some(s => s.id === expandedSoundId)) {
+      toggleDetail(expandedSoundId, true);
+    }
   }
 
-  async function toggleDetail(id) {
+  async function toggleDetail(id, forceExpand = false) {
     const el = document.getElementById('detail-' + id);
-    if (el.style.display === 'none') {
+    if (!el) return;
+    if (el.style.display === 'none' || forceExpand) {
       el.style.display = 'block';
-      el.innerHTML = '<div style="text-align:center;color:#999;padding:8px">加载中...</div>';
+      expandedSoundId = id;
+      if (!forceExpand) {
+        el.innerHTML = '<div style="text-align:center;color:#999;padding:8px">加载中...</div>';
+      }
       try {
         const r = await fetch('/api/sound-detail?id=' + encodeURIComponent(id));
         const meta = await r.json();
@@ -1209,7 +1260,8 @@ function getAdminHTML() {
 
         // 每个音频一个完整卡片
         if (meta.sounds && meta.sounds.length > 0) {
-          html += '<div style="font-size:0.75rem;color:#795548;margin:12px 0 6px">🎵 独立音频管理（' + meta.sounds.length + ' 条）</div>';
+          const singleAudio = meta.sounds.length === 1;
+          html += '<div style="font-size:0.75rem;color:#795548;margin:12px 0 6px">🎵 独立音频管理（' + meta.sounds.length + ' 条）' + (singleAudio ? ' · 单条音频直接使用上方声音级文案' : '') + '</div>';
           meta.sounds.forEach((snd, i) => {
             const fname = snd.file.split('/').pop();
             const fileUrl = snd.fileUrl || ('/data/sounds/' + id.replace('.', '/') + '/' + snd.file);
@@ -1229,16 +1281,18 @@ function getAdminHTML() {
                 '<div><label style="font-size:0.65rem;color:#999">分类标签（逗号分隔）</label>' +
                   '<input type="text" id="snd-tags-'+id+'-'+i+'" value="'+esc((snd.tags||[]).join(', '))+'" placeholder="如：柔软, 高频" style="width:100%;padding:4px 6px;border:1px solid #E0E0E0;border-radius:4px;font-size:0.75rem" oninput="markTrackDirty(\\''+id+'\\','+i+')" /></div>' +
               '</div>' +
-              // 第三行：文案 + 操作按钮
-              '<div style="display:flex;gap:8px;align-items:flex-start">' +
-                '<div style="flex:1"><label style="font-size:0.65rem;color:#999">专属文案 ' + (snd.fun_fact_ai_generated ? '(🤖 AI)' : (snd.fun_fact ? '(✏️ 手动)' : '')) + '</label>' +
-                  '<textarea id="snd-fact-'+id+'-'+i+'" style="width:100%;min-height:50px;padding:6px;border:1px solid #E0E0E0;border-radius:4px;font-size:0.78rem" placeholder="这个音频的专属文案..." oninput="markTrackDirty(\\''+id+'\\','+i+')">'+esc(snd.fun_fact||'')+'</textarea></div>' +
-                '<div style="display:flex;flex-direction:column;gap:4px">' +
-                  '<button class="btn btn-outline btn-sm" style="font-size:0.7rem;padding:4px 8px" onclick="genTrackFact(\\''+id+'\\','+i+')" title="用 LLM 生成文案">🤖 LLM生成</button>' +
-                  '<button class="btn btn-outline btn-sm" style="font-size:0.7rem;padding:4px 8px" onclick="saveTrack(\\''+id+'\\','+i+')" title="保存这条">💾 保存</button>' +
-                  '<button class="btn btn-outline btn-sm" style="font-size:0.7rem;padding:4px 8px;background:#E3F2FD;border-color:#2196F3;color:#1565C0" onclick="genTrackTTS(\\''+id+'\\','+i+')" title="生成朗读音频">🔊 生成朗读</button>' +
-                '</div>' +
-              '</div>' +
+              // 第三行：文案 + 操作按钮（单条音频时隐藏，避免与主文案重复）
+              (singleAudio
+                ? '<div style="padding:6px;background:#FFF8E1;border-radius:4px;font-size:0.7rem;color:#795548">💡 该声音只有 1 条音频，文案/朗读请直接使用上方「声音级科普文案」</div>'
+                : '<div style="display:flex;gap:8px;align-items:flex-start">' +
+                    '<div style="flex:1"><label id="snd-fact-label-'+id+'-'+i+'" style="font-size:0.65rem;color:#999">专属文案 ' + (snd.fun_fact_ai_generated ? '(🤖 AI)' : (snd.fun_fact ? '(✏️ 手动)' : '')) + '</label>' +
+                      '<textarea id="snd-fact-'+id+'-'+i+'" style="width:100%;min-height:50px;padding:6px;border:1px solid #E0E0E0;border-radius:4px;font-size:0.78rem" placeholder="这个音频的专属文案..." oninput="markTrackDirty(\\''+id+'\\','+i+')">'+esc(snd.fun_fact||'')+'</textarea></div>' +
+                    '<div style="display:flex;flex-direction:column;gap:4px">' +
+                      '<button type="button" class="btn btn-outline btn-sm" style="font-size:0.7rem;padding:4px 8px" onclick="genTrackFact(\\''+id+'\\','+i+',event)" title="用 LLM 生成文案">🤖 LLM生成</button>' +
+                      '<button type="button" class="btn btn-outline btn-sm" style="font-size:0.7rem;padding:4px 8px" onclick="saveTrack(\\''+id+'\\','+i+',event)" title="保存这条">💾 保存</button>' +
+                      '<button type="button" class="btn btn-outline btn-sm" style="font-size:0.7rem;padding:4px 8px;background:#E3F2FD;border-color:#2196F3;color:#1565C0" onclick="genTrackTTS(\\''+id+'\\','+i+',event)" title="生成朗读音频">🔊 生成朗读</button>' +
+                    '</div>' +
+                  '</div>') +
               // 第四行：TTS 播放器（如果有）
               '<div id="snd-tts-'+id+'-'+i+'" style="margin-top:6px;display:'+(ttsUrl?'flex':'none')+';align-items:center;gap:8px">' +
                 '<span style="font-size:0.7rem;color:#43A047">🔊 朗读音频:</span>' +
@@ -1250,8 +1304,8 @@ function getAdminHTML() {
 
         // 底部：保存声音级 + 重建 manifest
         html += '<div style="margin-top:8px;display:flex;gap:8px">' +
-          '<button class="btn btn-primary btn-sm" onclick="saveMeta(\\''+id+'\\','+(meta.sounds?meta.sounds.length:0)+')">💾 保存声音级设置</button>' +
-          '<button class="btn btn-outline btn-sm" onclick="runSSE(\\'build-manifest.js\\',[])">📦 重建 Manifest</button>' +
+          '<button type="button" class="btn btn-primary btn-sm" onclick="saveMeta(\\''+id+'\\','+(meta.sounds?meta.sounds.length:0)+',event)">💾 保存声音级设置</button>' +
+          '<button type="button" class="btn btn-outline btn-sm" onclick="runSSE(\\'build-manifest.js\\',[])">📦 重建 Manifest</button>' +
         '</div>';
         el.innerHTML = html;
       } catch(e) {
@@ -1259,6 +1313,7 @@ function getAdminHTML() {
       }
     } else {
       el.style.display = 'none';
+      if (expandedSoundId === id) expandedSoundId = null;
     }
   }
 
@@ -1269,8 +1324,9 @@ function getAdminHTML() {
   }
 
   // 单条音频 LLM 生成文案
-  async function genTrackFact(id, idx) {
-    const btn = event.target;
+  async function genTrackFact(id, idx, ev) {
+    ev.preventDefault();
+    const btn = ev.target;
     btn.disabled = true;
     btn.textContent = '⏳ 生成中...';
     log('🤖 为 ' + id + ' #' + (idx+1) + ' 生成文案...\\n', 'info');
@@ -1284,9 +1340,16 @@ function getAdminHTML() {
       if (j.ok) {
         const ta = document.getElementById('snd-fact-'+id+'-'+idx);
         if (ta) ta.value = j.fun_fact;
+        const lbl = document.getElementById('snd-fact-label-'+id+'-'+idx);
+        if (lbl) lbl.textContent = '专属文案 (🤖 AI)';
+        // 同步内存中的列表状态，避免整页刷新导致滚动条乱跳
+        const s = soundList.find(x => x.id === id);
+        if (s && s.sounds && s.sounds[idx]) {
+          s.sounds[idx].fun_fact = j.fun_fact;
+          s.sounds[idx].fun_fact_ai_generated = true;
+          updateSoundRow(id);
+        }
         log('✅ 文案: ' + j.fun_fact + '\\n', 'success');
-        await refreshStatus();      // 刷新顶部统计
-        renderSoundList();           // 刷新列表状态标记
       } else {
         alert('生成失败: ' + (j.error || '未知错误'));
       }
@@ -1296,7 +1359,8 @@ function getAdminHTML() {
   }
 
   // 单条音频保存（label + fun_fact + tags）
-  async function saveTrack(id, idx) {
+  async function saveTrack(id, idx, ev) {
+    ev.preventDefault();
     const label = document.getElementById('snd-label-'+id+'-'+idx).value;
     const fact = document.getElementById('snd-fact-'+id+'-'+idx).value;
     const tags = document.getElementById('snd-tags-'+id+'-'+idx).value;
@@ -1312,8 +1376,16 @@ function getAdminHTML() {
         log('✅ 已保存\\n', 'success');
         const el = document.getElementById('snd-label-'+id+'-'+idx);
         if (el) el.style.borderColor = '#E0E0E0';
-        await refreshStatus();
-        renderSoundList();
+        const lbl = document.getElementById('snd-fact-label-'+id+'-'+idx);
+        if (lbl) lbl.textContent = '专属文案 (✏️ 手动)';
+        const s = soundList.find(x => x.id === id);
+        if (s && s.sounds && s.sounds[idx]) {
+          s.sounds[idx].label = label;
+          s.sounds[idx].fun_fact = fact;
+          s.sounds[idx].fun_fact_ai_generated = false;
+          s.sounds[idx].tags = String(tags).split(/[,，、]/).map(t => t.trim()).filter(Boolean);
+          updateSoundRow(id);
+        }
       } else {
         alert('保存失败: ' + (j.error || '未知错误'));
       }
@@ -1321,8 +1393,9 @@ function getAdminHTML() {
   }
 
   // 单条音频生成朗读 TTS
-  async function genTrackTTS(id, idx) {
-    const btn = event.target;
+  async function genTrackTTS(id, idx, ev) {
+    ev.preventDefault();
+    const btn = ev.target;
     btn.disabled = true;
     btn.textContent = '⏳ 朗读中...';
     log('🔊 为 ' + id + ' #' + (idx+1) + ' 生成朗读音频...\\n', 'info');
@@ -1339,8 +1412,11 @@ function getAdminHTML() {
         const ttsUrl = '/data/sounds/' + id.replace('.', '/') + '/' + j.tts;
         ttsDiv.innerHTML = '<span style="font-size:0.7rem;color:#43A047">🔊 朗读音频:</span><audio controls preload="none" src="' + ttsUrl + '" style="height:24px;flex:1"></audio>';
         ttsDiv.style.display = 'flex';
-        await refreshStatus();      // 刷新顶部统计
-        renderSoundList();           // 刷新列表状态标记
+        const s = soundList.find(x => x.id === id);
+        if (s && s.sounds && s.sounds[idx]) {
+          s.sounds[idx].tts = j.tts;
+          updateSoundRow(id);
+        }
       } else {
         alert('生成失败: ' + (j.error || '未知错误'));
       }
@@ -1349,7 +1425,8 @@ function getAdminHTML() {
     btn.textContent = '🔊 生成朗读';
   }
 
-  async function saveMeta(id, soundCount) {
+  async function saveMeta(id, soundCount, ev) {
+    ev.preventDefault();
     const fields = {};
     const factEl = document.getElementById('meta-fact-'+id);
     const tagsEl = document.getElementById('meta-tags-'+id);
@@ -1360,10 +1437,12 @@ function getAdminHTML() {
     for (let i = 0; i < soundCount; i++) {
       const labelEl = document.getElementById('snd-label-'+id+'-'+i);
       const factEl2 = document.getElementById('snd-fact-'+id+'-'+i);
+      const tagsEl2 = document.getElementById('snd-tags-'+id+'-'+i);
       soundFields.push({
         index: i,
         label: labelEl ? labelEl.value : '',
-        fun_fact: factEl2 ? factEl2.value : ''
+        fun_fact: factEl2 ? factEl2.value : '',
+        tags: tagsEl2 ? tagsEl2.value.split(/[,，、]/).map(t => t.trim()).filter(Boolean) : []
       });
     }
 
@@ -1377,7 +1456,8 @@ function getAdminHTML() {
       const j = await r.json();
       if (j.ok) {
         log('✅ 已保存，manifest 已重建\\n', 'success');
-        refreshStatus();
+        await refreshStatus({ skipRenderList: true });
+        updateSoundRow(id);
       } else {
         alert('保存失败: ' + (j.error || '未知错误'));
       }
@@ -1520,12 +1600,17 @@ function getAdminHTML() {
     clearTerminal();
     log('🚀 一键全流程启动\\n', 'info');
 
-    log('📝 第1步：AI 生成科普文案...\\n', 'info');
     const args = getAllArgs();
-    await runSSE('ai-generate-fun-fact.js', args.length > 0 ? ['--force', ...args] : ['--force']);
+
+    log('📝 第1步：AI 生成科普文案...\\n', 'info');
+    const factArgs = [...args];
+    if (document.getElementById('opt-trackfact').checked) factArgs.push('--tracks');
+    await runSSE('ai-generate-fun-fact.js', factArgs);
 
     log('\\n🔊 第2步：生成 TTS 朗读...\\n', 'info');
-    await runSSE('ai-generate-tts.js', args);
+    const ttsArgs = [...args];
+    if (document.getElementById('opt-tracktts').checked) ttsArgs.push('--tracks');
+    await runSSE('ai-generate-tts.js', ttsArgs);
 
     log('\\n📦 第3步：重建 Manifest...\\n', 'info');
     await runSSE('build-manifest.js', []);

@@ -6,7 +6,7 @@
   "name_en": "Microwave",
   "emoji": "📟",
   "description": "微波炉嗡嗡工作的声音",
-  "fun_fact": "微波炉在工作时发出的嗡嗡声其实是因为它在快速转动食物，让微波均匀加热哦！",
+  "fun_fact": "微波炉“嗡嗡”响，是里面有个小风扇在转，帮它把看不见的微波能量送进食物里，让饭菜热起来！",
   "sounds": [
     {
       "file": "audio/microwave_1.mp3"
@@ -23,10 +23,10 @@
   "added_at": "2026-06-26",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:59:43.661Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:49:40.192Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:4fb6911"
+    "text_hash": "48d328124608858e"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",

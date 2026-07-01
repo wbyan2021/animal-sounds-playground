@@ -6,7 +6,7 @@
   "name_en": "Dolphin",
   "emoji": "🐬",
   "description": "海洋里最聪明的动物，喜欢跳跃",
-  "fun_fact": "海豚是海洋里的超强大脑，它们聪明得就像会游泳的小小博士！它们喜欢在海浪里快乐地跳跃，就像在空中表演杂技一样哦！",
+  "fun_fact": "海豚睡觉时，一半大脑在休息，另一半还在值班，这样它们就不会忘记浮上来呼吸啦！",
   "sounds": [
     {
       "file": "audio/real_dolphin1.mp3"
@@ -23,10 +23,10 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:58:48.038Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:48:02.029Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:6b925ac6"
+    "text_hash": "c62c4b7bfb349cae"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",

@@ -6,7 +6,7 @@
   "name_en": "Elephant",
   "emoji": "🐘",
   "description": "陆地上最大的动物，鼻子超级长",
-  "fun_fact": "哇！大象是陆地上最大的动物呢，它们长长的鼻子超级厉害，可以用来喝水、搬东西，还能和小伙伴打招呼呢！",
+  "fun_fact": "大象是陆地上最大的动物，长长的鼻子像灵巧的手，能卷起树叶，还能喷水洗澡，超厉害！",
   "sounds": [
     {
       "file": "audio/real_elephant1.mp3"
@@ -23,10 +23,10 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:58:55.252Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:48:17.371Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:dbb652f"
+    "text_hash": "e917ac5f69e8e479"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",

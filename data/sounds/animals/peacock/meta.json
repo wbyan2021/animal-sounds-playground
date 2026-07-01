@@ -6,7 +6,7 @@
   "name_en": "Peacock",
   "emoji": "🦚",
   "description": "最美的鸟，会开屏",
-  "fun_fact": "孔雀，一种超美的鸟儿，它开屏的时候就像一面五彩的扇子呢！它生活在森林里，开屏不只是为了好看，还能帮它找到朋友呢。",
+  "fun_fact": "孔雀开屏时，尾巴像一把大扇子，上面的“眼睛”能吓跑敌人，还能吸引女朋友哦！",
   "sounds": [
     {
       "file": "audio/real_peacock1.mp3"
@@ -23,10 +23,10 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:59:16.865Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:48:52.953Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:7ea9f06f"
+    "text_hash": "f728bc6672a2e4fe"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",

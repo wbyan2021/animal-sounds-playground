@@ -6,7 +6,7 @@
   "name_en": "Whale",
   "emoji": "🐋",
   "description": "海洋里最大的动物，会唱歌",
-  "fun_fact": "你知道吗？海洋里最大的动物是鲸鱼，它们会发出美妙的歌声，像在唱海洋之歌。",
+  "fun_fact": "鲸鱼是海洋里最大的动物，它们还会唱歌呢！大鲸鱼唱起歌来，海底就像在开音乐会。",
   "sounds": [
     {
       "file": "audio/real_whale1.mp3"
@@ -23,10 +23,10 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:59:32.109Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:49:20.552Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:4a13e5b7"
+    "text_hash": "4be9667bdcb14691"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",

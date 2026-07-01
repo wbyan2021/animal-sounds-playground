@@ -6,40 +6,86 @@
   "name_en": "Bird",
   "emoji": "🐦",
   "description": "唱好听的歌，在天空中飞翔",
-  "fun_fact": "小朋友们，你知道吗？小鸟们不仅能在天空中自由飞翔，还会唱出各种好听的歌哦！它们用这些美妙的旋律吸引同伴，一起快乐地生活。下次听到鸟儿唱歌，不妨仔细聆听一下，它们可能在分享故事呢！",
+  "fun_fact": "你知道吗？小鸟唱歌时，喉咙里有个像小喇叭一样的“鸣管”，能一边飞一边唱出各种好听的小曲儿。",
   "sounds": [
     {
-      "file": "audio/bulbul.mp3"
+      "file": "audio/bulbul.mp3",
+      "fun_fact": "白头鹎头顶戴了一朵小白花，最喜欢站在高高的树枝上，“啾啾”地和伙伴打招呼。",
+      "fun_fact_ai_generated": false,
+      "label": "",
+      "tags": [],
+      "tts": "generated/track-0-tts.mp3",
+      "tts_generated_at": "2026-06-30T17:47:09.728Z"
     },
     {
-      "file": "audio/flycatcher1.mp3"
+      "file": "audio/flycatcher1.mp3",
+      "fun_fact": "捕蝇鸟像个小飞行员，嗖地转身，在空中一口咬住飞虫，吃饭都不用停下来。",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-1-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:00:45.822Z"
     },
     {
-      "file": "audio/river_bird.mp3"
+      "file": "audio/river_bird.mp3",
+      "fun_fact": "河边的小鸟最爱在浅水里踩来踩去，用尖尖的嘴巴啄小虫子吃。",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-2-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:00:46.689Z"
     },
     {
-      "file": "audio/sparrows.mp3"
+      "file": "audio/sparrows.mp3",
+      "fun_fact": "麻雀们喜欢成群结队地在地上蹦蹦跳跳，像一群小跳跳豆，一起找谷粒吃。",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-3-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:00:47.885Z"
     },
     {
-      "file": "audio/swallows.mp3"
+      "file": "audio/swallows.mp3",
+      "fun_fact": "小燕子尾巴像一把小剪刀，飞得可快啦，专门捉空中飞来飞去的小虫子吃。",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-4-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:00:48.796Z"
     },
     {
-      "file": "audio/tropical_bird1.mp3"
+      "file": "audio/tropical_bird1.mp3",
+      "fun_fact": "热带小鸟的羽毛像彩虹一样鲜艳，它们最爱在温暖的大树上跳来跳去，找果子吃。",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-5-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:00:49.979Z"
     },
     {
-      "file": "audio/tropical_bird2.mp3"
+      "file": "audio/tropical_bird2.mp3",
+      "fun_fact": "热带小鸟的羽毛像彩虹糖一样鲜艳，它们最喜欢在又高又大的树上叽叽喳喳开音乐会啦。",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-6-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:00:50.978Z"
     },
     {
-      "file": "audio/tropical_bird3.mp3"
+      "file": "audio/tropical_bird3.mp3",
+      "fun_fact": "这只热带小鸟住在茂密的大森林里，羽毛像彩虹一样闪闪发光。",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-7-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:00:51.767Z"
     },
     {
-      "file": "audio/warbler1.mp3"
+      "file": "audio/warbler1.mp3",
+      "fun_fact": "这只小莺藏在树叶间，唱出细细亮亮的歌，像一串小铃铛在风里摇。",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-8-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:00:52.788Z"
     },
     {
-      "file": "audio/warbler2.mp3"
+      "file": "audio/warbler2.mp3",
+      "fun_fact": "小小的莺鸟藏在树叶间，它的歌声清脆得像一串小铃铛，春天里唱得最欢。",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-9-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:00:53.829Z"
     },
     {
-      "file": "audio/warbler3.mp3"
+      "file": "audio/warbler3.mp3",
+      "fun_fact": "这只小莺的歌声像一串清脆的银铃，它虽然比你的手掌还小，却能唱出整片森林最好听的歌。",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-10-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:00:54.907Z"
     }
   ],
   "tags": [
@@ -53,18 +99,18 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:58:35.236Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:47:36.169Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:29593c34"
+    "text_hash": "25da75c735c09459"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",
     "name_en": "generated/name-en.mp3",
     "fun_fact": "generated/fun-fact.mp3",
     "voice_id_zh": "female-tianmei",
-    "voice_id_en": "male-qn-qingse",
-    "generated_at": "2026-06-30T07:15:30.928Z",
+    "voice_id_en": "English_captivating_female1",
+    "generated_at": "2026-06-30T19:00:54.907Z",
     "tts_model": "speech-2.8-hd"
   }
 }

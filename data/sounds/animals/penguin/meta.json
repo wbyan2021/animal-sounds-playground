@@ -6,7 +6,7 @@
   "name_en": "Penguin",
   "emoji": "🐧",
   "description": "穿燕尾服的南极居民，摇摇摆摆",
-  "fun_fact": "你知道吗？企鹅是穿着燕尾服的南极居民，走起路来摇摇摆摆，像个小绅士。",
+  "fun_fact": "企鹅是穿“燕尾服”的南极小鸟，不会飞，但摇摇摆摆走路像个小绅士。",
   "sounds": [
     {
       "file": "audio/real_penguin1.mp3"
@@ -23,10 +23,10 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:59:18.226Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:48:55.862Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:3b05e7a9"
+    "text_hash": "0cce59ebd3809cf3"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",

@@ -6,7 +6,7 @@
   "name_en": "Cow",
   "emoji": "🐮",
   "description": "农场里的大家伙，哞哞叫",
-  "fun_fact": "在农场里，大家伙奶牛会发出“哞哞”的叫声哦，它们不仅会产奶，还能帮人们耕田呢！",
+  "fun_fact": "奶牛有四个胃，吃下青草后，它会趴在地上慢慢反刍，像在嚼口香糖一样，把草再嚼一遍。",
   "sounds": [
     {
       "file": "audio/cow1.mp3"
@@ -23,10 +23,10 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:58:39.150Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:47:46.400Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:51eac063"
+    "text_hash": "761f111394cff582"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",

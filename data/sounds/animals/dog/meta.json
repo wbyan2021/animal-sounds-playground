@@ -6,40 +6,82 @@
   "name_en": "Dog",
   "emoji": "🐶",
   "description": "人类最忠实的朋友，喜欢汪汪叫",
-  "fun_fact": "小狗是人类最忠实的朋友，总是爱用“汪汪”和我们打招呼。它们不仅能听懂我们的话，还能用叫声和尾巴表达自己的感受呢！",
+  "fun_fact": "小狗汪汪叫，不是乱喊哦！它在用声音和你“聊天”：开心时摇尾巴，遇到危险会大叫，它是人类",
   "sounds": [
     {
-      "file": "audio/dog1a.mp3"
+      "file": "audio/dog1a.mp3",
+      "fun_fact": "小狗短促地“汪”一声，是在打招呼呢！有时轻轻“呜呜”，是想让你陪它玩。",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-0-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:14.064Z"
     },
     {
-      "file": "audio/dog2a.mp3"
+      "file": "audio/dog2a.mp3",
+      "tts": "generated/track-1-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:15.126Z"
     },
     {
-      "file": "audio/dog2b.mp3"
+      "file": "audio/dog2b.mp3",
+      "fun_fact": "小狗发出短促的“汪”声，是在开心地邀请你一起玩，尾巴摇得可欢啦！",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-2-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:15.998Z"
     },
     {
-      "file": "audio/dog3a.mp3"
+      "file": "audio/dog3a.mp3",
+      "fun_fact": "小狗听到你回家的脚步声，兴奋地汪汪叫，这是在说：“我好想你呀！”",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-3-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:16.864Z"
     },
     {
-      "file": "audio/dog_barking2.mp3"
+      "file": "audio/dog_barking2.mp3",
+      "fun_fact": "小狗大声汪汪，像在说“有客人来啦！”它竖起耳朵，警惕地看着门口，保护自己的家呢！",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-4-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:17.978Z"
     },
     {
-      "file": "audio/maltese_dog1.mp3"
+      "file": "audio/maltese_dog1.mp3",
+      "fun_fact": "马尔济斯犬全身雪白的长毛软软的，像一团小棉花，跑动时耳朵藏在毛里忽闪忽闪的。",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-5-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:19.137Z"
     },
     {
-      "file": "audio/maltese_dog2.mp3"
+      "file": "audio/maltese_dog2.mp3",
+      "fun_fact": "听，这是马尔济斯犬的叫声——它身体小小的，一身雪白绒毛，声音也细细软软的。",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-6-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:20.226Z"
     },
     {
-      "file": "audio/maltese_dog7.mp3"
+      "file": "audio/maltese_dog7.mp3",
+      "fun_fact": "马尔济斯小狗的叫声细细的，它最爱趴在软垫上等你陪它玩。",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-7-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:21.073Z"
     },
     {
-      "file": "audio/small_dog1.mp3"
+      "file": "audio/small_dog1.mp3",
+      "fun_fact": "小小狗个子小，叫声却尖尖的，它汪汪一喊，就像在说：“嘿，我在这里呢！”",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-8-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:22.173Z"
     },
     {
-      "file": "audio/small_dog2.mp3"
+      "file": "audio/small_dog2.mp3",
+      "fun_fact": "这只小狗个子小，叫声脆脆的，尾巴摇得飞快——它在用“汪汪”说：“快来陪我玩！”",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-9-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:23.340Z"
     },
     {
-      "file": "audio/talking_dog.mp3"
+      "file": "audio/talking_dog.mp3",
+      "fun_fact": "听，这只小狗在“说话”呢！它用不同的叫声告诉你——高兴时短促轻快，紧张时又急又响。",
+      "fun_fact_ai_generated": true,
+      "tts": "generated/track-10-tts.mp3",
+      "tts_generated_at": "2026-06-30T19:01:24.543Z"
     }
   ],
   "tags": [
@@ -53,17 +95,17 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:58:46.526Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:45:12.379Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:14d051ed"
+    "text_hash": "9544eaef414665cc"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",
     "name_en": "generated/name-en.mp3",
     "voice_id_zh": "female-tianmei",
-    "voice_id_en": "male-qn-qingse",
-    "generated_at": "2026-06-30T07:20:13.953Z",
+    "voice_id_en": "English_captivating_female1",
+    "generated_at": "2026-06-30T19:01:24.543Z",
     "tts_model": "speech-2.8-hd",
     "fun_fact": "generated/fun-fact.mp3"
   }

@@ -1,6 +1,6 @@
 {
-  "version": "2026.06.30.42",
-  "generated_at": "2026-06-30T10:04:56.016Z",
+  "version": "2026.07.01.36",
+  "generated_at": "2026-07-01T00:50:13.064Z",
   "total_sounds": 58,
   "total_audio_files": 270,
   "categories": [
@@ -135,10 +135,14 @@
       "name_en": "Bear",
       "emoji": "🐻",
       "description": "森林里的大个子，冬天喜欢睡懒觉",
-      "fun_fact": "棕熊是森林里的大个子，秋天吃得圆滚滚，冬天就躲进洞里呼呼大睡，一睡好几个月不饿肚子！",
+      "fun_fact": "森林里的大个子棕熊，冬天钻进树洞呼呼大睡，能一口气睡上好几个月，连雪堆在身上都不知道。",
       "sounds": [
         {
-          "file": "data/sounds/animals/bear/audio/real_bear1.mp3"
+          "file": "data/sounds/animals/bear/audio/real_bear1.mp3",
+          "label": "",
+          "tags": [],
+          "fun_fact": "",
+          "fun_fact_ai_generated": false
         }
       ],
       "tags": [
@@ -150,20 +154,20 @@
       "source": "https://freesound.org/",
       "contributor": "wbyan2021",
       "added_at": "2026-06-17",
-      "fun_fact_ai_generated": true,
+      "fun_fact_ai_generated": false,
       "ai": {
-        "generated_at": "2026-06-30T08:55:43.765Z",
+        "generated_at": "2026-06-30T17:47:30.312Z",
         "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "f6e7fc00522aadf0"
+        "text_hash": "d1dd344af658b9c5"
       },
       "tts": {
         "name_zh": "data/sounds/animals/bear/generated/name-zh.mp3",
         "name_en": "data/sounds/animals/bear/generated/name-en.mp3",
         "fun_fact": "data/sounds/animals/bear/generated/fun-fact.mp3",
         "voice_id_zh": "female-tianmei",
-        "voice_id_en": "male-qn-qingse",
-        "generated_at": "2026-06-30T07:15:20.378Z",
+        "voice_id_en": "English_captivating_female1",
+        "generated_at": "2026-06-30T15:28:49.393Z",
         "tts_model": "speech-2.8-hd"
       }
     },
@@ -175,10 +179,12 @@
       "name_en": "Bee",
       "emoji": "🐝",
       "description": "勤劳的小飞虫，嗡嗡采花蜜",
-      "fun_fact": "蜜蜂勤劳的小飞虫，嗡嗡飞，采集花蜜。它们的翅膀每秒可拍打200次，真像小小的发动机！",
+      "fun_fact": "小蜜蜂嗡嗡嗡，它把花蜜吸进肚子，回到蜂巢跳起“8”字舞，告诉小伙伴们花在哪里！",
       "sounds": [
         {
-          "file": "data/sounds/animals/bee/audio/bee_buzz1.mp3"
+          "file": "data/sounds/animals/bee/audio/bee_buzz1.mp3",
+          "label": "",
+          "tags": []
         }
       ],
       "tags": [
@@ -192,10 +198,10 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:58:32.374Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:47:33.229Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:5b3b6a4"
+        "text_hash": "ea28a6ad6185875e"
       },
       "tts": {
         "name_zh": "data/sounds/animals/bee/generated/name-zh.mp3",
@@ -215,40 +221,86 @@
       "name_en": "Bird",
       "emoji": "🐦",
       "description": "唱好听的歌，在天空中飞翔",
-      "fun_fact": "小朋友们，你知道吗？小鸟们不仅能在天空中自由飞翔，还会唱出各种好听的歌哦！它们用这些美妙的旋律吸引同伴，一起快乐地生活。下次听到鸟儿唱歌，不妨仔细聆听一下，它们可能在分享故事呢！",
+      "fun_fact": "你知道吗？小鸟唱歌时，喉咙里有个像小喇叭一样的“鸣管”，能一边飞一边唱出各种好听的小曲儿。",
       "sounds": [
         {
-          "file": "data/sounds/animals/bird/audio/bulbul.mp3"
+          "file": "data/sounds/animals/bird/audio/bulbul.mp3",
+          "fun_fact": "白头鹎头顶戴了一朵小白花，最喜欢站在高高的树枝上，“啾啾”地和伙伴打招呼。",
+          "fun_fact_ai_generated": false,
+          "label": "",
+          "tags": [],
+          "tts": "generated/track-0-tts.mp3",
+          "tts_generated_at": "2026-06-30T17:47:09.728Z"
         },
         {
-          "file": "data/sounds/animals/bird/audio/flycatcher1.mp3"
+          "file": "data/sounds/animals/bird/audio/flycatcher1.mp3",
+          "fun_fact": "捕蝇鸟像个小飞行员，嗖地转身，在空中一口咬住飞虫，吃饭都不用停下来。",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-1-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:00:45.822Z"
         },
         {
-          "file": "data/sounds/animals/bird/audio/river_bird.mp3"
+          "file": "data/sounds/animals/bird/audio/river_bird.mp3",
+          "fun_fact": "河边的小鸟最爱在浅水里踩来踩去，用尖尖的嘴巴啄小虫子吃。",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-2-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:00:46.689Z"
         },
         {
-          "file": "data/sounds/animals/bird/audio/sparrows.mp3"
+          "file": "data/sounds/animals/bird/audio/sparrows.mp3",
+          "fun_fact": "麻雀们喜欢成群结队地在地上蹦蹦跳跳，像一群小跳跳豆，一起找谷粒吃。",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-3-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:00:47.885Z"
         },
         {
-          "file": "data/sounds/animals/bird/audio/swallows.mp3"
+          "file": "data/sounds/animals/bird/audio/swallows.mp3",
+          "fun_fact": "小燕子尾巴像一把小剪刀，飞得可快啦，专门捉空中飞来飞去的小虫子吃。",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-4-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:00:48.796Z"
         },
         {
-          "file": "data/sounds/animals/bird/audio/tropical_bird1.mp3"
+          "file": "data/sounds/animals/bird/audio/tropical_bird1.mp3",
+          "fun_fact": "热带小鸟的羽毛像彩虹一样鲜艳，它们最爱在温暖的大树上跳来跳去，找果子吃。",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-5-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:00:49.979Z"
         },
         {
-          "file": "data/sounds/animals/bird/audio/tropical_bird2.mp3"
+          "file": "data/sounds/animals/bird/audio/tropical_bird2.mp3",
+          "fun_fact": "热带小鸟的羽毛像彩虹糖一样鲜艳，它们最喜欢在又高又大的树上叽叽喳喳开音乐会啦。",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-6-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:00:50.978Z"
         },
         {
-          "file": "data/sounds/animals/bird/audio/tropical_bird3.mp3"
+          "file": "data/sounds/animals/bird/audio/tropical_bird3.mp3",
+          "fun_fact": "这只热带小鸟住在茂密的大森林里，羽毛像彩虹一样闪闪发光。",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-7-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:00:51.767Z"
         },
         {
-          "file": "data/sounds/animals/bird/audio/warbler1.mp3"
+          "file": "data/sounds/animals/bird/audio/warbler1.mp3",
+          "fun_fact": "这只小莺藏在树叶间，唱出细细亮亮的歌，像一串小铃铛在风里摇。",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-8-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:00:52.788Z"
         },
         {
-          "file": "data/sounds/animals/bird/audio/warbler2.mp3"
+          "file": "data/sounds/animals/bird/audio/warbler2.mp3",
+          "fun_fact": "小小的莺鸟藏在树叶间，它的歌声清脆得像一串小铃铛，春天里唱得最欢。",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-9-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:00:53.829Z"
         },
         {
-          "file": "data/sounds/animals/bird/audio/warbler3.mp3"
+          "file": "data/sounds/animals/bird/audio/warbler3.mp3",
+          "fun_fact": "这只小莺的歌声像一串清脆的银铃，它虽然比你的手掌还小，却能唱出整片森林最好听的歌。",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-10-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:00:54.907Z"
         }
       ],
       "tags": [
@@ -262,18 +314,18 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:58:35.236Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:47:36.169Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:29593c34"
+        "text_hash": "25da75c735c09459"
       },
       "tts": {
         "name_zh": "data/sounds/animals/bird/generated/name-zh.mp3",
         "name_en": "data/sounds/animals/bird/generated/name-en.mp3",
         "fun_fact": "data/sounds/animals/bird/generated/fun-fact.mp3",
         "voice_id_zh": "female-tianmei",
-        "voice_id_en": "male-qn-qingse",
-        "generated_at": "2026-06-30T07:15:30.928Z",
+        "voice_id_en": "English_captivating_female1",
+        "generated_at": "2026-06-30T19:00:54.907Z",
         "tts_model": "speech-2.8-hd"
       }
     },
@@ -285,7 +337,7 @@
       "name_en": "Cat",
       "emoji": "🐱",
       "description": "毛茸茸的小伙伴，会喵喵叫",
-      "fun_fact": "小猫的脚底有软软的肉垫，走路静悄悄，像穿着小棉鞋，抓老鼠时一点声音都没有哦！",
+      "fun_fact": "小猫开心时会发出咕噜咕噜的声音，像肚子里藏了个小马达，这声音还能帮它们自己放松呢！",
       "sounds": [
         {
           "file": "data/sounds/animals/cat/audio/cat1a.mp3",
@@ -344,10 +396,10 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-30T08:56:12.317Z",
+        "generated_at": "2026-06-30T17:47:39.452Z",
         "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "d1b54fd1b11fd6e4"
+        "text_hash": "6276ac60a81cc998"
       },
       "tts": {
         "name_zh": "data/sounds/animals/cat/generated/name-zh.mp3",
@@ -367,13 +419,21 @@
       "name_en": "Chicken",
       "emoji": "🐔",
       "description": "农场里的妈妈，会咯咯叫",
-      "fun_fact": "母鸡下完蛋，会“咯咯咯”地叫，好像在说：“快看，我下了一个圆圆的蛋！”",
+      "fun_fact": "农场里的母鸡妈妈，下完蛋就会“咯咯哒”叫个不停，好像在喊大家来看新宝宝呢！",
       "sounds": [
         {
-          "file": "data/sounds/animals/chicken/audio/hen_cackle1.mp3"
+          "file": "data/sounds/animals/chicken/audio/hen_cackle1.mp3",
+          "fun_fact": "母鸡下完蛋，会“咯咯咯”地叫，好像在骄傲地报告：“快来看，我下的蛋可棒啦！”",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-0-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:00:58.459Z"
         },
         {
-          "file": "data/sounds/animals/chicken/audio/hen_cackle2.mp3"
+          "file": "data/sounds/animals/chicken/audio/hen_cackle2.mp3",
+          "fun_fact": "母鸡下完蛋，会“咯咯哒”连叫好几声，好像在开心地告诉大家：“快来看我的蛋宝宝！”",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-1-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:00:59.457Z"
         }
       ],
       "tags": [
@@ -387,18 +447,18 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-30T09:19:56.552Z",
+        "generated_at": "2026-06-30T17:47:42.987Z",
         "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "a91435ff746f6243"
+        "text_hash": "a4e1a6c0e5c42168"
       },
       "tts": {
         "name_zh": "data/sounds/animals/chicken/generated/name-zh.mp3",
         "name_en": "data/sounds/animals/chicken/generated/name-en.mp3",
         "fun_fact": "data/sounds/animals/chicken/generated/fun-fact.mp3",
         "voice_id_zh": "female-tianmei",
-        "voice_id_en": "male-qn-qingse",
-        "generated_at": "2026-06-30T07:15:42.000Z",
+        "voice_id_en": "English_captivating_female1",
+        "generated_at": "2026-06-30T19:00:59.457Z",
         "tts_model": "speech-2.8-hd"
       }
     },
@@ -410,7 +470,7 @@
       "name_en": "Cow",
       "emoji": "🐮",
       "description": "农场里的大家伙，哞哞叫",
-      "fun_fact": "在农场里，大家伙奶牛会发出“哞哞”的叫声哦，它们不仅会产奶，还能帮人们耕田呢！",
+      "fun_fact": "奶牛有四个胃，吃下青草后，它会趴在地上慢慢反刍，像在嚼口香糖一样，把草再嚼一遍。",
       "sounds": [
         {
           "file": "data/sounds/animals/cow/audio/cow1.mp3"
@@ -427,10 +487,10 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:58:39.150Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:47:46.400Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:51eac063"
+        "text_hash": "761f111394cff582"
       },
       "tts": {
         "name_zh": "data/sounds/animals/cow/generated/name-zh.mp3",
@@ -450,13 +510,23 @@
       "name_en": "Cricket",
       "emoji": "🦗",
       "description": "草丛里的小歌手，唧唧叫",
-      "fun_fact": "蟋蟀是草丛里的小歌手，每到夜晚就用它们的小翅膀摩擦发出“唧唧”的声音，其实是它们在唱歌吸引小伙伴呢！",
+      "fun_fact": "蟋蟀是草丛里的小歌手，它不用嘴巴唱歌，而是用翅膀摩擦发出“唧唧”声，夜晚开音乐会呢！",
       "sounds": [
         {
-          "file": "data/sounds/animals/cricket/audio/cricket_chirp1.mp3"
+          "file": "data/sounds/animals/cricket/audio/cricket_chirp1.mp3",
+          "fun_fact": "听，草丛里的小歌手蟋蟀，正用翅膀摩擦出“唧唧”声，它是在唱歌找伙伴呢！",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-0-tts.mp3",
+          "tts_generated_at": "2026-06-30T11:31:06.512Z",
+          "label": ""
         },
         {
-          "file": "data/sounds/animals/cricket/audio/cricket_chirp2.mp3"
+          "file": "data/sounds/animals/cricket/audio/cricket_chirp2.mp3",
+          "fun_fact": "夜晚，草丛里的小歌手蟋蟀，正用翅膀“唧唧”地唱歌，那是它们在呼唤朋友呢！",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-1-tts.mp3",
+          "tts_generated_at": "2026-06-30T11:30:47.402Z",
+          "label": ""
         }
       ],
       "tags": [
@@ -470,10 +540,10 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:58:40.997Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:47:49.112Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:69b566fa"
+        "text_hash": "c88d5d4250bd5c78"
       },
       "tts": {
         "name_zh": "data/sounds/animals/cricket/generated/name-zh.mp3",
@@ -493,7 +563,7 @@
       "name_en": "Crocodile",
       "emoji": "🐊",
       "description": "大河里的大家伙，嘴巴特别大",
-      "fun_fact": "鳄鱼生活在大河里，它是爬行类动物。你知道吗？它的嘴巴非常大，里面藏着很多尖尖的牙齿呢！",
+      "fun_fact": "鳄鱼是河里的大家伙，嘴巴特别大，但它的舌头却紧紧贴在嘴底，不会伸出来，像粘住了一样！",
       "sounds": [
         {
           "file": "data/sounds/animals/crocodile/audio/real_crocodile1.mp3"
@@ -510,10 +580,10 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:58:43.152Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:47:52.415Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:431f6774"
+        "text_hash": "994d129d41f27dd1"
       },
       "tts": {
         "name_zh": "data/sounds/animals/crocodile/generated/name-zh.mp3",
@@ -533,31 +603,57 @@
       "name_en": "Crow",
       "emoji": "🐦‍⬛",
       "description": "聪明的黑鸟，嘎嘎叫",
-      "fun_fact": "乌鸦是聪明的黑鸟，它们不仅会嘎嘎叫，还会模仿其他鸟儿的声音哦！",
+      "fun_fact": "乌鸦穿着黑礼服，嘎嘎一叫，原来是在和伙伴聊天。它可是鸟界的小侦探，能记住你的脸呢！",
       "sounds": [
         {
-          "file": "data/sounds/animals/crow/audio/crow1.mp3"
+          "file": "data/sounds/animals/crow/audio/crow1.mp3",
+          "fun_fact": "乌鸦“嘎嘎”叫，是在告诉朋友：“快来，这里有好吃的东西！”",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-0-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:02.784Z"
         },
         {
-          "file": "data/sounds/animals/crow/audio/crow2.mp3"
+          "file": "data/sounds/animals/crow/audio/crow2.mp3",
+          "tts": "generated/track-1-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:03.975Z"
         },
         {
-          "file": "data/sounds/animals/crow/audio/crow3.mp3"
+          "file": "data/sounds/animals/crow/audio/crow3.mp3",
+          "fun_fact": "乌鸦的叫声有几十种，就像在说悄悄话、唱歌或者发警报，能告诉伙伴：这里有好吃的东西！",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-2-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:05.256Z"
         },
         {
-          "file": "data/sounds/animals/crow/audio/crow4.mp3"
+          "file": "data/sounds/animals/crow/audio/crow4.mp3",
+          "tts": "generated/track-3-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:06.598Z"
         },
         {
-          "file": "data/sounds/animals/crow/audio/crow5.mp3"
+          "file": "data/sounds/animals/crow/audio/crow5.mp3",
+          "tts": "generated/track-4-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:07.709Z"
         },
         {
-          "file": "data/sounds/animals/crow/audio/crow6.mp3"
+          "file": "data/sounds/animals/crow/audio/crow6.mp3",
+          "fun_fact": "乌鸦用尖尖的嘴巴叼起一根小树枝，扑扇着翅膀飞回树顶，要盖新房子啦。",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-5-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:08.717Z"
         },
         {
-          "file": "data/sounds/animals/crow/audio/crow7.mp3"
+          "file": "data/sounds/animals/crow/audio/crow7.mp3",
+          "fun_fact": "乌鸦的叫声有很多种，这一声“啊——”，是在告诉同伴这里有好吃的东西。",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-6-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:09.704Z"
         },
         {
-          "file": "data/sounds/animals/crow/audio/crows.mp3"
+          "file": "data/sounds/animals/crow/audio/crows.mp3",
+          "fun_fact": "一群乌鸦好朋友，嘎嘎商量着，一起去找好吃的，还会互相帮忙呢！",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-7-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:10.589Z"
         }
       ],
       "tags": [
@@ -571,18 +667,18 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T17:58:33.025Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:47:55.311Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "5885ab02dfa05ffb"
+        "text_hash": "86317b64ffc655d0"
       },
       "tts": {
         "name_zh": "data/sounds/animals/crow/generated/name-zh.mp3",
         "name_en": "data/sounds/animals/crow/generated/name-en.mp3",
         "fun_fact": "data/sounds/animals/crow/generated/fun-fact.mp3",
         "voice_id_zh": "female-tianmei",
-        "voice_id_en": "male-qn-qingse",
-        "generated_at": "2026-06-30T07:16:00.984Z",
+        "voice_id_en": "English_captivating_female1",
+        "generated_at": "2026-06-30T19:01:10.589Z",
         "tts_model": "speech-2.8-hd"
       }
     },
@@ -594,40 +690,82 @@
       "name_en": "Dog",
       "emoji": "🐶",
       "description": "人类最忠实的朋友，喜欢汪汪叫",
-      "fun_fact": "小狗是人类最忠实的朋友，总是爱用“汪汪”和我们打招呼。它们不仅能听懂我们的话，还能用叫声和尾巴表达自己的感受呢！",
+      "fun_fact": "小狗汪汪叫，不是乱喊哦！它在用声音和你“聊天”：开心时摇尾巴，遇到危险会大叫，它是人类",
       "sounds": [
         {
-          "file": "data/sounds/animals/dog/audio/dog1a.mp3"
+          "file": "data/sounds/animals/dog/audio/dog1a.mp3",
+          "fun_fact": "小狗短促地“汪”一声，是在打招呼呢！有时轻轻“呜呜”，是想让你陪它玩。",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-0-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:14.064Z"
         },
         {
-          "file": "data/sounds/animals/dog/audio/dog2a.mp3"
+          "file": "data/sounds/animals/dog/audio/dog2a.mp3",
+          "tts": "generated/track-1-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:15.126Z"
         },
         {
-          "file": "data/sounds/animals/dog/audio/dog2b.mp3"
+          "file": "data/sounds/animals/dog/audio/dog2b.mp3",
+          "fun_fact": "小狗发出短促的“汪”声，是在开心地邀请你一起玩，尾巴摇得可欢啦！",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-2-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:15.998Z"
         },
         {
-          "file": "data/sounds/animals/dog/audio/dog3a.mp3"
+          "file": "data/sounds/animals/dog/audio/dog3a.mp3",
+          "fun_fact": "小狗听到你回家的脚步声，兴奋地汪汪叫，这是在说：“我好想你呀！”",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-3-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:16.864Z"
         },
         {
-          "file": "data/sounds/animals/dog/audio/dog_barking2.mp3"
+          "file": "data/sounds/animals/dog/audio/dog_barking2.mp3",
+          "fun_fact": "小狗大声汪汪，像在说“有客人来啦！”它竖起耳朵，警惕地看着门口，保护自己的家呢！",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-4-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:17.978Z"
         },
         {
-          "file": "data/sounds/animals/dog/audio/maltese_dog1.mp3"
+          "file": "data/sounds/animals/dog/audio/maltese_dog1.mp3",
+          "fun_fact": "马尔济斯犬全身雪白的长毛软软的，像一团小棉花，跑动时耳朵藏在毛里忽闪忽闪的。",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-5-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:19.137Z"
         },
         {
-          "file": "data/sounds/animals/dog/audio/maltese_dog2.mp3"
+          "file": "data/sounds/animals/dog/audio/maltese_dog2.mp3",
+          "fun_fact": "听，这是马尔济斯犬的叫声——它身体小小的，一身雪白绒毛，声音也细细软软的。",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-6-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:20.226Z"
         },
         {
-          "file": "data/sounds/animals/dog/audio/maltese_dog7.mp3"
+          "file": "data/sounds/animals/dog/audio/maltese_dog7.mp3",
+          "fun_fact": "马尔济斯小狗的叫声细细的，它最爱趴在软垫上等你陪它玩。",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-7-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:21.073Z"
         },
         {
-          "file": "data/sounds/animals/dog/audio/small_dog1.mp3"
+          "file": "data/sounds/animals/dog/audio/small_dog1.mp3",
+          "fun_fact": "小小狗个子小，叫声却尖尖的，它汪汪一喊，就像在说：“嘿，我在这里呢！”",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-8-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:22.173Z"
         },
         {
-          "file": "data/sounds/animals/dog/audio/small_dog2.mp3"
+          "file": "data/sounds/animals/dog/audio/small_dog2.mp3",
+          "fun_fact": "这只小狗个子小，叫声脆脆的，尾巴摇得飞快——它在用“汪汪”说：“快来陪我玩！”",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-9-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:23.340Z"
         },
         {
-          "file": "data/sounds/animals/dog/audio/talking_dog.mp3"
+          "file": "data/sounds/animals/dog/audio/talking_dog.mp3",
+          "fun_fact": "听，这只小狗在“说话”呢！它用不同的叫声告诉你——高兴时短促轻快，紧张时又急又响。",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-10-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:24.543Z"
         }
       ],
       "tags": [
@@ -641,17 +779,17 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:58:46.526Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:45:12.379Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:14d051ed"
+        "text_hash": "9544eaef414665cc"
       },
       "tts": {
         "name_zh": "data/sounds/animals/dog/generated/name-zh.mp3",
         "name_en": "data/sounds/animals/dog/generated/name-en.mp3",
         "voice_id_zh": "female-tianmei",
-        "voice_id_en": "male-qn-qingse",
-        "generated_at": "2026-06-30T07:20:13.953Z",
+        "voice_id_en": "English_captivating_female1",
+        "generated_at": "2026-06-30T19:01:24.543Z",
         "tts_model": "speech-2.8-hd",
         "fun_fact": "data/sounds/animals/dog/generated/fun-fact.mp3"
       }
@@ -664,7 +802,7 @@
       "name_en": "Dolphin",
       "emoji": "🐬",
       "description": "海洋里最聪明的动物，喜欢跳跃",
-      "fun_fact": "海豚是海洋里的超强大脑，它们聪明得就像会游泳的小小博士！它们喜欢在海浪里快乐地跳跃，就像在空中表演杂技一样哦！",
+      "fun_fact": "海豚睡觉时，一半大脑在休息，另一半还在值班，这样它们就不会忘记浮上来呼吸啦！",
       "sounds": [
         {
           "file": "data/sounds/animals/dolphin/audio/real_dolphin1.mp3"
@@ -681,10 +819,10 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:58:48.038Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:48:02.029Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:6b925ac6"
+        "text_hash": "c62c4b7bfb349cae"
       },
       "tts": {
         "name_zh": "data/sounds/animals/dolphin/generated/name-zh.mp3",
@@ -704,7 +842,7 @@
       "name_en": "Donkey",
       "emoji": "🫏",
       "description": "勤劳的长耳朵，会啊啊叫",
-      "fun_fact": "驴是农场上的勤劳小伙伴，它们长着长长的耳朵，特别喜欢用啊啊的声音和大家打招呼呢。",
+      "fun_fact": "驴的“啊啊”叫声能传好几里地，这是它们在跟远处的朋友打招呼呢！勤劳的长耳朵驴，最爱在农场里帮人驮东西。",
       "sounds": [
         {
           "file": "data/sounds/animals/donkey/audio/real_donkey1.mp3"
@@ -721,10 +859,10 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:58:49.428Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:48:05.530Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:6908eea4"
+        "text_hash": "f95fc35ee0ff56a2"
       },
       "tts": {
         "name_zh": "data/sounds/animals/donkey/generated/name-zh.mp3",
@@ -744,13 +882,21 @@
       "name_en": "Dove",
       "emoji": "🕊️",
       "description": "和平的小天使，咕咕叫",
-      "fun_fact": "鸽子不仅是和平的小天使，还会用咕咕声和其它鸽子聊天呢，它们在城市高楼和公园树梢上自由飞翔，喜欢集体生活。",
+      "fun_fact": "鸽子咕咕叫的时候，小脑袋一点一点，其实是在用眼睛悄悄瞄准回家的路呢！",
       "sounds": [
         {
-          "file": "data/sounds/animals/dove/audio/dove_coo1.mp3"
+          "file": "data/sounds/animals/dove/audio/dove_coo1.mp3",
+          "fun_fact": "鸽子咕咕叫时，脖子会鼓得圆圆的，像在吹一个小气球，这是在跟伙伴说悄悄话呢！",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-0-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:28.082Z"
         },
         {
-          "file": "data/sounds/animals/dove/audio/dove_coo2.mp3"
+          "file": "data/sounds/animals/dove/audio/dove_coo2.mp3",
+          "fun_fact": "鸽子咕咕叫的时候，喉咙里的小气囊一鼓一鼓的，声音就是这样挤出来的哦！",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-1-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:29.103Z"
         }
       ],
       "tags": [
@@ -764,16 +910,16 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:58:50.954Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:48:08.674Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:2e7dc84"
+        "text_hash": "370c2041a42c2556"
       },
       "tts": {
         "name_zh": "data/sounds/animals/dove/generated/name-zh.mp3",
         "voice_id_zh": "female-tianmei",
-        "voice_id_en": "male-qn-qingse",
-        "generated_at": "2026-06-30T07:20:25.863Z",
+        "voice_id_en": "English_captivating_female1",
+        "generated_at": "2026-06-30T19:01:29.103Z",
         "tts_model": "speech-2.8-hd",
         "fun_fact": "data/sounds/animals/dove/generated/fun-fact.mp3",
         "name_en": "data/sounds/animals/dove/generated/name-en.mp3"
@@ -787,7 +933,7 @@
       "name_en": "Duck",
       "emoji": "🦆",
       "description": "摇摇摆摆走路，嘎嘎叫",
-      "fun_fact": "嘎嘎嘎，摇摇摆摆的鸭子在农场上忙碌着，它们不仅喜欢游泳，还会在陆地上昂首阔步，可爱极了！",
+      "fun_fact": "鸭子走路摇摇摆摆，可不是为了搞笑——它的腿长在肚子后面，这样在水里游泳才又快又稳！",
       "sounds": [
         {
           "file": "data/sounds/animals/duck/audio/mallard1.mp3"
@@ -804,10 +950,10 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:58:52.185Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:45:24.377Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:68a23df5"
+        "text_hash": "6d76f0f75988af07"
       },
       "tts": {
         "name_zh": "data/sounds/animals/duck/generated/name-zh.mp3",
@@ -827,13 +973,21 @@
       "name_en": "Eagle",
       "emoji": "🦅",
       "description": "天空中的大力士，飞得很高",
-      "fun_fact": "鹰是天空中的大力士，能飞得很高很高，好像在云端玩耍的小伙伴呢！",
+      "fun_fact": "老鹰是天空的“大力士”，能飞到云朵那么高，还能一眼看清地上的小兔子在跑！",
       "sounds": [
         {
-          "file": "data/sounds/animals/eagle/audio/eagle_call1.mp3"
+          "file": "data/sounds/animals/eagle/audio/eagle_call1.mp3",
+          "fun_fact": "老鹰的叫声又尖又亮，能穿过山谷告诉同伴：“我在这里！”",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-0-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:32.452Z"
         },
         {
-          "file": "data/sounds/animals/eagle/audio/eagle_call2.mp3"
+          "file": "data/sounds/animals/eagle/audio/eagle_call2.mp3",
+          "fun_fact": "老鹰的叫声又尖又亮，像在喊“这是我的家”，连山那边都能听见！",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-1-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:33.380Z"
         }
       ],
       "tags": [
@@ -847,16 +1001,16 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:58:53.437Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:48:14.831Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:1b152b6b"
+        "text_hash": "c44bb338d981b7fa"
       },
       "tts": {
         "name_zh": "data/sounds/animals/eagle/generated/name-zh.mp3",
         "voice_id_zh": "female-tianmei",
-        "voice_id_en": "male-qn-qingse",
-        "generated_at": "2026-06-30T07:20:34.652Z",
+        "voice_id_en": "English_captivating_female1",
+        "generated_at": "2026-06-30T19:01:33.380Z",
         "tts_model": "speech-2.8-hd",
         "name_en": "data/sounds/animals/eagle/generated/name-en.mp3",
         "fun_fact": "data/sounds/animals/eagle/generated/fun-fact.mp3"
@@ -870,7 +1024,7 @@
       "name_en": "Elephant",
       "emoji": "🐘",
       "description": "陆地上最大的动物，鼻子超级长",
-      "fun_fact": "哇！大象是陆地上最大的动物呢，它们长长的鼻子超级厉害，可以用来喝水、搬东西，还能和小伙伴打招呼呢！",
+      "fun_fact": "大象是陆地上最大的动物，长长的鼻子像灵巧的手，能卷起树叶，还能喷水洗澡，超厉害！",
       "sounds": [
         {
           "file": "data/sounds/animals/elephant/audio/real_elephant1.mp3"
@@ -887,10 +1041,10 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:58:55.252Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:48:17.371Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:dbb652f"
+        "text_hash": "e917ac5f69e8e479"
       },
       "tts": {
         "name_zh": "data/sounds/animals/elephant/generated/name-zh.mp3",
@@ -910,7 +1064,7 @@
       "name_en": "Fox",
       "emoji": "🦊",
       "description": "聪明的红毛家伙，尾巴很大",
-      "fun_fact": "狐狸是聪明的野生动物，它们有着红红的毛发和大大的尾巴，常在森林和田野里生活。你知道吗？狐狸的大尾巴不仅可以保暖，还能帮助它们保持平衡呢！",
+      "fun_fact": "狐狸的尾巴像一条大围巾，睡觉时它把尾巴盖在鼻子上，这样就能暖暖和和地睡个好觉啦！",
       "sounds": [
         {
           "file": "data/sounds/animals/fox/audio/real_fox1.mp3"
@@ -927,10 +1081,10 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:58:57.311Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:45:32.483Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:2c74e82e"
+        "text_hash": "31c65cdf4d4b024e"
       },
       "tts": {
         "name_zh": "data/sounds/animals/fox/generated/name-zh.mp3",
@@ -990,7 +1144,7 @@
       "name_en": "Goat",
       "emoji": "🐐",
       "description": "喜欢爬山的小家伙，咩咩叫",
-      "fun_fact": "山羊喜欢爬山，边咩咩叫边蹦跳，好像在找最好玩的山顶呢！",
+      "fun_fact": "山羊宝宝是爬山高手！哪怕陡峭的山崖，它们也能稳稳地跳来跳去，咩咩叫着找好吃的。",
       "sounds": [
         {
           "file": "data/sounds/animals/goat/audio/real_goat1.mp3"
@@ -1007,10 +1161,10 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:01.091Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:48:26.610Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:2274313c"
+        "text_hash": "8ae84d29faf27b4b"
       },
       "tts": {
         "name_en": "data/sounds/animals/goat/generated/name-en.mp3",
@@ -1030,7 +1184,7 @@
       "name_en": "Gorilla",
       "emoji": "🦍",
       "description": "森林里的大个子，力气很大",
-      "fun_fact": "大猩猩是森林里的大力士，它的力量可以和好几只老虎相比呢！",
+      "fun_fact": "大猩猩是森林里的大力士，生气时会咚咚咚地拍胸口，告诉别人：“别惹我，我超厉害！”",
       "sounds": [
         {
           "file": "data/sounds/animals/gorilla/audio/real_gorilla1.mp3"
@@ -1047,10 +1201,10 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:02.143Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:48:29.650Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:792a9d94"
+        "text_hash": "b9e61bb9e9aa7c57"
       },
       "tts": {
         "name_zh": "data/sounds/animals/gorilla/generated/name-zh.mp3",
@@ -1110,7 +1264,7 @@
       "name_en": "Lion",
       "emoji": "🦁",
       "description": "草原上的大猫，吼声很响亮",
-      "fun_fact": "草原上威风凛凛的大猫——狮子，它们的吼声可以传得很远，就像草原上的小喇叭，可以和远处的伙伴们交流呢！",
+      "fun_fact": "狮子是草原上的大猫，吼声特别响亮，能传8公里远，好像在告诉所有动物：“我在这里！”",
       "sounds": [
         {
           "file": "data/sounds/animals/lion/audio/real_lion1.mp3"
@@ -1127,10 +1281,10 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:06.163Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:48:37.268Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:1dd73b63"
+        "text_hash": "cf0a8f96ecd7cfc5"
       },
       "tts": {
         "name_zh": "data/sounds/animals/lion/generated/name-zh.mp3",
@@ -1150,7 +1304,7 @@
       "name_en": "Monkey",
       "emoji": "🐒",
       "description": "爱爬树的调皮鬼，吱吱叫",
-      "fun_fact": "嘿，孩子们！你们知道猴子是个爱爬树的调皮鬼吗？它们吱吱叫着，在树上跳来跳去，就像空中飞人一样！",
+      "fun_fact": "小猴子尾巴像钩子，能紧紧勾住树枝，倒挂着荡秋千，调皮又灵巧！",
       "sounds": [
         {
           "file": "data/sounds/animals/monkey/audio/real_monkey1.mp3"
@@ -1167,10 +1321,10 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:07.942Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:48:39.397Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:5153152f"
+        "text_hash": "4fc635dfc0af92c0"
       },
       "tts": {
         "name_zh": "data/sounds/animals/monkey/generated/name-zh.mp3",
@@ -1190,13 +1344,21 @@
       "name_en": "Mosquito",
       "emoji": "🦟",
       "description": "嗡嗡飞的小虫子，喜欢叮人",
-      "fun_fact": "嗡嗡~小心啦！蚊子是个会飞的小虫子，喜欢在晚上悄悄叮你，吸你的血哦！",
+      "fun_fact": "嗡嗡嗡，蚊子飞来啦！告诉你一个小秘密：只有蚊子妈妈才爱叮人，蚊子爸爸只喝花蜜，从不咬一口！",
       "sounds": [
         {
-          "file": "data/sounds/animals/mosquito/audio/mosquito_buzz1.mp3"
+          "file": "data/sounds/animals/mosquito/audio/mosquito_buzz1.mp3",
+          "fun_fact": "蚊子飞的时候，翅膀扇得好快好快，就会发出“嗡嗡嗡”的声音。",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-0-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:36.740Z"
         },
         {
-          "file": "data/sounds/animals/mosquito/audio/mosquito_buzz2.mp3"
+          "file": "data/sounds/animals/mosquito/audio/mosquito_buzz2.mp3",
+          "fun_fact": "蚊子飞的时候，翅膀扇得好快，发出“嗡嗡嗡”的响声，就像在说：我来啦！",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-1-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:37.821Z"
         }
       ],
       "tags": [
@@ -1210,16 +1372,16 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:09.216Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:48:42.231Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:2d05b2f"
+        "text_hash": "98a2c9f4e23deb0b"
       },
       "tts": {
         "name_zh": "data/sounds/animals/mosquito/generated/name-zh.mp3",
         "voice_id_zh": "female-tianmei",
-        "voice_id_en": "male-qn-qingse",
-        "generated_at": "2026-06-30T07:21:12.710Z",
+        "voice_id_en": "English_captivating_female1",
+        "generated_at": "2026-06-30T19:01:37.821Z",
         "tts_model": "speech-2.8-hd",
         "name_en": "data/sounds/animals/mosquito/generated/name-en.mp3",
         "fun_fact": "data/sounds/animals/mosquito/generated/fun-fact.mp3"
@@ -1233,13 +1395,19 @@
       "name_en": "Mouse",
       "emoji": "🐭",
       "description": "小小的小家伙，吱吱叫",
-      "fun_fact": "吱吱叫的小老鼠，别看个头小，听力可灵敏啦，能听到超声波哦！它们用超声波找朋友、找食物，真是聪明又可爱！",
+      "fun_fact": "小老鼠吱吱叫，它的门牙会一直长，所以要不停咬东西磨牙，不然牙齿会太长哦！",
       "sounds": [
         {
-          "file": "data/sounds/animals/mouse/audio/mouse_squeak1.mp3"
+          "file": "data/sounds/animals/mouse/audio/mouse_squeak1.mp3",
+          "fun_fact": "小老鼠的吱吱声又细又尖，像是在说悄悄话，有时找伙伴，有时提醒大家小心。",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-0-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:41.437Z"
         },
         {
-          "file": "data/sounds/animals/mouse/audio/mouse_squeak2.mp3"
+          "file": "data/sounds/animals/mouse/audio/mouse_squeak2.mp3",
+          "fun_fact": "老鼠吱吱叫，是在跟伙伴说悄悄话：这里有好吃的，快来呀！",
+          "fun_fact_ai_generated": true
         }
       ],
       "tags": [
@@ -1253,16 +1421,16 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:11.462Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:48:45.200Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:2e3b04bd"
+        "text_hash": "1df61b15e939c2a8"
       },
       "tts": {
         "name_zh": "data/sounds/animals/mouse/generated/name-zh.mp3",
         "voice_id_zh": "female-tianmei",
-        "voice_id_en": "male-qn-qingse",
-        "generated_at": "2026-06-30T07:21:17.026Z",
+        "voice_id_en": "English_captivating_female1",
+        "generated_at": "2026-06-30T19:01:41.676Z",
         "tts_model": "speech-2.8-hd",
         "name_en": "data/sounds/animals/mouse/generated/name-en.mp3",
         "fun_fact": "data/sounds/animals/mouse/generated/fun-fact.mp3"
@@ -1276,7 +1444,7 @@
       "name_en": "Owl",
       "emoji": "🦉",
       "description": "夜晚不睡觉的大眼睛，咕咕叫",
-      "fun_fact": "猫头鹰的眼睛大大的，像两盏明亮的灯，在黑夜中也能看清东西。它们晚上不睡觉，咕咕的叫声在寂静中响起，像是在和月亮打招呼呢。",
+      "fun_fact": "猫头鹰的眼睛大大的，晚上不睡觉，脖子能转一个大圆圈，咕咕叫着找食物，真神奇！",
       "sounds": [
         {
           "file": "data/sounds/animals/owl/audio/owl.mp3"
@@ -1293,10 +1461,10 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:13.289Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:48:47.704Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:4b6272b3"
+        "text_hash": "b27e51c5cbe9a662"
       },
       "tts": {
         "name_zh": "data/sounds/animals/owl/generated/name-zh.mp3",
@@ -1316,7 +1484,7 @@
       "name_en": "Parrot",
       "emoji": "🦜",
       "description": "会学人说话的彩色小鸟",
-      "fun_fact": "鹦鹉不仅长着五彩斑斓的羽毛，还能模仿人类说话哦！它们有超强的记忆力，能学会很多单词和短句呢！",
+      "fun_fact": "鹦鹉是彩色的小鸟，舌头又软又灵活，能像小喇叭一样模仿你说话，真神奇！",
       "sounds": [
         {
           "file": "data/sounds/animals/parrot/audio/real_parrot1.mp3"
@@ -1333,10 +1501,10 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:14.870Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:48:50.491Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:47c39d"
+        "text_hash": "8fe4c1d881bb626a"
       },
       "tts": {
         "name_zh": "data/sounds/animals/parrot/generated/name-zh.mp3",
@@ -1356,7 +1524,7 @@
       "name_en": "Peacock",
       "emoji": "🦚",
       "description": "最美的鸟，会开屏",
-      "fun_fact": "孔雀，一种超美的鸟儿，它开屏的时候就像一面五彩的扇子呢！它生活在森林里，开屏不只是为了好看，还能帮它找到朋友呢。",
+      "fun_fact": "孔雀开屏时，尾巴像一把大扇子，上面的“眼睛”能吓跑敌人，还能吸引女朋友哦！",
       "sounds": [
         {
           "file": "data/sounds/animals/peacock/audio/real_peacock1.mp3"
@@ -1373,10 +1541,10 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:16.865Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:48:52.953Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:7ea9f06f"
+        "text_hash": "f728bc6672a2e4fe"
       },
       "tts": {
         "name_zh": "data/sounds/animals/peacock/generated/name-zh.mp3",
@@ -1396,7 +1564,7 @@
       "name_en": "Penguin",
       "emoji": "🐧",
       "description": "穿燕尾服的南极居民，摇摇摆摆",
-      "fun_fact": "你知道吗？企鹅是穿着燕尾服的南极居民，走起路来摇摇摆摆，像个小绅士。",
+      "fun_fact": "企鹅是穿“燕尾服”的南极小鸟，不会飞，但摇摇摆摆走路像个小绅士。",
       "sounds": [
         {
           "file": "data/sounds/animals/penguin/audio/real_penguin1.mp3"
@@ -1413,10 +1581,10 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:18.226Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:48:55.862Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:3b05e7a9"
+        "text_hash": "0cce59ebd3809cf3"
       },
       "tts": {
         "name_zh": "data/sounds/animals/penguin/generated/name-zh.mp3",
@@ -1436,7 +1604,7 @@
       "name_en": "Pig",
       "emoji": "🐷",
       "description": "粉嘟嘟的胖家伙，哼哼叫",
-      "fun_fact": "猪是粉嘟嘟的胖家伙，在农场里哼哼叫着找食物，它们聪明又喜欢社交哦！",
+      "fun_fact": "小猪虽然爱在泥坑里打滚，但它们其实特别爱干净，滚泥巴是为了凉快和赶走小虫子哦！",
       "sounds": [
         {
           "file": "data/sounds/animals/pig/audio/real_pig1.mp3"
@@ -1453,10 +1621,10 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:19.953Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:48:58.013Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:5ed3a110"
+        "text_hash": "57c663bcfd51ec62"
       },
       "tts": {
         "name_zh": "data/sounds/animals/pig/generated/name-zh.mp3",
@@ -1476,7 +1644,7 @@
       "name_en": "Rooster",
       "emoji": "🐓",
       "description": "农场里的大嗓门，喔喔叫",
-      "fun_fact": "你知道吗？农场里的大嗓门公鸡，喔喔叫其实是它们在唱歌呢！早上一叫，就是告诉所有人新的一天开始了！",
+      "fun_fact": "公鸡喔喔叫，是为了告诉别的公鸡：“这是我的地盘！”它可是农场里的天然闹钟哦。",
       "sounds": [
         {
           "file": "data/sounds/animals/rooster/audio/real_rooster1.mp3"
@@ -1493,10 +1661,10 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:21.368Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:45:43.985Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:1f64752d"
+        "text_hash": "7b6e30dba5603213"
       },
       "tts": {
         "name_zh": "data/sounds/animals/rooster/generated/name-zh.mp3",
@@ -1556,13 +1724,21 @@
       "name_en": "Sheep",
       "emoji": "🐑",
       "description": "穿厚毛衣的软绵绵，咩咩叫",
-      "fun_fact": "绵羊在农场里咩咩叫，它们穿着厚厚的毛衣——其实是它们自己的毛哦！每到春天，羊毛就会被剪下来，做成温暖的衣服和毛毯呢！",
+      "fun_fact": "绵羊穿着厚厚的毛毛衣，咩咩叫。它的毛会一直长，如果不剪，就会像拖把一样拖到地上啦！",
       "sounds": [
         {
-          "file": "data/sounds/animals/sheep/audio/real_sheep1.mp3"
+          "file": "data/sounds/animals/sheep/audio/real_sheep1.mp3",
+          "fun_fact": "听，这是真的绵羊咩咩叫，声音又粗又慢，和动画片里的不一样哦。",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-0-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:45.128Z"
         },
         {
-          "file": "data/sounds/animals/sheep/audio/real_sheep2.mp3"
+          "file": "data/sounds/animals/sheep/audio/real_sheep2.mp3",
+          "fun_fact": "听，这是真的小绵羊在“咩——咩——”叫，它正呼唤着小伙伴一起在草地上散步呢。",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-1-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:46.228Z"
         }
       ],
       "tags": [
@@ -1576,16 +1752,16 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:24.851Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T18:34:14.468Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:7a31e2c9"
+        "text_hash": "625a386651ba7801"
       },
       "tts": {
         "name_zh": "data/sounds/animals/sheep/generated/name-zh.mp3",
         "voice_id_zh": "female-tianmei",
-        "voice_id_en": "male-qn-qingse",
-        "generated_at": "2026-06-30T07:21:52.098Z",
+        "voice_id_en": "English_captivating_female1",
+        "generated_at": "2026-06-30T19:01:46.228Z",
         "tts_model": "speech-2.8-hd",
         "name_en": "data/sounds/animals/sheep/generated/name-en.mp3",
         "fun_fact": "data/sounds/animals/sheep/generated/fun-fact.mp3"
@@ -1599,7 +1775,7 @@
       "name_en": "Snake",
       "emoji": "🐍",
       "description": "没有脚的长家伙，嘶嘶叫",
-      "fun_fact": "蛇是滑溜溜的爬行动物，虽然没有脚，但它可以用身体像波浪一样移动，悄无声息地滑行哦！它们还喜欢嘶嘶地叫，像在说悄悄话呢！",
+      "fun_fact": "蛇没有脚，靠肚子上的鳞片当“小脚丫”，滑溜溜地在地上扭来扭去，还能用舌头闻味道呢！",
       "sounds": [
         {
           "file": "data/sounds/animals/snake/audio/real_snake1.mp3"
@@ -1616,10 +1792,10 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:26.980Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:49:10.602Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:94836dd"
+        "text_hash": "8ea2399a7f264421"
       },
       "tts": {
         "name_zh": "data/sounds/animals/snake/generated/name-zh.mp3",
@@ -1639,7 +1815,7 @@
       "name_en": "Swan",
       "emoji": "🦢",
       "description": "湖面上优雅的白裙子",
-      "fun_fact": "湖面上，优雅的天鹅身穿洁白如雪的裙子，它们是鸟类中的优雅舞者，在水面上翩翩起舞。",
+      "fun_fact": "天鹅在水上漂，脖子弯成S形，像穿白裙子跳芭蕾。飞起来时，翅膀“呼呼”响，能飞到珠穆朗玛峰那么高呢！",
       "sounds": [
         {
           "file": "data/sounds/animals/swan/audio/real_swan1.mp3"
@@ -1656,10 +1832,10 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:28.484Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:45:58.129Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:13760fda"
+        "text_hash": "785400e0fd815600"
       },
       "tts": {
         "name_zh": "data/sounds/animals/swan/generated/name-zh.mp3",
@@ -1679,13 +1855,19 @@
       "name_en": "Tiger",
       "emoji": "🐯",
       "description": "森林里的大猫，身上有花纹",
-      "fun_fact": "嘿，你知道吗？森林里的大猫老虎，身上的花纹就像它们的迷彩服，帮助它们在树木间悄悄接近猎物哦！",
+      "fun_fact": "老虎身上的花纹，每只都不一样，就像你的小手指印，全世界只有这一个！",
       "sounds": [
         {
-          "file": "data/sounds/animals/tiger/audio/tiger_growl1.mp3"
+          "file": "data/sounds/animals/tiger/audio/tiger_growl1.mp3",
+          "fun_fact": "老虎的吼叫声很大，能传到两公里外，就像在喊：“这是我的家！”",
+          "fun_fact_ai_generated": true,
+          "tts": "generated/track-0-tts.mp3",
+          "tts_generated_at": "2026-06-30T19:01:49.693Z"
         },
         {
-          "file": "data/sounds/animals/tiger/audio/tiger_growl2.mp3"
+          "file": "data/sounds/animals/tiger/audio/tiger_growl2.mp3",
+          "fun_fact": "老虎的吼叫声能传到两公里外，像是在说：“这是我的家！”",
+          "fun_fact_ai_generated": true
         }
       ],
       "tags": [
@@ -1699,16 +1881,16 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:30.855Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:49:17.358Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:3cb1f33"
+        "text_hash": "5130c61072350d58"
       },
       "tts": {
         "name_en": "data/sounds/animals/tiger/generated/name-en.mp3",
         "voice_id_zh": "female-tianmei",
-        "voice_id_en": "male-qn-qingse",
-        "generated_at": "2026-06-30T07:22:05.479Z",
+        "voice_id_en": "English_captivating_female1",
+        "generated_at": "2026-06-30T19:01:49.801Z",
         "tts_model": "speech-2.8-hd",
         "name_zh": "data/sounds/animals/tiger/generated/name-zh.mp3",
         "fun_fact": "data/sounds/animals/tiger/generated/fun-fact.mp3"
@@ -1722,7 +1904,7 @@
       "name_en": "Whale",
       "emoji": "🐋",
       "description": "海洋里最大的动物，会唱歌",
-      "fun_fact": "你知道吗？海洋里最大的动物是鲸鱼，它们会发出美妙的歌声，像在唱海洋之歌。",
+      "fun_fact": "鲸鱼是海洋里最大的动物，它们还会唱歌呢！大鲸鱼唱起歌来，海底就像在开音乐会。",
       "sounds": [
         {
           "file": "data/sounds/animals/whale/audio/real_whale1.mp3"
@@ -1739,10 +1921,10 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:32.109Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:49:20.552Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:4a13e5b7"
+        "text_hash": "4be9667bdcb14691"
       },
       "tts": {
         "name_zh": "data/sounds/animals/whale/generated/name-zh.mp3",
@@ -1762,7 +1944,7 @@
       "name_en": "Wolf",
       "emoji": "🐺",
       "description": "夜晚对着月亮叫的家伙",
-      "fun_fact": "灰狼在月圆之夜对着月亮嚎叫，不是为了表达孤独，而是为了和远方的伙伴们交流呢！",
+      "fun_fact": "灰狼晚上“嗷呜”大叫，可不是在跟月亮聊天——它在喊远处的伙伴：“集合啦，我在这儿呢！”",
       "sounds": [
         {
           "file": "data/sounds/animals/wolf/audio/wolf_howl1.mp3"
@@ -1779,10 +1961,10 @@
       "added_at": "2026-06-17",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:33.949Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:49:23.307Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:544ef67a"
+        "text_hash": "d8320ec1953e8e1e"
       },
       "tts": {
         "fun_fact": "data/sounds/animals/wolf/generated/fun-fact.mp3",
@@ -1842,7 +2024,7 @@
       "name_en": "Doorbell",
       "emoji": "🔔",
       "description": "门铃叮咚响，有客人来了",
-      "fun_fact": "叮咚，门铃响了，这是告诉你有客人来了家门哦。它的声音就像猫咪的喵喵，小狗的汪汪，能传递信息呢！",
+      "fun_fact": "按一下门铃，里面有个小锤子轻轻敲打小铁片，“叮咚”一声，告诉你：有客人来啦！",
       "sounds": [
         {
           "file": "data/sounds/life/doorbell/audio/doorbell_1.mp3"
@@ -1859,10 +2041,10 @@
       "added_at": "2026-06-26",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:37.211Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:49:29.096Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:1325211a"
+        "text_hash": "4107bdce27d2c6a4"
       },
       "tts": {
         "name_zh": "data/sounds/life/doorbell/generated/name-zh.mp3",
@@ -1882,7 +2064,7 @@
       "name_en": "Drum",
       "emoji": "🥁",
       "description": "咚咚咚的鼓声",
-      "fun_fact": "咚咚咚的鼓声不仅好听，其实还能传递信息呢！像一些小动物，比如青蛙，用它们的“鼓”——肚子，敲出不同的节奏来和同伴们交流呢！",
+      "fun_fact": "鼓的肚子空空的，敲一敲，皮就跳起来，发出“咚咚咚”的声音，像小动物在跑步！",
       "sounds": [
         {
           "file": "data/sounds/life/drum/audio/drum_1.mp3"
@@ -1899,10 +2081,10 @@
       "added_at": "2026-06-26",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:38.879Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:49:31.678Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:77d01e2d"
+        "text_hash": "2d16d2a7158c59cb"
       },
       "tts": {
         "name_zh": "data/sounds/life/drum/generated/name-zh.mp3",
@@ -1922,7 +2104,7 @@
       "name_en": "Frying",
       "emoji": "🍳",
       "description": "炒菜滋滋啦啦的声音",
-      "fun_fact": "炒菜时滋滋啦啦的声音，是因为热油和食材接触时产生的水蒸气呀，就像是在和食物玩耍，发出的快乐声音呢！",
+      "fun_fact": "炒菜时“滋滋”响，是水滴跳进热油里，变成小水蒸气在油里蹦跶跳舞呢！",
       "sounds": [
         {
           "file": "data/sounds/life/frying/audio/frying_1.mp3"
@@ -1939,10 +2121,10 @@
       "added_at": "2026-06-26",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:40.419Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:49:34.216Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:5ae94553"
+        "text_hash": "fba98996e0c2313b"
       },
       "tts": {
         "name_zh": "data/sounds/life/frying/generated/name-zh.mp3",
@@ -1962,7 +2144,7 @@
       "name_en": "Guitar",
       "emoji": "🎸",
       "description": "吉他弹奏的声音",
-      "fun_fact": "小吉他很会唱歌，拨动它的弦，就会发出美妙的音乐哦！",
+      "fun_fact": "吉他有个空空的“大肚子”，拨动六根“小绳子”，声音就在肚子里跳舞，叮叮咚咚跳出来啦！",
       "sounds": [
         {
           "file": "data/sounds/life/guitar/audio/guitar_1.mp3"
@@ -1979,10 +2161,10 @@
       "added_at": "2026-06-26",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:41.814Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:49:37.436Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:47084e75"
+        "text_hash": "c240d673d697b8a1"
       },
       "tts": {
         "name_zh": "data/sounds/life/guitar/generated/name-zh.mp3",
@@ -2002,7 +2184,7 @@
       "name_en": "Microwave",
       "emoji": "📟",
       "description": "微波炉嗡嗡工作的声音",
-      "fun_fact": "微波炉在工作时发出的嗡嗡声其实是因为它在快速转动食物，让微波均匀加热哦！",
+      "fun_fact": "微波炉“嗡嗡”响，是里面有个小风扇在转，帮它把看不见的微波能量送进食物里，让饭菜热起来！",
       "sounds": [
         {
           "file": "data/sounds/life/microwave/audio/microwave_1.mp3"
@@ -2019,10 +2201,10 @@
       "added_at": "2026-06-26",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:43.661Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:49:40.192Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:4fb6911"
+        "text_hash": "48d328124608858e"
       },
       "tts": {
         "name_zh": "data/sounds/life/microwave/generated/name-zh.mp3",
@@ -2042,7 +2224,7 @@
       "name_en": "Piano",
       "emoji": "🎹",
       "description": "钢琴叮叮咚咚的声音",
-      "fun_fact": "叮叮咚咚的声音来自钢琴，它是一种很大很厉害的乐器哦！钢琴用黑白键敲击钢丝，发出美妙的音乐。",
+      "fun_fact": "钢琴是个大黑盒子，里面有好多小锤子，敲着粗细不同的琴弦，就叮叮咚咚唱起了歌。",
       "sounds": [
         {
           "file": "data/sounds/life/piano/audio/piano_1.mp3"
@@ -2059,10 +2241,10 @@
       "added_at": "2026-06-26",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:45.265Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:49:42.875Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:65f5ff9a"
+        "text_hash": "d37e6aa701955871"
       },
       "tts": {
         "name_zh": "data/sounds/life/piano/generated/name-zh.mp3",
@@ -2082,7 +2264,7 @@
       "name_en": "Telephone",
       "emoji": "📞",
       "description": "电话铃声响，快接电话",
-      "fun_fact": "\"当电话铃声响起，就像家里的小鸟在唱歌，它在提醒我们有朋友想聊天啦！接电话，就像跟小鸟对话一样，了解朋友的新消息。\"",
+      "fun_fact": "家里的电话叮铃铃响，就像在喊：“快接我！”这是有人想和你说话啦，声音会一直响到你拿起听筒。",
       "sounds": [
         {
           "file": "data/sounds/life/telephone/audio/telephone_1.mp3"
@@ -2099,10 +2281,10 @@
       "added_at": "2026-06-26",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:46.892Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:49:45.762Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:5c4dc002"
+        "text_hash": "997039e801de7e59"
       },
       "tts": {
         "name_zh": "data/sounds/life/telephone/generated/name-zh.mp3",
@@ -2122,7 +2304,7 @@
       "name_en": "Campfire",
       "emoji": "🔥",
       "description": "篝火噼里啪啦地烧",
-      "fun_fact": "篝火噼里啪啦烧起来，其实是木头里的空气和水在舞蹈呢！它们被火先生的热情邀请，变成气泡，跳出来时就发出了响声。",
+      "fun_fact": "篝火里的木头藏着“小水泡”，一烧热就“嘭”地炸开，所以篝火会噼里啪啦地唱歌！",
       "sounds": [
         {
           "file": "data/sounds/nature/campfire/audio/campfire_1.mp3"
@@ -2139,10 +2321,10 @@
       "added_at": "2026-06-26",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:48.737Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:49:48.291Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:75d39f62"
+        "text_hash": "6ecdd1cb264a55f3"
       },
       "tts": {
         "name_zh": "data/sounds/nature/campfire/generated/name-zh.mp3",
@@ -2150,7 +2332,7 @@
         "fun_fact": "data/sounds/nature/campfire/generated/fun-fact.mp3",
         "voice_id_zh": "female-tianmei",
         "voice_id_en": "male-qn-qingse",
-        "generated_at": "2026-06-30T07:18:22.816Z",
+        "generated_at": "2026-06-30T11:33:32.057Z",
         "tts_model": "speech-2.8-hd"
       }
     },
@@ -2190,7 +2372,7 @@
         "fun_fact": "data/sounds/nature/forest/generated/fun-fact.mp3",
         "voice_id_zh": "female-tianmei",
         "voice_id_en": "male-qn-qingse",
-        "generated_at": "2026-06-30T07:18:26.429Z",
+        "generated_at": "2026-06-30T11:33:36.618Z",
         "tts_model": "speech-2.8-hd"
       }
     },
@@ -2202,7 +2384,7 @@
       "name_en": "Ocean Waves",
       "emoji": "🌊",
       "description": "海浪拍打沙滩，哗啦哗啦",
-      "fun_fact": "海浪是大海的歌声，它们哗啦哗啦拍打着沙滩，就像是大自然在唱歌。",
+      "fun_fact": "海浪哗啦哗啦拍沙滩，其实是能量在跳舞，水宝宝们只是原地转圈圈，并没有跑远哦！",
       "sounds": [
         {
           "file": "data/sounds/nature/ocean_waves/audio/ocean_waves_1.mp3"
@@ -2219,10 +2401,10 @@
       "added_at": "2026-06-26",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:51.063Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T18:33:52.483Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:74a14d26"
+        "text_hash": "64ee7c79dfb76662"
       },
       "tts": {
         "name_zh": "data/sounds/nature/ocean_waves/generated/name-zh.mp3",
@@ -2230,7 +2412,7 @@
         "fun_fact": "data/sounds/nature/ocean_waves/generated/fun-fact.mp3",
         "voice_id_zh": "female-tianmei",
         "voice_id_en": "male-qn-qingse",
-        "generated_at": "2026-06-30T07:18:29.863Z",
+        "generated_at": "2026-06-30T11:33:41.827Z",
         "tts_model": "speech-2.8-hd"
       }
     },
@@ -2242,7 +2424,7 @@
       "name_en": "Rain",
       "emoji": "🌧️",
       "description": "雨水落下的声音，滴滴答答",
-      "fun_fact": "哗啦啦，雨水像小精灵一样跳到地上，发出滴滴答答的声音。雨落下的时候，天空好像在弹奏美妙的音乐呢！",
+      "fun_fact": "雨滴落在屋顶上“滴滴答答”，落在树叶上“沙沙沙”——原来雨滴会演奏不一样的歌，你听见了吗？",
       "sounds": [
         {
           "file": "data/sounds/nature/rain/audio/rain_1.mp3"
@@ -2259,10 +2441,10 @@
       "added_at": "2026-06-26",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:52.516Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:49:57.637Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:1e783db5"
+        "text_hash": "639aea7afe5a9da2"
       },
       "tts": {
         "name_zh": "data/sounds/nature/rain/generated/name-zh.mp3",
@@ -2270,7 +2452,7 @@
         "fun_fact": "data/sounds/nature/rain/generated/fun-fact.mp3",
         "voice_id_zh": "female-tianmei",
         "voice_id_en": "male-qn-qingse",
-        "generated_at": "2026-06-30T07:18:34.513Z",
+        "generated_at": "2026-06-30T11:33:47.160Z",
         "tts_model": "speech-2.8-hd"
       }
     },
@@ -2282,7 +2464,7 @@
       "name_en": "Stream",
       "emoji": "🏞️",
       "description": "山间小溪哗啦啦地流",
-      "fun_fact": "小溪哗啦啦地流，像山间的小精灵在唱歌，水里住着小鱼和石头。水清清，鱼儿游，小溪是自然的悄悄话。",
+      "fun_fact": "山间小溪哗啦啦地流，它们从高高的山上蹦跳着往下跑，一路遇见小石头，就绕个弯，忙不停！",
       "sounds": [
         {
           "file": "data/sounds/nature/stream/audio/stream_1.mp3"
@@ -2299,10 +2481,10 @@
       "added_at": "2026-06-26",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:54.940Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:50:00.874Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:258686df"
+        "text_hash": "b35598a4ce6e7732"
       },
       "tts": {
         "name_zh": "data/sounds/nature/stream/generated/name-zh.mp3",
@@ -2310,7 +2492,7 @@
         "fun_fact": "data/sounds/nature/stream/generated/fun-fact.mp3",
         "voice_id_zh": "female-tianmei",
         "voice_id_en": "male-qn-qingse",
-        "generated_at": "2026-06-30T07:18:37.960Z",
+        "generated_at": "2026-06-30T11:33:51.597Z",
         "tts_model": "speech-2.8-hd"
       }
     },
@@ -2322,7 +2504,7 @@
       "name_en": "Thunder",
       "emoji": "🌩️",
       "description": "打雷轰隆隆，闪电亮晶晶",
-      "fun_fact": "轰隆隆，打雷了！当天空中的云朵们吵架时，就会发出响亮的雷声，闪电像天空中的银线，一闪一闪亮晶晶！",
+      "fun_fact": "闪电和雷声是好朋友，它们一起出现。闪电跑得快，先亮晶晶；雷声慢悠悠，后轰隆隆。",
       "sounds": [
         {
           "file": "data/sounds/nature/thunder/audio/thunder_1.mp3"
@@ -2339,10 +2521,10 @@
       "added_at": "2026-06-26",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:56.495Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:50:03.834Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:3e6c5b01"
+        "text_hash": "2041c34d96029684"
       },
       "tts": {
         "name_zh": "data/sounds/nature/thunder/generated/name-zh.mp3",
@@ -2350,7 +2532,7 @@
         "fun_fact": "data/sounds/nature/thunder/generated/fun-fact.mp3",
         "voice_id_zh": "female-tianmei",
         "voice_id_en": "male-qn-qingse",
-        "generated_at": "2026-06-30T07:18:41.340Z",
+        "generated_at": "2026-06-30T11:33:56.076Z",
         "tts_model": "speech-2.8-hd"
       }
     },
@@ -2362,7 +2544,7 @@
       "name_en": "Wind",
       "emoji": "💨",
       "description": "风吹过树叶沙沙响",
-      "fun_fact": "风宝宝跑得快，轻轻一吹，树叶就沙沙响。它有时温柔，有时又像调皮的小孩，带着雨水到处跑。",
+      "fun_fact": "风是个看不见的淘气包，跑过树叶时，叶子就“沙沙沙”地唱起歌来。",
       "sounds": [
         {
           "file": "data/sounds/nature/wind/audio/wind_1.mp3"
@@ -2379,10 +2561,10 @@
       "added_at": "2026-06-26",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:58.067Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:50:05.926Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:7cc342ec"
+        "text_hash": "60bf748c8260550b"
       },
       "tts": {
         "name_zh": "data/sounds/nature/wind/generated/name-zh.mp3",
@@ -2390,7 +2572,7 @@
         "fun_fact": "data/sounds/nature/wind/generated/fun-fact.mp3",
         "voice_id_zh": "female-tianmei",
         "voice_id_en": "male-qn-qingse",
-        "generated_at": "2026-06-30T07:18:44.666Z",
+        "generated_at": "2026-06-30T11:34:00.945Z",
         "tts_model": "speech-2.8-hd"
       }
     },
@@ -2402,7 +2584,7 @@
       "name_en": "Airplane",
       "emoji": "✈️",
       "description": "飞机飞过头顶的轰鸣声",
-      "fun_fact": "轰隆隆，飞机像大鸟一样在天空中翱翔，它的轰鸣声让我们抬头就能看见它在白云间划过的痕迹呢！",
+      "fun_fact": "飞机轰隆隆飞过头顶，是它的大“鼻子”发动机在使劲吸气、呼气，把空气往后推，自己就往前冲啦！",
       "sounds": [
         {
           "file": "data/sounds/transport/airplane/audio/airplane_1.mp3"
@@ -2419,10 +2601,10 @@
       "added_at": "2026-06-26",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T16:59:59.677Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:50:08.576Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:3213c4f8"
+        "text_hash": "148fccab60efd2a1"
       },
       "tts": {
         "name_zh": "data/sounds/transport/airplane/generated/name-zh.mp3",
@@ -2442,7 +2624,7 @@
       "name_en": "Boat",
       "emoji": "🚢",
       "description": "轮船的汽笛声呜呜响",
-      "fun_fact": "当轮船在水里航行时，它的汽笛会发出“呜呜”的声音，就像在和海豚打招呼呢！海豚听到后，还会用它们的叫声来回应哦。",
+      "fun_fact": "轮船的汽笛“呜呜”响，就像在说：“我来了，快让开！”这样其他船就知道它要转弯啦！",
       "sounds": [
         {
           "file": "data/sounds/transport/boat/audio/boat_1.mp3"
@@ -2459,10 +2641,10 @@
       "added_at": "2026-06-26",
       "fun_fact_ai_generated": true,
       "ai": {
-        "generated_at": "2026-06-29T17:00:02.586Z",
-        "model": "abab6.5s-chat",
+        "generated_at": "2026-06-30T17:50:11.128Z",
+        "model": "deepseek-v4-flash",
         "prompt_version": "v1",
-        "text_hash": "sha256:197a0ba"
+        "text_hash": "f2475da32b380217"
       },
       "tts": {
         "name_zh": "data/sounds/transport/boat/generated/name-zh.mp3",
@@ -2565,7 +2747,9 @@
       "fun_fact": "轰隆隆，火车来了！它像一条长长的钢铁巨龙，穿梭在城市和乡村间，带着人们快速旅行。火车头呼啸而过，让铁轨也跟着震动起来，就像一场有节奏的音乐演奏会。",
       "sounds": [
         {
-          "file": "data/sounds/transport/train/audio/train_1.mp3"
+          "file": "data/sounds/transport/train/audio/train_1.mp3",
+          "label": "",
+          "tags": []
         }
       ],
       "tags": [
@@ -2577,7 +2761,7 @@
       "source": "https://freesound.org/people/gundamu/sounds/346957/",
       "contributor": "wbyan2021",
       "added_at": "2026-06-26",
-      "fun_fact_ai_generated": true,
+      "fun_fact_ai_generated": false,
       "ai": {
         "generated_at": "2026-06-29T17:00:08.319Z",
         "model": "abab6.5s-chat",

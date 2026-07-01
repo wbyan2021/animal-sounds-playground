@@ -6,7 +6,7 @@
   "name_en": "Snake",
   "emoji": "🐍",
   "description": "没有脚的长家伙，嘶嘶叫",
-  "fun_fact": "蛇是滑溜溜的爬行动物，虽然没有脚，但它可以用身体像波浪一样移动，悄无声息地滑行哦！它们还喜欢嘶嘶地叫，像在说悄悄话呢！",
+  "fun_fact": "蛇没有脚，靠肚子上的鳞片当“小脚丫”，滑溜溜地在地上扭来扭去，还能用舌头闻味道呢！",
   "sounds": [
     {
       "file": "audio/real_snake1.mp3"
@@ -23,10 +23,10 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:59:26.980Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:49:10.602Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:94836dd"
+    "text_hash": "8ea2399a7f264421"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",

@@ -6,7 +6,7 @@
   "name_en": "Fox",
   "emoji": "🦊",
   "description": "聪明的红毛家伙，尾巴很大",
-  "fun_fact": "狐狸是聪明的野生动物，它们有着红红的毛发和大大的尾巴，常在森林和田野里生活。你知道吗？狐狸的大尾巴不仅可以保暖，还能帮助它们保持平衡呢！",
+  "fun_fact": "狐狸的尾巴像一条大围巾，睡觉时它把尾巴盖在鼻子上，这样就能暖暖和和地睡个好觉啦！",
   "sounds": [
     {
       "file": "audio/real_fox1.mp3"
@@ -23,10 +23,10 @@
   "added_at": "2026-06-17",
   "fun_fact_ai_generated": true,
   "ai": {
-    "generated_at": "2026-06-29T16:58:57.311Z",
-    "model": "abab6.5s-chat",
+    "generated_at": "2026-06-30T17:45:32.483Z",
+    "model": "deepseek-v4-flash",
     "prompt_version": "v1",
-    "text_hash": "sha256:2c74e82e"
+    "text_hash": "31c65cdf4d4b024e"
   },
   "tts": {
     "name_zh": "generated/name-zh.mp3",
